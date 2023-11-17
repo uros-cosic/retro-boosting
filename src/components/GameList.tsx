@@ -30,7 +30,7 @@ function GameList() {
       <h2 className="text-xl font-bold text-gray-400 text-center">
         You can view all the games where you can find friends.
       </h2>
-      <div className="h-[60vh] w-full rounded-xl border-secondary border-b-4 border-r-4 overflow-hidden relative">
+      <div className="h-[60vh] w-full rounded-xl border-primary border-b-4 border-r-4 overflow-hidden relative">
         <Image
           src="/img/game-list.png"
           alt="Game List Section"

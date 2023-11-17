@@ -86,10 +86,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--primary));
+  background: #fff;
   border-radius: 0.75rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--primary) / 0.8);
+  background: #ccc;
 }

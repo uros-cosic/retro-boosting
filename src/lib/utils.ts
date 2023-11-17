@@ -32,9 +32,21 @@ export const tierMapping: any = {
     label: "diamond iv",
     href: "/img/tiers/diamond.png",
   },
+  D3: {
+    label: "diamond iii",
+    href: "/img/tiers/diamond.png",
+  },
+  D2: {
+    label: "diamond ii",
+    href: "/img/tiers/diamond.png",
+  },
+  D1: {
+    label: "diamond i",
+    href: "/img/tiers/diamond.png",
+  },
 };
 
-export const divisionsOrdered: Array<string> = ["D4", "M1"];
+export const divisionsOrdered: Array<string> = ["D4", "D3", "D2", "D1", "M1"];
 
 export function nameify(name: string, limit = 45) {
   return name.length > limit ? name.slice(0, limit) + "..." : name;

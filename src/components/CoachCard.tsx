@@ -46,7 +46,7 @@ function CoachCard({
               {data.coach.name}
             </p>
             <div className="flex py-2 items-center justify-center lg:items-start lg:justify-start">
-              <div className="bg-secondary rounded-full p-3 lg:p-4 z-10" />
+              <div className="bg-gray-300 rounded-full p-3 lg:p-4 z-10" />
               <div className="bg-primary rounded-full p-3 lg:p-4 z-20 -ml-2" />
               <div className="bg-green-500 rounded-full p-3 lg:p-4 z-30 -ml-2" />
             </div>

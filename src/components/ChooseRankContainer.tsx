@@ -3,8 +3,6 @@ import React, { useContext } from "react";
 import { OrderDataContent, OrderDataContext } from "@/lib/OrderDataContext";
 import { divisionsOrdered, tierMapping } from "@/lib/utils";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { FaMinus, FaPlus } from "react-icons/fa";
 import {
   Select,
   SelectContent,
@@ -31,6 +29,18 @@ function ChooseRankContainer({ idx }: { idx: number }) {
     }
   };
 
+  const filterDivisions = (arr: Array<string>) => {
+    if (idx === 0) {
+      let end = arr.indexOf(to);
+      if (end > arr.length) return arr.slice(0, arr.length - 1);
+      return arr.slice(0, end);
+    }
+    let end = arr.length;
+    let start = arr.indexOf(from) + 1;
+    if (start < 0) return arr.slice(1, end);
+    return arr.slice(start, end);
+  };
+
   return (
     <div className="px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between">
       <Image
@@ -45,19 +55,6 @@ function ChooseRankContainer({ idx }: { idx: number }) {
           {idx === 0 ? "current rank" : "desired rank"}
         </h2>
         <div className="flex space-x-3">
-          <Button
-            className="text-white"
-            onClick={() =>
-              handleChange(
-                idx,
-                divisionsOrdered[
-                  divisionsOrdered.indexOf(idx === 0 ? from : to) - 1
-                ] || divisionsOrdered[0]
-              )
-            }
-          >
-            <FaMinus aria-label="lower division" />
-          </Button>
           <Select onValueChange={(val) => handleChange(idx, val)}>
             <SelectTrigger className="w-[180px]">
               <SelectValue
@@ -70,26 +67,13 @@ function ChooseRankContainer({ idx }: { idx: number }) {
               />
             </SelectTrigger>
             <SelectContent>
-              {divisionsOrdered.map((key, idx) => (
+              {filterDivisions(divisionsOrdered).map((key: string) => (
                 <SelectItem value={key}>
                   {tierMapping[key].label.toUpperCase()}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
-          <Button
-            className="text-white"
-            onClick={() =>
-              handleChange(
-                idx,
-                divisionsOrdered[
-                  divisionsOrdered.indexOf(idx === 0 ? from : to) + 1
-                ] || divisionsOrdered[divisionsOrdered.length - 1]
-              )
-            }
-          >
-            <FaPlus aria-label="higher division" />
-          </Button>
         </div>
       </div>
     </div>
