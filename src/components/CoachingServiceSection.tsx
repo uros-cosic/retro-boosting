@@ -26,7 +26,7 @@ function CoachingServiceSection() {
         width={1700}
         className="object-cover h-full w-full"
       />
-      <div className="absolute h-full w-full bg-third/50" />
+      <div className="absolute h-full w-full bg-primary/50" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col-reverse lg:flex-row justify-between items-center">
         <div className="w-fit sm:w-1/3 h-[40%] lg:h-full flex lg:flex-col justify-center items-end lg:items-start lg:space-y-5">
           {coachesContent.map((coach, idx) => (
@@ -49,7 +49,7 @@ function CoachingServiceSection() {
           </p>
           <Link
             href="/coaches"
-            className="bg-primary text-center border-b-2 border-r-2 border-secondary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:bg-primary/90 transition-colors"
+            className="bg-black text-center border-b-2 border-r-2 border-secondary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:bg-black/90 transition-colors"
           >
             connect with coach
           </Link>

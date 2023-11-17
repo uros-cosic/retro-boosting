@@ -49,7 +49,7 @@ function GameList() {
                   <Link
                     key={link.label}
                     href={link.link}
-                    className="text-third bg-primary px-2 py-1 rounded-full border-third border font-medium text-xs hover:text-third/80 hover:border-third/80 transition-colors"
+                    className="text-primary bg-black px-2 py-1 rounded-full border-primary border font-medium text-xs hover:text-primary/80 hover:border-primary/80 transition-colors"
                   >
                     {link.label}
                   </Link>

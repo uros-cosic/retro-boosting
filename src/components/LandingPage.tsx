@@ -16,19 +16,19 @@ function LandingPage() {
         <h1 className="text-white text-lg sm:text-4xl font-bold text-center">
           Say Goodbye to Losing Streaks: Get Your Winning Edge with a Booster!
         </h1>
-        <h2 className="text-gray-400 text-base sm:text-2xl font-bold text-center">
+        <h2 className="text-gray-300 text-base sm:text-xl font-bold text-center">
           Or unleash your true potential through personalized coaching?
         </h2>
         <div className="flex space-x-3 sm:space-x-5 text-white font-bold text-sm sm:text-xl items-center justify-center">
           <Link
             href="/boosting"
-            className="bg-third px-10 py-2 rounded hover:bg-third/90 transition-colors"
+            className="bg-secondary px-10 py-2 rounded hover:bg-secondary/90 transition-colors"
           >
             Boosting
           </Link>
           <Link
             href="/boosting"
-            className="bg-secondary px-10 py-2 rounded hover:bg-secondary/90 transition-colors"
+            className="bg-primary px-10 py-2 rounded hover:bg-primary/90 transition-colors"
           >
             Coaching
           </Link>

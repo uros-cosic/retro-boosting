@@ -33,7 +33,7 @@ function Navbar() {
               <SheetTrigger>
                 <AiOutlineMenu className="text-2xl" />
               </SheetTrigger>
-              <SheetContent side="left" className="bg-primary">
+              <SheetContent side="left" className="bg-black">
                 <div className="flex flex-col h-full items-center justify-center uppercase space-y-5 font-medium text-gray-300">
                   {navLinks.map((link) => (
                     <Link
@@ -61,7 +61,8 @@ function Navbar() {
                 className={clsx(
                   "text-gray-300 hover:text-gray-200 transition-colors",
                   {
-                    "text-yellow": pathname === link.href,
+                    "text-primary hover:text-primary/90":
+                      pathname === link.href,
                   }
                 )}
               >
@@ -74,14 +75,14 @@ function Navbar() {
       <div className="h-full space-x-2 md:space-x-5 uppercase text-xs md:text-sm font-bold flex items-center">
         <Link
           href="/register"
-          className="h-1/2 bg-yellow rounded px-2 md:px-5 flex items-center text-primary hover:bg-yellow/80 transition-colors"
+          className="h-1/2 bg-primary rounded px-2 md:px-5 flex items-center text-black hover:bg-primary/80 transition-colors"
         >
           <PiUserCirclePlusLight className="text-xl mr-1" />
           register
         </Link>
         <Link
           href="/login"
-          className="h-1/2 bg-primary rounded px-2 md:px-5 border-b-2 border-r-2 border-yellow flex items-center hover:text-gray-300 transition-colors"
+          className="h-1/2 bg-black rounded px-2 md:px-5 border-b-2 border-r-2 border-primary flex items-center hover:text-gray-300 transition-colors"
         >
           <PiUserCircleLight className="text-xl mr-1" />
           login

@@ -34,6 +34,8 @@ export const tierMapping: any = {
   },
 };
 
+export const divisionsOrdered: Array<string> = ["D4", "M1"];
+
 export function nameify(name: string, limit = 45) {
   return name.length > limit ? name.slice(0, limit) + "..." : name;
 }

@@ -36,10 +36,6 @@ module.exports = {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-        third: {
-          DEFAULT: "hsl(var(--third))",
-          foreground: "hsl(var(--third-foreground))",
-        },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
@@ -59,10 +55,6 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
-        },
-        yellow: {
-          DEFAULT: "hsl(var(--yellow))",
-          foreground: "hsl(var(--yellow-foreground))",
         },
       },
       borderRadius: {

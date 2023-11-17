@@ -96,7 +96,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-primary w-full py-10 flex flex-col items-center justify-center text-white space-y-7">
+    <footer className="bg-black w-full py-10 flex flex-col items-center justify-center text-white space-y-7">
       <Logo />
       <div className="flex space-x-5 items-center text-center justify-center">
         {socials.map((social) => (
@@ -110,14 +110,25 @@ function Footer() {
         ))}
       </div>
       <div className="w-4/5 lg:w-1/3 mx-auto">
-        <hr className="border-secondary border-2" />
+        <hr className="border-primary border-2" />
       </div>
-      <ul className="w-4/5 lg:w-1/3 flex justify-between uppercase font-medium items-center text-center mx-auto">
-        {nav.map((link) => (
+      <ul className="w-4/5 lg:w-1/3 flex justify-between uppercase font-medium items-center text-center mx-auto relative">
+        {nav.map((link, idx) => (
           <li key={link.label}>
-            <Link href={link.href} className="hover:underline">
-              {link.label}
-            </Link>
+            <>
+              {idx === 1 ? (
+                <Link
+                  href={link.href}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:underline"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <Link href={link.href} className="hover:underline">
+                  {link.label}
+                </Link>
+              )}
+            </>
           </li>
         ))}
       </ul>

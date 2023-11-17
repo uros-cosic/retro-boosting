@@ -13,13 +13,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 229 73.9% 4.5%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 259 100% 62.4%;
+    --primary-foreground: 229 73.9% 4.5%;
 
-    --secondary: 259 100% 62.4%;
-    --secondary-foreground: 229 73.9% 4.5%;
-
-    --third: 334 87.6% 65.3%;
+    --secondary: 334 87.6% 65.3%;
     --secondary-foreground: 229 73.9% 4.5%;
 
     --muted: 300 2.2% 8.8%;
@@ -30,9 +27,6 @@
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
-    --yellow: 39 84.2% 55.3%;
-    --yellow-foreground: 229 73.9% 4.5%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
@@ -51,10 +45,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 229 73.9% 4.5%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 259 100% 62.4%;
+    --primary-foreground: 229 73.9% 4.5%;
 
-    --secondary: 263 30.2% 49.4%;
+    --secondary: 334 87.6% 65.3%;
     --secondary-foreground: 229 73.9% 4.5%;
 
     --muted: 300 2.2% 8.8%;
@@ -88,14 +82,14 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(var(--primary));
+  background: #000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--third));
+  background: hsl(var(--primary));
   border-radius: 0.75rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: hsl(var(--primary) / 0.8);
 }

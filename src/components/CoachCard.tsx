@@ -29,7 +29,7 @@ function CoachCard({
     >
       <Link
         href={data.coach.link}
-        className="w-[90%] h-full bg-primary rounded-xl px-6 py-2 sm:px-10 lg:p-3 flex flex-col lg:flex-row items-center justify-between hover:scale-110 transition-transform ease-in-out lg:space-x-3"
+        className="w-[90%] h-full bg-black rounded-xl px-6 py-2 sm:px-10 lg:p-3 flex flex-col lg:flex-row items-center justify-between hover:scale-110 transition-transform ease-in-out lg:space-x-3"
       >
         <div className="flex flex-col space-y-2 lg:flex-row h-full lg:space-x-3">
           <div className="rounded-full overflow-hidden h-1/2 lg:h-full flex items-center justify-center">
@@ -47,7 +47,7 @@ function CoachCard({
             </p>
             <div className="flex py-2 items-center justify-center lg:items-start lg:justify-start">
               <div className="bg-secondary rounded-full p-3 lg:p-4 z-10" />
-              <div className="bg-third rounded-full p-3 lg:p-4 z-20 -ml-2" />
+              <div className="bg-primary rounded-full p-3 lg:p-4 z-20 -ml-2" />
               <div className="bg-green-500 rounded-full p-3 lg:p-4 z-30 -ml-2" />
             </div>
           </div>

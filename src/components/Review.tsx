@@ -10,7 +10,7 @@ import Link from "next/link";
 function Review({ data }: { data: ReviewInterface }) {
   const stars = [...Array(Math.ceil(data.review.rating))];
   return (
-    <div className="w-full lg:w-[48%] rounded-xl border border-third bg-primary p-5 h-[30vh] space-y-2">
+    <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-5 h-[30vh] space-y-2">
       <div className="flex items-center justify-between h-1/3">
         <div className="w-[40%] h-full flex items-center space-x-2">
           <div className="h-full overflow-hidden rounded-full bg-white">
@@ -81,7 +81,7 @@ function Review({ data }: { data: ReviewInterface }) {
         </p>
         <Link
           href={data.link}
-          className="text-third text-xs font-bold underline hover:text-third/90 transition-colors"
+          className="text-primary text-xs font-bold underline hover:text-primary/90 transition-colors"
         >
           Continue Reading
         </Link>
