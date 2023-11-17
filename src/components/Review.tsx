@@ -81,7 +81,7 @@ function Review({ data }: { data: ReviewInterface }) {
         </p>
         <Link
           href={data.link}
-          className="text-third text-xs font-bold underline"
+          className="text-third text-xs font-bold underline hover:text-third/90 transition-colors"
         >
           Continue Reading
         </Link>

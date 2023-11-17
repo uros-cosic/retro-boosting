@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { PiUserCirclePlusLight, PiUserCircleLight } from "react-icons/pi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import Logo from "./Logo";
 
 function Navbar() {
   const navLinks = [
@@ -48,9 +49,7 @@ function Navbar() {
             </Sheet>
           </div>
           <Link href="/">
-            <h1 className="text-sm md:text-xl font-bold uppercase">
-              retro-boosting
-            </h1>
+            <Logo />
           </Link>
         </div>
         <ul className="hidden md:flex uppercase items-center text-sm font-bold space-x-5">

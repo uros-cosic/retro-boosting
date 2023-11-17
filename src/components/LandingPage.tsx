@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function LandingPage() {
   return (
-    <section className="relative w-full">
+    <section className="relative w-full h-[80vh]">
       <Image
         src="/img/retro-map.png"
         alt="Retro Map"
