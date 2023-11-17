@@ -31,7 +31,7 @@ function ContactForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="text-white max-w-5xl mx-auto p-10 rounded-xl bg-primary uppercase space-y-5"
+          className="text-white max-w-5xl mx-auto p-10 rounded-xl bg-primary shadow-xl uppercase space-y-5"
         >
           <h1 className="font-bold text-3xl">contact us</h1>
           <FormField
@@ -44,7 +44,7 @@ function ContactForm() {
                   <Input
                     placeholder="name..."
                     {...field}
-                    className="bg-gray-200 text-black"
+                    className="bg-gray-200 text-black uppercase text-xs font-medium"
                   />
                 </FormControl>
                 <FormMessage />
@@ -62,7 +62,7 @@ function ContactForm() {
                     placeholder="email..."
                     {...field}
                     type="email"
-                    className="bg-gray-200 text-black"
+                    className="bg-gray-200 text-black uppercase text-xs font-medium"
                   />
                 </FormControl>
                 <FormMessage />
@@ -79,7 +79,7 @@ function ContactForm() {
                   <Input
                     placeholder="subject..."
                     {...field}
-                    className="bg-gray-200 text-black"
+                    className="bg-gray-200 text-black uppercase text-xs font-medium"
                   />
                 </FormControl>
                 <FormMessage />
@@ -96,7 +96,7 @@ function ContactForm() {
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    className="bg-gray-200 text-black"
+                    className="bg-gray-200 text-black uppercase text-xs font-medium"
                     placeholder="question..."
                     {...field}
                   />
