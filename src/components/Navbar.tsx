@@ -11,7 +11,7 @@ function Navbar() {
   const navLinks = [
     {
       label: "support",
-      href: "/support#contact-form",
+      href: "/support#contact",
     },
     {
       label: "boosting",
