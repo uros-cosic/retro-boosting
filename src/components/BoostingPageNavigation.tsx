@@ -30,7 +30,7 @@ function BoostingPageNavigation() {
   ];
 
   return (
-    <nav className="py-5 w-full bg-black">
+    <nav className="py-5 w-full bg-black" id="nav">
       <ul className="flex w-full capitalize justify-between items-center px-3 lg:px-5 font-black">
         {boostingServices.map((boostingServiceObj) => (
           <li

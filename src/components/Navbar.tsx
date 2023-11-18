@@ -15,11 +15,11 @@ function Navbar() {
     },
     {
       label: "boosting",
-      href: "/boosting#boosting-menu",
+      href: "/boosting#nav",
     },
     {
       label: "coaching",
-      href: "/coaching#coaching-menu",
+      href: "/coaching#nav",
     },
   ];
 
