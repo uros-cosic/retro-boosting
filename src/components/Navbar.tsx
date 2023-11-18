@@ -39,7 +39,7 @@ function Navbar() {
                   {navLinks.map((link) => (
                     <Link
                       key={link.label}
-                      href={link.href}
+                      href={"/" + link.href.split(/\/|#/)[1]}
                       className="underline"
                     >
                       {link.label}
