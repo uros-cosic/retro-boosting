@@ -50,13 +50,13 @@ function ChooseRankContainer({ idx }: { idx: number }) {
         width={150}
         className="h-2/3 w-auto"
       />
-      <div className="flex flex-col items-center justify-center text-center w-full space-y-3">
-        <h2 className="font-bold capitalize text-lg">
+      <div className="flex flex-col items-center justify-center text-center w-full space-y-5">
+        <h2 className="font-bold capitalize text-2xl">
           {idx === 0 ? "current rank" : "desired rank"}
         </h2>
         <div className="flex space-x-3">
           <Select onValueChange={(val) => handleChange(idx, val)}>
-            <SelectTrigger className="w-[180px]">
+            <SelectTrigger className="w-40 font-black">
               <SelectValue
                 className="uppercase"
                 placeholder={
