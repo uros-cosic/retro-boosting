@@ -42,7 +42,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
   };
 
   return (
-    <div className="px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between">
+    <div className="px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between border border-primary">
       <Image
         src={idx === 0 ? tierMapping[from].href : tierMapping[to].href}
         alt={idx === 0 ? tierMapping[from].label : tierMapping[to].label}
@@ -56,7 +56,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
         </h2>
         <div className="flex space-x-3">
           <Select onValueChange={(val) => handleChange(idx, val)}>
-            <SelectTrigger className="w-40 font-black">
+            <SelectTrigger className="w-40 font-black border border-primary">
               <SelectValue
                 className="uppercase"
                 placeholder={
@@ -66,7 +66,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
                 }
               />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="border border-primary">
               {filterDivisions(divisionsOrdered).map((key: string) => (
                 <SelectItem value={key}>
                   {tierMapping[key].label.toUpperCase()}

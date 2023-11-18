@@ -31,7 +31,7 @@ function ContactForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="text-white max-w-3xl mx-auto p-5 rounded-xl bg-black shadow-xl uppercase space-y-5"
+          className="text-white max-w-3xl mx-auto p-5 rounded-xl bg-black shadow-xl uppercase space-y-5 border border-primary"
         >
           <h1 className="font-bold text-3xl">contact us</h1>
           <FormField

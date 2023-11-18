@@ -31,13 +31,16 @@ function BoostingPageNavigation() {
 
   return (
     <nav className="py-5 w-full bg-black">
-      <ul className="flex w-full text-xl capitalize justify-between items-center px-5 font-bold">
+      <ul className="flex w-full capitalize justify-between items-center px-3 lg:px-5 font-black">
         {boostingServices.map((boostingServiceObj) => (
-          <li key={boostingServiceObj.label}>
+          <li
+            key={boostingServiceObj.label}
+            className="flex items-center justify-center text-center h-full w-full"
+          >
             <Link
               href={boostingServiceObj.href}
               className={clsx(
-                "text-gray-300 hover:text-gray-200 transition-colors",
+                "text-gray-300 hover:text-gray-200 transition-colors text-xs lg:text-xl",
                 {
                   "text-primary hover:text-primary/90":
                     pathname === boostingServiceObj.href,

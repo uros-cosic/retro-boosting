@@ -32,7 +32,7 @@ function BoostingServiceSection() {
         width={1700}
         className="object-cover h-full w-full"
       />
-      <div className="absolute h-full w-full bg-gray-300/20" />
+      <div className="absolute h-full w-full bg-primary/50" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col lg:flex-row justify-between items-center">
         <div className="w-full lg:w-1/2 h-full flex flex-col justify-center lg:justify-between space-y-3 lg:space-y-5 text-center lg:text-left items-center lg:items-start">
           <h1 className="text-white text-2xl lg:text-4xl font-black">
