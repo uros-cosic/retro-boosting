@@ -18,7 +18,7 @@ function CoachingServiceSection() {
     },
   ];
   return (
-    <section className="flex items-center justify-center w-full relative h-[60vh]">
+    <section className="flex items-center justify-center w-full relative h-[65vh]">
       <Image
         src="/img/ezreal-cover.jpg"
         alt="Coaching Service"

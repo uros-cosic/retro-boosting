@@ -29,7 +29,7 @@ function BoosterCard({
     >
       <Link
         href={data.booster.link}
-        className="w-[90%] h-full bg-black rounded-xl px-6 py-2 sm:px-10 lg:p-3 flex flex-col lg:flex-row items-center justify-between hover:scale-110 transition-transform ease-in-out lg:space-x-3"
+        className="w-[90%] h-full bg-black border border-primary rounded-xl px-6 py-2 sm:px-10 lg:p-3 flex flex-col lg:flex-row items-center justify-between hover:scale-110 transition-transform ease-in-out lg:space-x-3"
       >
         <div className="flex flex-col space-y-2 lg:flex-row h-full lg:space-x-3">
           <div className="rounded-full overflow-hidden h-1/2 lg:h-full flex items-center justify-center">
