@@ -40,7 +40,7 @@ function SmallCheckoutContainer() {
   ];
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-between space-y-3">
+    <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-1/3 space-y-2">
@@ -71,8 +71,8 @@ function SmallCheckoutContainer() {
         <hr className="border-primary border-2" />
       </div>
       <Button className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
-        <FaGear className="text-2xl" />
-        <p className="uppercase font-medium">extra options</p>
+        <FaGear className="text-xl" />
+        <p className="uppercase font-medium text-xs">extra options</p>
       </Button>
       <div className="flex flex-col w-full space-y-2">
         {switchableOptions.map((optionObj) => (
@@ -98,9 +98,9 @@ function SmallCheckoutContainer() {
         <Input
           maxLength={20}
           placeholder="discount code"
-          className="uppercase border border-primary"
+          className="uppercase border border-primary h-fit"
         />
-        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-black">
+        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-black">
           apply
         </Button>
       </div>
@@ -114,7 +114,7 @@ function SmallCheckoutContainer() {
       </div>
       <Link
         href="/checkout"
-        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold"
+        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm"
       >
         purchase boost
       </Link>

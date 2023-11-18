@@ -49,7 +49,7 @@ function CoachingServiceSection() {
           </p>
           <Link
             href="/coaches"
-            className="bg-black text-center border-b-2 border-r-2 border-white px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:bg-black/90 transition-colors"
+            className="bg-black text-center border-b-2 border-r-2 border-white px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:bg-black/80 transition-colors"
           >
             connect with coach
           </Link>
