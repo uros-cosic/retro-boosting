@@ -11,15 +11,15 @@ function Navbar() {
   const navLinks = [
     {
       label: "support",
-      href: "/support",
+      href: "/support#contact-form",
     },
     {
       label: "boosting",
-      href: "/boosting",
+      href: "/boosting#boosting-menu",
     },
     {
       label: "coaching",
-      href: "/coaching",
+      href: "/coaching#coaching-menu",
     },
   ];
 

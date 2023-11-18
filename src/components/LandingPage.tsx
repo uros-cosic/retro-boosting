@@ -23,13 +23,13 @@ function LandingPage() {
         </h2>
         <div className="flex space-x-3 sm:space-x-5 text-white font-bold text-sm sm:text-xl items-center justify-center">
           <Link
-            href="/boosting"
+            href="/boosting#boosting-menu"
             className="bg-primary hover:bg-primary/90 px-10 py-2 rounded transition-colors shadow-xl"
           >
             Boosting
           </Link>
           <Link
-            href="/boosting"
+            href="/coaching"
             className="bg-gray-300 text-black px-10 py-2 rounded hover:bg-gray-300/90 transition-colors shadow-xl"
           >
             Coaching

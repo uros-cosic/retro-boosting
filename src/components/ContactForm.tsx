@@ -30,6 +30,7 @@ function ContactForm() {
     <div className="py-10 px-1">
       <Form {...form}>
         <form
+          id="contact-form"
           onSubmit={form.handleSubmit(onSubmit)}
           className="text-white max-w-3xl mx-auto p-5 rounded-xl bg-black shadow-xl uppercase space-y-5 border border-primary"
         >
