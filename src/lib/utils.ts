@@ -48,6 +48,15 @@ export const tierMapping: any = {
 
 export const divisionsOrdered: Array<string> = ["D4", "D3", "D2", "D1", "M1"];
 
+export const arenaTierMapping: any = {
+  G1: {
+    label: "gladiator",
+    href: "/img/tiers/arena/gladiator.png",
+  },
+};
+
+export const arenaDivisionsOrdered: Array<string> = ["G1"];
+
 export function nameify(name: string, limit = 45) {
   return name.length > limit ? name.slice(0, limit) + "..." : name;
 }

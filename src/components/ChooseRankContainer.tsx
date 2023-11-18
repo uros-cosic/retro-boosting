@@ -10,6 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Input } from "./ui/input";
 
 function ChooseRankContainer({ idx }: { idx: number }) {
   const { from, to, setOrderData } =
@@ -17,14 +18,12 @@ function ChooseRankContainer({ idx }: { idx: number }) {
 
   const handleChange = (idx: number, val: string) => {
     if (idx === 0) {
-      setOrderData({
-        from: val,
-        to,
+      setOrderData((prev: any) => {
+        return { ...prev, from: val };
       });
     } else {
-      setOrderData({
-        from,
-        to: val,
+      setOrderData((prev: any) => {
+        return { ...prev, to: val };
       });
     }
   };
@@ -54,7 +53,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
         <h2 className="font-bold capitalize text-2xl">
           {idx === 0 ? "current rank" : "desired rank"}
         </h2>
-        <div className="flex space-x-3">
+        <div>
           <Select onValueChange={(val) => handleChange(idx, val)}>
             <SelectTrigger className="w-40 font-black border border-primary">
               <SelectValue
