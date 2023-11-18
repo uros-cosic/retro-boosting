@@ -15,6 +15,21 @@ import {
 } from "@/components/ui/tooltip";
 import { Input } from "./ui/input";
 import Link from "next/link";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "./ui/dialog";
+import {
+  Select,
+  SelectContent,
+  SelectTrigger,
+  SelectValue,
+  SelectItem,
+} from "./ui/select";
 
 function SmallCheckoutContainer() {
   const { from, to, setOrderData } =
@@ -70,10 +85,53 @@ function SmallCheckoutContainer() {
       <div className="w-full">
         <hr className="border-primary border-2" />
       </div>
-      <Button className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
-        <FaGear className="text-xl" />
-        <p className="uppercase font-medium text-xs">extra options</p>
-      </Button>
+      <Dialog>
+        <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
+          <FaGear className="text-xl" />
+          <p className="uppercase font-medium text-xs">extra options</p>
+        </DialogTrigger>
+        <DialogContent className="bg-black border-primary border text-white">
+          <DialogHeader className="space-y-3">
+            <DialogTitle className="uppercase font-bold">
+              extra options
+            </DialogTitle>
+            <DialogDescription className="text-gray-300 text-xs">
+              Customize your order free of charge.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex items-center justify-between">
+            <div>
+              <h3 className="text-lg font-bold">Lane</h3>
+              <Select>
+                <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
+                  <SelectValue placeholder="any" />
+                </SelectTrigger>
+                <SelectContent className="border border-primary">
+                  <SelectItem value="any">any</SelectItem>
+                  <SelectItem value="jg">Jungle</SelectItem>
+                  <SelectItem value="mid">Mid</SelectItem>
+                  <SelectItem value="adc">Adc</SelectItem>
+                  <SelectItem value="top">Top</SelectItem>
+                  <SelectItem value="supp">Support</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold">Flash Placement</h3>
+              <Select>
+                <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
+                  <SelectValue placeholder="any" />
+                </SelectTrigger>
+                <SelectContent className="border border-primary">
+                  <SelectItem value="any">any</SelectItem>
+                  <SelectItem value="D">D</SelectItem>
+                  <SelectItem value="F">F</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
       <div className="flex flex-col w-full space-y-2">
         {switchableOptions.map((optionObj) => (
           <div key={optionObj.label} className="flex justify-between w-full">
@@ -114,7 +172,7 @@ function SmallCheckoutContainer() {
       </div>
       <Link
         href="/checkout"
-        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm"
+        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm hover:bg-primary/90 transition-colors"
       >
         purchase boost
       </Link>

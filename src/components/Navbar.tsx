@@ -24,6 +24,7 @@ function Navbar() {
   ];
 
   const pathname = usePathname();
+
   return (
     <nav className="text-white mx-auto flex items-center justify-between h-full">
       <div className="h-full flex space-x-5 items-center">
@@ -61,7 +62,7 @@ function Navbar() {
                   "text-gray-300 hover:text-gray-200 transition-colors",
                   {
                     "text-primary hover:text-primary/90":
-                      pathname === link.href,
+                      pathname.split(/\/|#/)[1] === link.href.split(/\/|#/)[1],
                   }
                 )}
               >
