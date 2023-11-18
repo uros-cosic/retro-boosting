@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function ContentTop({ heading }: { heading: string }) {
   return (
-    <div className="relative w-full h-[80vh]">
+    <div className="relative w-full h-[60vh]">
       <Image
         src="/img/retro-map.png"
         alt="Retro Map"

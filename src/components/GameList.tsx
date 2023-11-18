@@ -6,19 +6,19 @@ function GameList() {
   const links = [
     {
       label: "casual",
-      link: "/boosting/casual",
+      link: "/boosting/normals",
     },
     {
       label: "ranked",
-      link: "/boosting/ranked",
+      link: "/boosting#nav",
     },
     {
       label: "duo",
-      link: "/boosting/duo",
+      link: "/boosting/duo#nav",
     },
     {
       label: "team",
-      link: "/boosting/team",
+      link: "/boosting/flex",
     },
   ];
 

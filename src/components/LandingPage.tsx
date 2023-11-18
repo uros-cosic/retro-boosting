@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function LandingPage() {
   return (
-    <section className="relative w-full h-[80vh]">
+    <section className="relative w-full h-[60vh]">
       <Image
         src="/img/retro-map.png"
         alt="Retro Map"
@@ -23,13 +23,13 @@ function LandingPage() {
         </h2>
         <div className="flex space-x-3 sm:space-x-5 text-white font-bold text-sm sm:text-xl items-center justify-center">
           <Link
-            href="/boosting#boosting-menu"
+            href="/boosting#nav"
             className="bg-primary hover:bg-primary/90 px-10 py-2 rounded transition-colors shadow-xl"
           >
             Boosting
           </Link>
           <Link
-            href="/coaching"
+            href="/coaching#nav"
             className="bg-gray-300 text-black px-10 py-2 rounded hover:bg-gray-300/90 transition-colors shadow-xl"
           >
             Coaching
