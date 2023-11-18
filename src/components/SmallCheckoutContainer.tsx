@@ -30,29 +30,17 @@ import {
   SelectValue,
   SelectItem,
 } from "./ui/select";
+import SmallCheckoutPrice from "./SmallCheckoutPrice";
 
-function SmallCheckoutContainer() {
+function SmallCheckoutContainer({
+  switchableOptions,
+  extraOptions,
+}: {
+  switchableOptions: Array<any>;
+  extraOptions: boolean;
+}) {
   const { from, to, setOrderData } =
     useContext<OrderDataContent>(OrderDataContext);
-
-  const switchableOptions = [
-    {
-      label: "Offline Mode (FREE)",
-      detail: "Appear offline in league client chat",
-    },
-    {
-      label: "Priority Order (+20%)",
-      detail: "Your order will get done faster",
-    },
-    {
-      label: "Stream Games (+15%)",
-      detail: "Booster will stream the games for you",
-    },
-    {
-      label: "Solo Only (+20%)",
-      detail: "Booster won't play with a duo",
-    },
-  ];
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
@@ -85,53 +73,55 @@ function SmallCheckoutContainer() {
       <div className="w-full">
         <hr className="border-primary border-2" />
       </div>
-      <Dialog>
-        <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
-          <FaGear className="text-xl" />
-          <p className="uppercase font-medium text-xs">extra options</p>
-        </DialogTrigger>
-        <DialogContent className="bg-black border-primary border text-white">
-          <DialogHeader className="space-y-3">
-            <DialogTitle className="uppercase font-bold">
-              extra options
-            </DialogTitle>
-            <DialogDescription className="text-gray-300 text-xs">
-              Customize your order free of charge.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-bold">Lane</h3>
-              <Select>
-                <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
-                  <SelectValue placeholder="any" />
-                </SelectTrigger>
-                <SelectContent className="border border-primary">
-                  <SelectItem value="any">any</SelectItem>
-                  <SelectItem value="jg">Jungle</SelectItem>
-                  <SelectItem value="mid">Mid</SelectItem>
-                  <SelectItem value="adc">Adc</SelectItem>
-                  <SelectItem value="top">Top</SelectItem>
-                  <SelectItem value="supp">Support</SelectItem>
-                </SelectContent>
-              </Select>
+      {extraOptions && (
+        <Dialog>
+          <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
+            <FaGear className="text-xl" />
+            <p className="uppercase font-medium text-xs">extra options</p>
+          </DialogTrigger>
+          <DialogContent className="bg-black border-primary border text-white">
+            <DialogHeader className="space-y-3">
+              <DialogTitle className="uppercase font-bold">
+                extra options
+              </DialogTitle>
+              <DialogDescription className="text-gray-300 text-xs">
+                Customize your order free of charge.
+              </DialogDescription>
+            </DialogHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-lg font-bold">Lane</h3>
+                <Select>
+                  <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
+                    <SelectValue placeholder="any" />
+                  </SelectTrigger>
+                  <SelectContent className="border border-primary">
+                    <SelectItem value="any">any</SelectItem>
+                    <SelectItem value="jg">Jungle</SelectItem>
+                    <SelectItem value="mid">Mid</SelectItem>
+                    <SelectItem value="adc">Adc</SelectItem>
+                    <SelectItem value="top">Top</SelectItem>
+                    <SelectItem value="supp">Support</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold">Flash Placement</h3>
+                <Select>
+                  <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
+                    <SelectValue placeholder="any" />
+                  </SelectTrigger>
+                  <SelectContent className="border border-primary">
+                    <SelectItem value="any">any</SelectItem>
+                    <SelectItem value="D">D</SelectItem>
+                    <SelectItem value="F">F</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
             </div>
-            <div>
-              <h3 className="text-lg font-bold">Flash Placement</h3>
-              <Select>
-                <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
-                  <SelectValue placeholder="any" />
-                </SelectTrigger>
-                <SelectContent className="border border-primary">
-                  <SelectItem value="any">any</SelectItem>
-                  <SelectItem value="D">D</SelectItem>
-                  <SelectItem value="F">F</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
+          </DialogContent>
+        </Dialog>
+      )}
       <div className="flex flex-col w-full space-y-2">
         {switchableOptions.map((optionObj) => (
           <div key={optionObj.label} className="flex justify-between w-full">
@@ -162,14 +152,7 @@ function SmallCheckoutContainer() {
           apply
         </Button>
       </div>
-      <div className="flex flex-col w-full items-end space-y-1">
-        {/* only show discounted price if good code is applied */}
-        <p className="line-through text-sm font-black">420.50$</p>
-        <div className="flex justify-between w-full items-center">
-          <p className="font-bold">Total Price:</p>
-          <p className="font-black text-lg">399.47$</p>
-        </div>
-      </div>
+      <SmallCheckoutPrice />
       <Link
         href="/checkout"
         className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm hover:bg-primary/90 transition-colors"

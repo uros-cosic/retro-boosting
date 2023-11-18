@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import ChooseRankContainer from "./ChooseRankContainer";
 import { OrderDataContext } from "@/lib/OrderDataContext";
-import { Input } from "./ui/input";
 import {
   Select,
   SelectContent,
@@ -12,7 +11,13 @@ import {
 } from "./ui/select";
 import SmallCheckoutContainer from "./SmallCheckoutContainer";
 
-function SoloBoostContainer() {
+function SoloBoostContainer({
+  switchableOptions,
+  extraOptions,
+}: {
+  switchableOptions: Array<any>;
+  extraOptions: boolean;
+}) {
   const [orderData, setOrderData] = useState<any>({
     from: "D4",
     to: "M1",
@@ -77,7 +82,10 @@ function SoloBoostContainer() {
           </div>
         </div>
         <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary">
-          <SmallCheckoutContainer />
+          <SmallCheckoutContainer
+            switchableOptions={switchableOptions}
+            extraOptions={extraOptions}
+          />
         </div>
       </OrderDataContext.Provider>
     </div>
