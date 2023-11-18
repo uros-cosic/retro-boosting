@@ -68,7 +68,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
             </SelectTrigger>
             <SelectContent className="border border-primary">
               {filterDivisions(divisionsOrdered).map((key: string) => (
-                <SelectItem value={key}>
+                <SelectItem key={tierMapping[key].label} value={key}>
                   {tierMapping[key].label.toUpperCase()}
                 </SelectItem>
               ))}

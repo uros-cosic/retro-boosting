@@ -56,7 +56,6 @@ function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
-                key={link.label}
                 href={link.href}
                 className={clsx(
                   "text-gray-300 hover:text-gray-200 transition-colors",

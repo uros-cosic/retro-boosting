@@ -33,15 +33,15 @@ function Review({ data }: { data: ReviewInterface }) {
             </div>
             <div className="flex space-x-1">
               {stars.map((_, idx) => (
-                <>
+                <div key={idx}>
                   {idx !== stars.length - 1 ? (
-                    <FaStar key={idx} className="text-white text-xs" />
+                    <FaStar className="text-white text-xs" />
                   ) : data.review.rating % 1 === 0 ? (
-                    <FaStar key={idx} className="text-white text-xs" />
+                    <FaStar className="text-white text-xs" />
                   ) : (
-                    <FaStarHalf key={idx} className="text-white text-xs" />
+                    <FaStarHalf className="text-white text-xs" />
                   )}
-                </>
+                </div>
               ))}
             </div>
           </div>
