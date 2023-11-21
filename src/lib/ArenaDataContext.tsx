@@ -2,13 +2,13 @@
 import { createContext } from "react";
 
 export type ArenaOrderDataContent = {
-  desiredRank: string;
+  currentRank: string;
   numOfGames: number;
   setArenaOrderData: (s: any) => void;
 };
 
 export const ArenaOrderDataContext: any = createContext<ArenaOrderDataContent>({
-  desiredRank: "G1",
+  currentRank: "G1",
   numOfGames: 1,
   setArenaOrderData: () => {},
 });

@@ -1,10 +1,7 @@
 import React, { useContext } from "react";
 import Image from "next/image";
-import {
-  ArenaOrderDataContent,
-  ArenaOrderDataContext,
-} from "@/lib/ArenaDataContext";
-import { arenaDivisionsOrdered, arenaTierMapping } from "@/lib/utils";
+import { WinOrderDataContent, WinOrderDataContext } from "@/lib/WinDataContext";
+import { tierMapping, divisionsOrdered } from "@/lib/utils";
 import {
   Select,
   SelectContent,
@@ -14,16 +11,12 @@ import {
 } from "@/components/ui/select";
 import { Input } from "./ui/input";
 
-function ChooseArenaRankContainer() {
-  const { setArenaOrderData } = useContext<ArenaOrderDataContent>(
-    ArenaOrderDataContext
-  );
-  const { currentRank, numOfGames } = useContext<ArenaOrderDataContent>(
-    ArenaOrderDataContext
-  );
+function ChooseWinRankContainer() {
+  const { currentRank, numOfGames, setWinOrderData } =
+    useContext<WinOrderDataContent>(WinOrderDataContext);
 
   const handleChange = (val: string) => {
-    setArenaOrderData((prev: any) => {
+    setWinOrderData((prev: any) => {
       return { ...prev, currentRank: val };
     });
   };
@@ -32,8 +25,8 @@ function ChooseArenaRankContainer() {
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center">
         <Image
-          src={arenaTierMapping[currentRank].href}
-          alt={arenaTierMapping[currentRank].label}
+          src={tierMapping[currentRank].href}
+          alt={tierMapping[currentRank].label}
           height={150}
           width={150}
           className="h-auto w-auto"
@@ -46,26 +39,28 @@ function ChooseArenaRankContainer() {
             <SelectTrigger className="w-40 font-black border border-primary">
               <SelectValue
                 className="uppercase"
-                placeholder={arenaTierMapping[currentRank].label.toUpperCase()}
+                placeholder={tierMapping[currentRank].label.toUpperCase()}
               />
             </SelectTrigger>
             <SelectContent className="border border-primary">
-              {arenaDivisionsOrdered.map((key: string) => (
-                <SelectItem key={arenaTierMapping[key].label} value={key}>
-                  {arenaTierMapping[key].label.toUpperCase()}
+              {divisionsOrdered.map((key: string) => (
+                <SelectItem key={tierMapping[key].label} value={key}>
+                  {tierMapping[key].label.toUpperCase()}
                 </SelectItem>
               ))}
             </SelectContent>
           </Select>
         </div>
         <div className="flex flex-col items-center space-y-5">
-          <h2 className="font-bold capitalize text-xl">number of games</h2>
+          <h2 className="font-bold capitalize text-sm lg:text-xl">
+            number of games
+          </h2>
           <Input
             className="w-40 font-black border border-primary"
             type="number"
             value={numOfGames}
             onChange={(e) =>
-              setArenaOrderData((prev: any) => {
+              setWinOrderData((prev: any) => {
                 return {
                   ...prev,
                   numOfGames: e.target.value,
@@ -81,4 +76,4 @@ function ChooseArenaRankContainer() {
   );
 }
 
-export default ChooseArenaRankContainer;
+export default ChooseWinRankContainer;

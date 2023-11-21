@@ -4,7 +4,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import { PiUserCirclePlusLight, PiUserCircleLight } from "react-icons/pi";
 import { AiOutlineMenu } from "react-icons/ai";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import Logo from "./Logo";
 
 function Navbar() {
@@ -37,13 +37,14 @@ function Navbar() {
               <SheetContent side="left" className="bg-black">
                 <div className="flex flex-col h-full items-center justify-center uppercase space-y-5 font-medium text-gray-300">
                   {navLinks.map((link) => (
-                    <Link
-                      key={link.label}
-                      href={"/" + link.href.split(/\/|#/)[1]}
-                      className="underline"
-                    >
-                      {link.label}
-                    </Link>
+                    <SheetClose asChild key={link.label}>
+                      <Link
+                        href={"/" + link.href.split(/\/|#/)[1]}
+                        className="underline"
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
                   ))}
                 </div>
               </SheetContent>

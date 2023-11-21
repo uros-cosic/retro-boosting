@@ -1,11 +1,8 @@
 import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArenaOrderDataContent,
-  ArenaOrderDataContext,
-} from "@/lib/ArenaDataContext";
-import { arenaTierMapping } from "@/lib/utils";
+import { WinOrderDataContent, WinOrderDataContext } from "@/lib/WinDataContext";
+import { tierMapping } from "@/lib/utils";
 import {
   Dialog,
   DialogTrigger,
@@ -21,7 +18,7 @@ import {
   SelectValue,
   SelectItem,
 } from "./ui/select";
-import { FaGreaterThan, FaGear, FaCircleQuestion } from "react-icons/fa6";
+import { FaGear, FaCircleQuestion } from "react-icons/fa6";
 import { Button } from "./ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -34,18 +31,12 @@ import {
 import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
 
-function ArenaSmallCheckoutContainer() {
-  const { currentRank } = useContext<ArenaOrderDataContent>(
-    ArenaOrderDataContext
-  );
+function WinSmallCheckoutContainer() {
+  const { currentRank } = useContext<WinOrderDataContent>(WinOrderDataContext);
   const switchableOptions = [
     {
       label: "Offline Mode (FREE)",
       detail: "Appear offline in league client chat",
-    },
-    {
-      label: "Champion (FREE)",
-      detail: "You choose a champion",
     },
     {
       label: "Priority Order (+20%)",
@@ -55,6 +46,10 @@ function ArenaSmallCheckoutContainer() {
       label: "Stream Games (+15%)",
       detail: "Booster will stream the games for you",
     },
+    {
+      label: "Solo Only (+20%)",
+      detail: "Booster won't play with a duo",
+    },
   ];
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
@@ -62,14 +57,14 @@ function ArenaSmallCheckoutContainer() {
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
           <Image
-            src={arenaTierMapping[currentRank].href}
-            alt={arenaTierMapping[currentRank].label}
+            src={tierMapping[currentRank].href}
+            alt={tierMapping[currentRank].label}
             height={100}
             width={100}
             className="h-auto w-auto max-h-[100px]"
           />
           <p className="uppercase text-center text-sm">
-            {arenaTierMapping[currentRank].label}
+            {tierMapping[currentRank].label}
           </p>
         </div>
       </div>
@@ -164,4 +159,4 @@ function ArenaSmallCheckoutContainer() {
   );
 }
 
-export default ArenaSmallCheckoutContainer;
+export default WinSmallCheckoutContainer;
