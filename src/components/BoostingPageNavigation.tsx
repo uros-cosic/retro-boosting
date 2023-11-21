@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import { twMerge } from "tailwind-merge";
 
 function BoostingPageNavigation() {
   const pathname = usePathname();
@@ -39,12 +40,14 @@ function BoostingPageNavigation() {
           >
             <Link
               href={boostingServiceObj.href}
-              className={clsx(
-                "text-gray-300 hover:text-white transition-colors text-xs lg:text-xl",
-                {
-                  "text-primary hover:text-primary/90":
-                    pathname === boostingServiceObj.href,
-                }
+              className={twMerge(
+                clsx(
+                  "text-gray-300 hover:text-white transition-colors text-xs lg:text-xl",
+                  {
+                    "text-primary hover:text-primary/90":
+                      pathname === boostingServiceObj.href,
+                  }
+                )
               )}
             >
               {boostingServiceObj.label}

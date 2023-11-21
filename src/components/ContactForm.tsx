@@ -44,7 +44,7 @@ function ContactForm() {
                   <Input
                     placeholder="name..."
                     {...field}
-                    className="bg-white text-black uppercase text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-black"
                   />
                 </FormControl>
                 <FormMessage />
@@ -62,7 +62,7 @@ function ContactForm() {
                     placeholder="email..."
                     {...field}
                     type="email"
-                    className="bg-white text-black uppercase text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-black"
                   />
                 </FormControl>
                 <FormMessage />
@@ -79,7 +79,7 @@ function ContactForm() {
                   <Input
                     placeholder="subject..."
                     {...field}
-                    className="bg-white text-black uppercase text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-black"
                   />
                 </FormControl>
                 <FormMessage />
@@ -96,7 +96,7 @@ function ContactForm() {
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    className="bg-white text-black uppercase text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-black"
                     placeholder="question..."
                     {...field}
                   />
@@ -107,7 +107,7 @@ function ContactForm() {
           />
           <Button
             type="submit"
-            className="bg-white text-black text-lg font-black w-full uppercase py-5 hover:bg-white/90 transition-colors"
+            className="bg-white text-black text-lg font-black w-full  py-5 hover:bg-white/90 transition-colors uppercase"
           >
             send message
           </Button>

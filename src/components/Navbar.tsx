@@ -6,6 +6,7 @@ import { PiUserCirclePlusLight, PiUserCircleLight } from "react-icons/pi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import Logo from "./Logo";
+import { twMerge } from "tailwind-merge";
 
 function Navbar() {
   const navLinks = [
@@ -59,12 +60,11 @@ function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className={clsx(
-                  "text-gray-300 hover:text-white transition-colors",
-                  {
+                className={twMerge(
+                  clsx("text-gray-300 hover:text-white transition-colors", {
                     "text-primary hover:text-primary/90":
                       pathname.split(/\/|#/)[1] === link.href.split(/\/|#/)[1],
-                  }
+                  })
                 )}
               >
                 {link.label}
