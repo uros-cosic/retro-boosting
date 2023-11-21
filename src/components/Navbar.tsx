@@ -60,7 +60,7 @@ function Navbar() {
               <Link
                 href={link.href}
                 className={clsx(
-                  "text-gray-300 hover:text-gray-200 transition-colors",
+                  "text-gray-300 hover:text-white transition-colors",
                   {
                     "text-primary hover:text-primary/90":
                       pathname.split(/\/|#/)[1] === link.href.split(/\/|#/)[1],
@@ -76,14 +76,14 @@ function Navbar() {
       <div className="h-full space-x-2 md:space-x-5 uppercase text-xs md:text-sm font-bold flex items-center">
         <Link
           href="/register"
-          className="h-1/2 bg-gray-300 rounded px-2 md:px-5 flex items-center text-black hover:bg-gray-300/80 transition-colors"
+          className="h-1/2 bg-secondary rounded px-2 md:px-5 flex items-center text-black hover:bg-secondary/80 transition-colors"
         >
           <PiUserCirclePlusLight className="text-xl mr-1" />
           register
         </Link>
         <Link
           href="/login"
-          className="h-1/2 bg-black rounded px-2 md:px-5 border-b-2 border-r-2 border-gray-300 flex items-center hover:text-gray-300 transition-colors"
+          className="h-1/2 bg-black rounded px-2 md:px-5 border-b-2 border-r-2 border-secondary flex items-center hover:opacity-80 transition-colors"
         >
           <PiUserCircleLight className="text-xl mr-1" />
           login

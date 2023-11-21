@@ -30,7 +30,7 @@ function LandingPage() {
           </Link>
           <Link
             href="/coaching#nav"
-            className="bg-gray-300 text-black px-10 py-2 rounded hover:bg-gray-300/90 transition-colors shadow-xl"
+            className="bg-secondary text-black px-10 py-2 rounded hover:bg-secondary/90 transition-colors shadow-xl"
           >
             Coaching
           </Link>

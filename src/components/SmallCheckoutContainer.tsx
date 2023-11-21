@@ -84,7 +84,7 @@ function SmallCheckoutContainer({
               <DialogTitle className="uppercase font-bold">
                 extra options
               </DialogTitle>
-              <DialogDescription className="text-gray-300 text-xs">
+              <DialogDescription className="text-secondary text-xs">
                 Customize your order free of charge.
               </DialogDescription>
             </DialogHeader>

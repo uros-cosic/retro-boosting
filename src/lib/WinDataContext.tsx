@@ -8,7 +8,7 @@ export type WinOrderDataContent = {
 };
 
 export const WinOrderDataContext: any = createContext<WinOrderDataContent>({
-  currentRank: "G1",
+  currentRank: "M1",
   numOfGames: 1,
   setWinOrderData: () => {},
 });

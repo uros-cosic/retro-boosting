@@ -40,7 +40,7 @@ function BoostingPageNavigation() {
             <Link
               href={boostingServiceObj.href}
               className={clsx(
-                "text-gray-300 hover:text-gray-200 transition-colors text-xs lg:text-xl",
+                "text-gray-300 hover:text-white transition-colors text-xs lg:text-xl",
                 {
                   "text-primary hover:text-primary/90":
                     pathname === boostingServiceObj.href,
