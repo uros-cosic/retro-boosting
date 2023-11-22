@@ -12,11 +12,11 @@ import {
 import SmallCheckoutContainer from "./SmallCheckoutContainer";
 
 function SoloBoostContainer({
-  switchableOptions,
   extraOptions,
+  switchableOptions,
 }: {
-  switchableOptions: Array<any>;
   extraOptions: boolean;
+  switchableOptions: Array<any>;
 }) {
   const [orderData, setOrderData] = useState<any>({
     from: "D4",
@@ -83,8 +83,8 @@ function SoloBoostContainer({
         </div>
         <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary">
           <SmallCheckoutContainer
-            switchableOptions={switchableOptions}
             extraOptions={extraOptions}
+            switchableOptions={switchableOptions}
           />
         </div>
       </OrderDataContext.Provider>

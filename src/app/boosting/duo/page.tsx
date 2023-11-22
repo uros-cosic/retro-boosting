@@ -1,17 +1,13 @@
 import React from "react";
 import BoostContainer from "@/components/BoostContainer";
+import { duoBoostSwitchableOptions } from "@/lib/data";
 
 function Page() {
   return (
     <div className="py-10 text-white max-w-5xl mx-auto space-y-10">
       <h1 className="text-3xl font-bold">Choose Your Rank</h1>
       <BoostContainer
-        switchableOptions={[
-          {
-            label: "Priority Order (+20%)",
-            detail: "Your order will get done faster",
-          },
-        ]}
+        switchableOptions={duoBoostSwitchableOptions}
         extraOptions={false}
       />
     </div>

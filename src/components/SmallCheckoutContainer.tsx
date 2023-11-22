@@ -33,11 +33,11 @@ import {
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
 
 function SmallCheckoutContainer({
-  switchableOptions,
   extraOptions,
+  switchableOptions,
 }: {
-  switchableOptions: Array<any>;
   extraOptions: boolean;
+  switchableOptions: Array<any>;
 }) {
   const { from, to, setOrderData } =
     useContext<OrderDataContent>(OrderDataContext);

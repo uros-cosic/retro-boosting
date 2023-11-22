@@ -29,8 +29,8 @@ function ChooseNormalsRankContainer() {
         <Image
           src={tierMapping[boosterRank].href}
           alt={tierMapping[boosterRank].label}
-          height={150}
-          width={150}
+          height={250}
+          width={250}
           className="h-auto w-auto"
         />
       </div>

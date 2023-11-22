@@ -21,7 +21,7 @@ import {
   SelectValue,
   SelectItem,
 } from "./ui/select";
-import { FaGreaterThan, FaGear, FaCircleQuestion } from "react-icons/fa6";
+import { FaGear, FaCircleQuestion } from "react-icons/fa6";
 import { Button } from "./ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -33,29 +33,12 @@ import {
 } from "@/components/ui/tooltip";
 import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
+import { arenaSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function ArenaSmallCheckoutContainer() {
   const { currentRank } = useContext<ArenaOrderDataContent>(
     ArenaOrderDataContext
   );
-  const switchableOptions = [
-    {
-      label: "Offline Mode (FREE)",
-      detail: "Appear offline in league client chat",
-    },
-    {
-      label: "Champion (FREE)",
-      detail: "You choose a champion",
-    },
-    {
-      label: "Priority Order (+20%)",
-      detail: "Your order will get done faster",
-    },
-    {
-      label: "Stream Games (+15%)",
-      detail: "Booster will stream the games for you",
-    },
-  ];
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-black uppercase text-center text-2xl">checkout</h1>

@@ -1,9 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import {
-  CoachingOrderDataContent,
-  CoachingOrderDataContext,
-} from "@/lib/CoachingDataContext";
+import { CoachingOrderDataContext } from "@/lib/CoachingDataContext";
 import {
   Select,
   SelectContent,

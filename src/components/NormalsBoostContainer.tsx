@@ -7,10 +7,7 @@ import {
   SelectValue,
   SelectItem,
 } from "./ui/select";
-import {
-  NormalsOrderDataContent,
-  NormalsOrderDataContext,
-} from "@/lib/NormalsDataContext";
+import { NormalsOrderDataContext } from "@/lib/NormalsDataContext";
 import ChooseNormalsRankContainer from "./ChooseNormalsRankContainer";
 import NormalsSmallCheckoutContainer from "./NormalsSmallCheckoutContainer";
 

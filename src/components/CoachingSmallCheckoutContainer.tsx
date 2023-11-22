@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/tooltip";
 import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
-import Image from "next/image";
 import Link from "next/link";
 import {
   CoachingOrderDataContent,

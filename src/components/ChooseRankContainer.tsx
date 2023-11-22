@@ -10,7 +10,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "./ui/input";
 
 function ChooseRankContainer({ idx }: { idx: number }) {
   const { from, to, setOrderData } =

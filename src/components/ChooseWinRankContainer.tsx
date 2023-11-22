@@ -27,8 +27,8 @@ function ChooseWinRankContainer() {
         <Image
           src={tierMapping[currentRank].href}
           alt={tierMapping[currentRank].label}
-          height={150}
-          width={150}
+          height={250}
+          width={250}
           className="h-auto w-auto"
         />
       </div>

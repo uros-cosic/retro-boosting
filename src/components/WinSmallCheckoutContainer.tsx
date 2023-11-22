@@ -30,27 +30,11 @@ import {
 } from "@/components/ui/tooltip";
 import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
+import { winBoostSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function WinSmallCheckoutContainer() {
   const { currentRank } = useContext<WinOrderDataContent>(WinOrderDataContext);
-  const switchableOptions = [
-    {
-      label: "Offline Mode (FREE)",
-      detail: "Appear offline in league client chat",
-    },
-    {
-      label: "Priority Order (+20%)",
-      detail: "Your order will get done faster",
-    },
-    {
-      label: "Stream Games (+15%)",
-      detail: "Booster will stream the games for you",
-    },
-    {
-      label: "Solo Only (+20%)",
-      detail: "Booster won't play with a duo",
-    },
-  ];
+
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-black uppercase text-center text-2xl">checkout</h1>
