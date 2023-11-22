@@ -20,7 +20,7 @@ function Navbar() {
     },
     {
       label: "coaching",
-      href: "/coaching#nav",
+      href: "/coaching",
     },
   ];
 

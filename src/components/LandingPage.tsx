@@ -29,7 +29,7 @@ function LandingPage() {
             Boosting
           </Link>
           <Link
-            href="/coaching#nav"
+            href="/coaching"
             className="bg-secondary text-black px-10 py-2 rounded hover:bg-secondary/90 transition-colors shadow-xl"
           >
             Coaching
