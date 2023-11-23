@@ -32,7 +32,7 @@ function CoachingSmallCheckoutContainer() {
       <h1 className="font-black uppercase text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
-          <h2 className="text-lg font-bold uppercase">
+          <h2 className="text-lg font-bold uppercase text-center">
             {coachingHours > 1
               ? `${coachingHours} hours of coaching with`
               : `${coachingHours} hour of coaching with`}
