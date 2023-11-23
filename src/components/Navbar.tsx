@@ -2,11 +2,12 @@ import clsx from "clsx";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
-import { PiUserCirclePlusLight, PiUserCircleLight } from "react-icons/pi";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
 import Logo from "./Logo";
 import { twMerge } from "tailwind-merge";
+import RegisterDialog from "./RegisterDialog";
+import LoginDialog from "./LoginDialog";
 
 function Navbar() {
   const navLinks = [
@@ -73,21 +74,9 @@ function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="h-full space-x-2 md:space-x-5 uppercase text-xs md:text-sm font-bold flex items-center">
-        <Link
-          href="/register"
-          className="h-1/2 bg-secondary rounded px-2 md:px-5 flex items-center text-black hover:bg-secondary/80 transition-colors"
-        >
-          <PiUserCirclePlusLight className="text-xl mr-1" />
-          register
-        </Link>
-        <Link
-          href="/login"
-          className="h-1/2 bg-black rounded px-2 md:px-5 border-b-2 border-r-2 border-secondary flex items-center hover:opacity-80 transition-colors"
-        >
-          <PiUserCircleLight className="text-xl mr-1" />
-          login
-        </Link>
+      <div className="h-full space-x-2 md:space-x-5 flex items-center">
+        <RegisterDialog />
+        <LoginDialog />
       </div>
     </nav>
   );

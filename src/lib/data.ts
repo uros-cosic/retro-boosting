@@ -80,3 +80,10 @@ export const winBoostSwitchableOptions = [
     detail: "Booster won't play with a duo",
   },
 ];
+
+export const coachingSwitchableOptions = [
+  {
+    label: "Priority Order (+20%)",
+    detail: "Your order will get done faster",
+  },
+];

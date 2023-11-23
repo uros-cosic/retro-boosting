@@ -16,17 +16,12 @@ import {
   CoachingOrderDataContent,
   CoachingOrderDataContext,
 } from "@/lib/CoachingDataContext";
+import { coachingSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function CoachingSmallCheckoutContainer() {
   const { coach, coachingHours } = useContext<CoachingOrderDataContent>(
     CoachingOrderDataContext
   );
-  const switchableOptions = [
-    {
-      label: "Priority Order (+20%)",
-      detail: "Your order will get done faster",
-    },
-  ];
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-black uppercase text-center text-2xl">checkout</h1>
