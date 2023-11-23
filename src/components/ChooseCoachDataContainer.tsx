@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Image from "next/image";
 import {
   CoachingOrderDataContent,
   CoachingOrderDataContext,
@@ -11,6 +10,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function ChooseCoachDataContainer() {
   const { coachingHours, language, role, server, coach, setCoachingOrderData } =
@@ -21,15 +21,14 @@ function ChooseCoachDataContainer() {
   return (
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center flex-col space-y-3">
-        {/* TODO: No Avatar Coach as default (any) */}
         <h2 className="font-bold uppercase text-xl">coach</h2>
-        <Image
-          src={coach.avatar}
-          alt={coach.name}
-          height={150}
-          width={150}
-          className="h-auto w-auto"
-        />
+        <Avatar className="h-1/2 w-fit">
+          <AvatarImage
+            src={coach.avatar}
+            className={`${coach.name === "any" ? "bg-white" : ""}`}
+          />
+          <AvatarFallback>{coach.name}</AvatarFallback>
+        </Avatar>
         <h3 className="font-bold uppercase">{coach.name}</h3>
       </div>
       <div className="flex flex-col items-center justify-center text-center w-full space-y-5">

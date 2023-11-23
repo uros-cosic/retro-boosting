@@ -22,8 +22,8 @@ function LoginDialog() {
       </DialogTrigger>
       <DialogContent className="bg-black text-white border border-primary">
         <DialogHeader>
-          <DialogTitle>
-            <h1 className="text-3xl text-center uppercase font-black">login</h1>
+          <DialogTitle className="text-3xl text-center uppercase font-black">
+            login
           </DialogTitle>
         </DialogHeader>
         <LoginForm />

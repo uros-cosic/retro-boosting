@@ -22,10 +22,8 @@ function RegisterDialog() {
       </DialogTrigger>
       <DialogContent className="bg-black text-white border border-primary">
         <DialogHeader>
-          <DialogTitle>
-            <h1 className="text-3xl text-center uppercase font-black">
-              register
-            </h1>
+          <DialogTitle className="text-3xl text-center uppercase font-black">
+            register
           </DialogTitle>
         </DialogHeader>
         <RegisterForm />

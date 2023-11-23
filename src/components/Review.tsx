@@ -6,22 +6,21 @@ import { FaStarHalf } from "react-icons/fa";
 import { tierMapping } from "@/lib/utils";
 import { FaGreaterThan } from "react-icons/fa6";
 import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 function Review({ data }: { data: ReviewInterface }) {
   const stars = [...Array(Math.ceil(data.review.rating))];
   return (
     <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-5 lg:h-[30vh] space-y-2">
       <div className="flex items-center justify-between h-1/3">
-        <div className="w-[40%] h-full flex items-center space-x-2">
-          <div className="h-full overflow-hidden rounded-full flex items-center justify-center">
-            <Image
+        <div className="w-[40%] h-full flex items-center space-x-2 md:justify-between">
+          <Avatar className="md:h-full w-auto">
+            <AvatarImage
               src={data.customer.avatar}
-              alt={data.customer.name}
-              height={100}
-              width={100}
-              className="h-auto sm:h-full w-auto max-h-full bg-white rounded-full"
+              className="bg-white h-full"
             />
-          </div>
+            <AvatarFallback>{data.customer.name}</AvatarFallback>
+          </Avatar>
           <div className="flex flex-col h-full justify-around">
             <div>
               <p className="text-sm font-medium text-white uppercase">

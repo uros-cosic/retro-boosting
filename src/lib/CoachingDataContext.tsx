@@ -21,7 +21,7 @@ export const CoachingOrderDataContext: any =
     language: "en",
     coach: {
       name: "any",
-      avatar: "/img/temp/coaches/lexa.png",
+      avatar: "/img/temp/coaches/any.png",
     },
     setCoachingOrderData: () => {},
   });
