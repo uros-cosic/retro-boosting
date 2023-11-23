@@ -7,6 +7,7 @@ import {
   FaTwitter,
   FaDiscord,
   FaLinkedin,
+  FaTiktok,
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -68,13 +69,13 @@ function Footer() {
       ),
     },
     {
-      name: "linkedin",
-      link: "https://www.linkedin.com/in/retro-boosting",
+      name: "tiktok",
+      link: "https://www.tiktok.com/@retro-boosting",
       icon: (
-        <FaLinkedin
-          key="linkedin social"
+        <FaTiktok
+          key="tiktok social"
           className="text-2xl"
-          aria-label="linkedin social"
+          aria-label="tiktok social"
         />
       ),
     },

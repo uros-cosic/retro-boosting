@@ -21,6 +21,18 @@ function ChooseWinRankContainer() {
     });
   };
 
+  const handleNumOfGamesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let val: any = e.target.value;
+    if (val.length > 2) return;
+    if (!val || Number(val) <= 0) val = 1;
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        numOfGames: val,
+      };
+    });
+  };
+
   return (
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center">
@@ -59,14 +71,7 @@ function ChooseWinRankContainer() {
             className="w-40 font-black border border-primary"
             type="number"
             value={numOfGames}
-            onChange={(e) =>
-              setWinOrderData((prev: any) => {
-                return {
-                  ...prev,
-                  numOfGames: e.target.value,
-                };
-              })
-            }
+            onChange={handleNumOfGamesChange}
             min={1}
             max={99}
           />

@@ -18,6 +18,20 @@ function ChooseCoachDataContainer() {
 
   const handleChange = () => {};
 
+  const handleCoachingHoursChange = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    let val: any = e.target.value;
+    if (val.length > 2) return;
+    if (!val || Number(val) <= 0) val = 1;
+    setCoachingOrderData((prev: any) => {
+      return {
+        ...prev,
+        coachingHours: val,
+      };
+    });
+  };
+
   return (
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center flex-col space-y-3">
@@ -38,14 +52,7 @@ function ChooseCoachDataContainer() {
             className="w-40 font-black border border-primary"
             type="number"
             value={coachingHours}
-            onChange={(e) =>
-              setCoachingOrderData((prev: any) => {
-                return {
-                  ...prev,
-                  coachingHours: e.target.value,
-                };
-              })
-            }
+            onChange={handleCoachingHoursChange}
             min={1}
             max={99}
           />
