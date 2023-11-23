@@ -19,6 +19,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaSearch } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogTrigger, DialogContent, DialogClose } from "./ui/dialog";
 
 function ChooseCoachDataContainer() {
   const { coachingHours, language, role, server, coach, setCoachingOrderData } =
@@ -68,6 +69,8 @@ function ChooseCoachDataContainer() {
   const handleChange = () => {};
 
   const handleCoachChange = (coachObj: any) => {
+    setSearchVal("");
+    setCoaches(coachesContent);
     setCoachingOrderData((prev: any) => {
       return {
         ...prev,
@@ -129,55 +132,55 @@ function ChooseCoachDataContainer() {
             max={99}
           />
         </div>
-        <div className="flex flex-col items-center space-y-5">
-          <Popover>
-            <PopoverTrigger asChild>
-              <Button className="font-bold capitalize text-xl bg-primary hover:bg-primary/90">
-                choose your coach
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button className="font-bold capitalize text-xl bg-primary hover:bg-primary/90">
+              choose your coach
+            </Button>
+          </DialogTrigger>
+          <DialogContent className="bg-black border-primary border text-white">
+            <div className="border-primary border-b relative">
+              <Input
+                className="border-none focus-visible:ring-0"
+                placeholder="Search..."
+                value={searchVal}
+                onChange={handleSearchChange}
+              />
+              <Button className="absolute top-1/3 left-full text-primary transform -translate-x-full p-0 m-0 border-none outline-none h-fit">
+                <FaSearch className="text-lg" />
               </Button>
-            </PopoverTrigger>
-            <PopoverContent className="bg-black border-primary border text-white w-96">
-              <div className="border-primary border-b relative">
-                <Input
-                  className="border-none focus-visible:ring-0"
-                  placeholder="Search..."
-                  value={searchVal}
-                  onChange={handleSearchChange}
-                />
-                <Button className="absolute top-1/3 left-full text-primary transform -translate-x-full p-0 m-0 border-none outline-none h-fit">
-                  <FaSearch className="text-lg" />
-                </Button>
-              </div>
-              <div className="w-full overflow-y-scroll max-h-52 my-2 space-y-3">
-                {coaches.map((coachObj) => (
-                  <div
-                    key={coachObj.name}
-                    className="h-14 w-full flex items-center justify-between pr-1"
-                  >
-                    <Avatar className="h-full w-auto">
-                      <AvatarImage
-                        src={coachObj.avatar}
-                        className="h-full w-auto"
-                      />
-                      <AvatarFallback>{coachObj.name}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="flex space-x-1">
-                        <Badge
-                          variant={"outline"}
-                          className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
-                        >
-                          challenger
-                        </Badge>
-                        <Badge
-                          variant={"outline"}
-                          className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
-                        >
-                          any role
-                        </Badge>
-                      </div>
-                      <p>{coachObj.name}</p>
+            </div>
+            <div className="w-full overflow-y-scroll max-h-52 my-2 space-y-3">
+              {coaches.map((coachObj) => (
+                <div
+                  key={coachObj.name}
+                  className="h-14 w-full flex items-center justify-between pr-1"
+                >
+                  <Avatar className="h-full w-auto">
+                    <AvatarImage
+                      src={coachObj.avatar}
+                      className="h-full w-auto"
+                    />
+                    <AvatarFallback>{coachObj.name}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <div className="flex space-x-1">
+                      <Badge
+                        variant={"outline"}
+                        className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                      >
+                        challenger
+                      </Badge>
+                      <Badge
+                        variant={"outline"}
+                        className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                      >
+                        any role
+                      </Badge>
                     </div>
+                    <p>{coachObj.name}</p>
+                  </div>
+                  <DialogClose asChild>
                     <Button
                       className="bg-primary text-white text-xs uppercase hover:bg-primary/90"
                       onClick={() => {
@@ -186,12 +189,73 @@ function ChooseCoachDataContainer() {
                     >
                       choose
                     </Button>
+                  </DialogClose>
+                </div>
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
+        {/* <Popover>
+          <PopoverTrigger asChild>
+            <Button className="font-bold capitalize text-xl bg-primary hover:bg-primary/90">
+              choose your coach
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="bg-black border-primary border text-white sm:w-96">
+            <div className="border-primary border-b relative">
+              <Input
+                className="border-none focus-visible:ring-0"
+                placeholder="Search..."
+                value={searchVal}
+                onChange={handleSearchChange}
+              />
+              <Button className="absolute top-1/3 left-full text-primary transform -translate-x-full p-0 m-0 border-none outline-none h-fit">
+                <FaSearch className="text-lg" />
+              </Button>
+            </div>
+            <div className="w-full overflow-y-scroll max-h-52 my-2 space-y-3">
+              {coaches.map((coachObj) => (
+                <div
+                  key={coachObj.name}
+                  className="h-14 w-full flex items-center justify-between pr-1"
+                >
+                  <Avatar className="h-full w-auto">
+                    <AvatarImage
+                      src={coachObj.avatar}
+                      className="h-full w-auto"
+                    />
+                    <AvatarFallback>{coachObj.name}</AvatarFallback>
+                  </Avatar>
+                  <div>
+                    <div className="flex space-x-1">
+                      <Badge
+                        variant={"outline"}
+                        className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                      >
+                        challenger
+                      </Badge>
+                      <Badge
+                        variant={"outline"}
+                        className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                      >
+                        any role
+                      </Badge>
+                    </div>
+                    <p>{coachObj.name}</p>
                   </div>
-                ))}
-              </div>
-            </PopoverContent>
-          </Popover>
-        </div>
+                  <Button
+                    className="bg-primary text-white text-xs uppercase hover:bg-primary/90"
+                    onClick={() => {
+                      handleCoachChange(coachObj);
+                    }}
+                  >
+                    choose
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </PopoverContent>
+        </Popover> */}
       </div>
     </div>
   );
