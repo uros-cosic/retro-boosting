@@ -1,4 +1,10 @@
-import React, { useContext } from "react";
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  ReactElement,
+  useContext,
+  useState,
+} from "react";
 import {
   CoachingOrderDataContent,
   CoachingOrderDataContext,
@@ -11,12 +17,78 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { FaSearch } from "react-icons/fa";
+import { Badge } from "@/components/ui/badge";
 
 function ChooseCoachDataContainer() {
   const { coachingHours, language, role, server, coach, setCoachingOrderData } =
     useContext<CoachingOrderDataContent>(CoachingOrderDataContext);
+  // TEMP COACH DATA - fetch from api
+
+  const coachesContent = [
+    {
+      avatar: "/img/temp/coaches/lexa.png",
+      name: "lexa",
+      link: "/coaches/lexa",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "ASCO",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "123",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "321",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "444",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "qqq",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "www",
+      link: "/coaches/asco",
+    },
+  ];
+  const [coaches, setCoaches] = useState(coachesContent);
+  const [searchVal, setSearchVal] = useState("");
 
   const handleChange = () => {};
+
+  const handleCoachChange = (coachObj: any) => {
+    setCoachingOrderData((prev: any) => {
+      return {
+        ...prev,
+        coach: coachObj,
+      };
+    });
+  };
+
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setSearchVal(val);
+    if (!val.trim()) {
+      setCoaches(coachesContent);
+      return;
+    }
+    setCoaches(
+      coachesContent.filter((coachObj) =>
+        coachObj.name.toLowerCase().startsWith(val.toLowerCase())
+      )
+    );
+  };
 
   const handleCoachingHoursChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -64,8 +136,59 @@ function ChooseCoachDataContainer() {
                 choose your coach
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="bg-black border-primary border text-white">
-              123
+            <PopoverContent className="bg-black border-primary border text-white w-96">
+              <div className="border-primary border-b relative">
+                <Input
+                  className="border-none focus-visible:ring-0"
+                  placeholder="Search..."
+                  value={searchVal}
+                  onChange={handleSearchChange}
+                />
+                <Button className="absolute top-1/3 left-full text-primary transform -translate-x-full p-0 m-0 border-none outline-none h-fit">
+                  <FaSearch className="text-lg" />
+                </Button>
+              </div>
+              <div className="w-full overflow-y-scroll max-h-52 my-2 space-y-3">
+                {coaches.map((coachObj) => (
+                  <div
+                    key={coachObj.name}
+                    className="h-14 w-full flex items-center justify-between pr-1"
+                  >
+                    <Avatar className="h-full w-auto">
+                      <AvatarImage
+                        src={coachObj.avatar}
+                        className="h-full w-auto"
+                      />
+                      <AvatarFallback>{coachObj.name}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <div className="flex space-x-1">
+                        <Badge
+                          variant={"outline"}
+                          className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                        >
+                          challenger
+                        </Badge>
+                        <Badge
+                          variant={"outline"}
+                          className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                        >
+                          any role
+                        </Badge>
+                      </div>
+                      <p>{coachObj.name}</p>
+                    </div>
+                    <Button
+                      className="bg-primary text-white text-xs uppercase hover:bg-primary/90"
+                      onClick={() => {
+                        handleCoachChange(coachObj);
+                      }}
+                    >
+                      choose
+                    </Button>
+                  </div>
+                ))}
+              </div>
             </PopoverContent>
           </Popover>
         </div>
