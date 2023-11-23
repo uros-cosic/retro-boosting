@@ -32,7 +32,9 @@ function CoachingSmallCheckoutContainer() {
               ? `${coachingHours} hours of coaching with`
               : `${coachingHours} hour of coaching with`}
           </h2>
-          <p className="uppercase text-center font-black">{`${coach.name} coach`}</p>
+          <p className="uppercase text-center font-black">
+            {coach.name === "any" ? "any coach" : `coach ${coach.name}`}
+          </p>
         </div>
       </div>
       <div className="w-full">
