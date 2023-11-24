@@ -2,26 +2,11 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BoosterCard from "./BoosterCard";
+import { getTopBoosters, BoosterCardInterface } from "@/lib/apiUtils";
 
-function BoostingServiceSection() {
-  // temp boosters content
-  const boostersContent = [
-    {
-      avatar: "/img/temp/boosters/prince.png",
-      name: "prince",
-      link: "/boosters/prince",
-    },
-    {
-      avatar: "/img/temp/boosters/lexa.png",
-      name: "lexa",
-      link: "/boosters/lexa",
-    },
-    {
-      avatar: "/img/temp/boosters/tama.png",
-      name: "tama",
-      link: "/boosters/tama",
-    },
-  ];
+async function BoostingServiceSection() {
+  const boostersContent: Array<BoosterCardInterface> | any =
+    await getTopBoosters();
 
   return (
     <section className="flex items-center justify-center w-full relative h-[65vh]">
@@ -48,14 +33,14 @@ function BoostingServiceSection() {
             your legacy as a true legend in the game.
           </p>
           <Link
-            href="/boosters"
+            href="/boosting"
             className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-lg font-bold rounded w-fit hover:text-white/80 transition-colors"
           >
             connect with booster
           </Link>
         </div>
         <div className="w-fit sm:w-1/3 h-[40%] lg:h-full flex lg:flex-col justify-center items-end lg:items-start lg:space-y-2 lg:justify-between">
-          {boostersContent.map((booster, idx) => (
+          {boostersContent.map((booster: BoosterCardInterface, idx: number) => (
             <BoosterCard key={idx} data={{ booster, idx }} />
           ))}
         </div>

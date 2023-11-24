@@ -34,6 +34,7 @@ import {
 import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
 import { normalsSwitchableOptions as switchableOptions } from "@/lib/data";
+import { getOrderPrice } from "@/lib/apiUtils";
 
 function NormalsSmallCheckoutContainer() {
   const { normalsOrderData, setNormalsOrderData } =
@@ -45,28 +46,19 @@ function NormalsSmallCheckoutContainer() {
     priceLoading: true,
   });
 
-  // temp func simulating price loading from api
-  const tempFunc = async () => {
+  const handleOptionsChange = async () => {
+    const data = await getOrderPrice();
+    setPriceObj(data);
+  };
+
+  useEffect(() => {
     setPriceObj((prev: any) => {
       return {
         ...prev,
         priceLoading: true,
       };
     });
-    const data = await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          total: 6969,
-          discountedPrice: null,
-          priceLoading: false,
-        });
-      }, 500);
-    });
-    setPriceObj((prev: any) => data);
-  };
-
-  useEffect(() => {
-    tempFunc();
+    handleOptionsChange();
   }, [normalsOrderData]);
 
   const handleSwitchChange = (checked: boolean, id: string) => {

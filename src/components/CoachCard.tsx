@@ -3,18 +3,13 @@ import React from "react";
 import Link from "next/link";
 import { FaHeadphones } from "react-icons/fa6";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-interface CoachInterface {
-  name: string;
-  avatar: string;
-  link: string;
-}
+import { CoachCardInterface } from "@/lib/apiUtils";
 
 function CoachCard({
   data,
 }: {
   data: {
-    coach: CoachInterface;
+    coach: CoachCardInterface;
     idx: number;
   };
 }) {

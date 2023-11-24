@@ -3,18 +3,13 @@ import { FaHeadphones } from "react-icons/fa6";
 import clsx from "clsx";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-
-interface BoosterCardData {
-  avatar: string;
-  name: string;
-  link: string;
-}
+import { BoosterCardInterface } from "@/lib/apiUtils";
 
 function BoosterCard({
   data,
 }: {
   data: {
-    booster: BoosterCardData;
+    booster: BoosterCardInterface;
     idx: number;
   };
 }) {

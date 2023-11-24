@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "./ui/sheet";
@@ -8,8 +8,30 @@ import Logo from "./Logo";
 import { twMerge } from "tailwind-merge";
 import RegisterDialog from "./RegisterDialog";
 import LoginDialog from "./LoginDialog";
+import { UserContext } from "@/lib/UserContext";
+import { getMe, UserDataInterface } from "@/lib/apiUtils";
+import AccountDialog from "./AccountDialog";
 
 function Navbar() {
+  const [user, setUser] = useState({
+    isLoggedIn: false,
+    data: null,
+  });
+
+  const checkUser = async () => {
+    const data: UserDataInterface | any = await getMe();
+    if (data.status === "success") {
+      setUser({
+        isLoggedIn: true,
+        data: data.data,
+      });
+    }
+  };
+
+  useEffect(() => {
+    checkUser();
+  }, []);
+
   const navLinks = [
     {
       label: "support",
@@ -74,10 +96,23 @@ function Navbar() {
           ))}
         </ul>
       </div>
-      <div className="h-full space-x-2 md:space-x-5 flex items-center">
-        <RegisterDialog />
-        <LoginDialog />
-      </div>
+      <UserContext.Provider
+        value={{
+          user,
+          setUser,
+        }}
+      >
+        {user.isLoggedIn ? (
+          <div className="h-full flex items-center">
+            <AccountDialog />
+          </div>
+        ) : (
+          <div className="h-full space-x-2 md:space-x-5 flex items-center">
+            <RegisterDialog />
+            <LoginDialog />
+          </div>
+        )}
+      </UserContext.Provider>
     </nav>
   );
 }

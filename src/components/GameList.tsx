@@ -5,20 +5,24 @@ import React from "react";
 function GameList() {
   const links = [
     {
-      label: "casual",
-      link: "/boosting/normals",
-    },
-    {
       label: "ranked",
-      link: "/boosting#nav",
+      link: "/boosting/boosting#nav",
     },
     {
       label: "duo",
       link: "/boosting/duo#nav",
     },
     {
-      label: "team",
-      link: "/boosting/flex",
+      label: "casual",
+      link: "/boosting/normals#nav",
+    },
+    {
+      label: "win",
+      link: "/boosting/win#nav",
+    },
+    {
+      label: "arena",
+      link: "/boosting/arena#nav",
     },
   ];
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,8 +10,18 @@ import { Button } from "@/components/ui/button";
 import { PiUserCircleLight } from "react-icons/pi";
 import { FaGoogle } from "react-icons/fa";
 import LoginForm from "./LoginForm";
+import { UserContent, UserContext } from "@/lib/UserContext";
+import { ImSpinner2 } from "react-icons/im";
 
 function LoginDialog() {
+  const { user, setUser } = useContext<UserContent>(UserContext);
+  const [loading, setLoading] = useState(false);
+
+  const handleGoogleClick = async () => {
+    // TODO
+    setLoading(true);
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -31,9 +41,20 @@ function LoginDialog() {
           <p className="text-center uppercase mx-4 font-semibold text-sm">or</p>
         </div>
         <div className="w-full">
-          <Button className="bg-primary text-white text-lg font-bold w-full py-5 hover:bg-primary/90 transition-colors uppercase">
-            <FaGoogle className="mr-3 text-lg" />
-            use google
+          <Button
+            className="bg-primary text-white text-lg font-bold w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+            onClick={handleGoogleClick}
+            disabled={loading}
+            aria-disabled={loading}
+          >
+            {loading ? (
+              <ImSpinner2 className="text-lg text-center animate-spin" />
+            ) : (
+              <>
+                <FaGoogle className="mr-3 text-lg" />
+                use google
+              </>
+            )}
           </Button>
         </div>
       </DialogContent>

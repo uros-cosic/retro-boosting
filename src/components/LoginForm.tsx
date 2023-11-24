@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,15 +14,31 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "./ui/input";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import Link from "next/link";
+import { UserContent, UserContext } from "@/lib/UserContext";
+import { UserDataInterface, handleLogin } from "@/lib/apiUtils";
+import { ImSpinner2 } from "react-icons/im";
 
 function LoginForm() {
+  const [loading, setLoading] = useState(false);
+
+  const { user, setUser } = useContext<UserContent>(UserContext);
+
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
     mode: "onSubmit",
   });
 
-  const onSubmit = (values: LoginFormValues) => {
-    // todo
+  const onSubmit = async (values: LoginFormValues) => {
+    // temp - will pass values to handleLogin
+    setLoading(true);
+    const data: UserDataInterface | any = await handleLogin();
+    if (data.status === "success") {
+      setUser(data);
+      window.location.assign("/");
+    } else {
+      // handle 404 / 500
+    }
+    setLoading(false);
   };
 
   return (
@@ -70,8 +86,14 @@ function LoginForm() {
         <Button
           type="submit"
           className="bg-primary text-white text-lg font-bold w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+          disabled={loading}
+          aria-disabled={loading}
         >
-          login
+          {loading ? (
+            <ImSpinner2 className="text-lg text-center animate-spin" />
+          ) : (
+            "login"
+          )}
         </Button>
         <Link
           href="/forgotPassword"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,8 +10,15 @@ import { FaGoogle } from "react-icons/fa";
 import RegisterForm from "./RegisterForm";
 import { Button } from "@/components/ui/button";
 import { PiUserCirclePlusLight } from "react-icons/pi";
+import { ImSpinner2 } from "react-icons/im";
 
 function RegisterDialog() {
+  const [loading, setLoading] = useState(false);
+
+  const handleGoogleClick = async () => {
+    setLoading(true);
+  };
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -31,9 +38,20 @@ function RegisterDialog() {
           <p className="text-center uppercase mx-4 font-semibold text-sm">or</p>
         </div>
         <div className="w-full">
-          <Button className="bg-primary text-white text-lg font-bold w-full py-5 hover:bg-primary/90 transition-colors uppercase">
-            <FaGoogle className="mr-3 text-lg" />
-            use google
+          <Button
+            className="bg-primary text-white text-lg font-bold w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+            disabled={loading}
+            aria-disabled={loading}
+            onClick={handleGoogleClick}
+          >
+            {loading ? (
+              <ImSpinner2 className="text-lg text-center animate-spin" />
+            ) : (
+              <>
+                <FaGoogle className="mr-3 text-lg" />
+                use google
+              </>
+            )}
           </Button>
         </div>
       </DialogContent>

@@ -5,24 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export interface ReviewInterface {
-  customer: {
-    name: string;
-    tag: string;
-    avatar: string;
-  };
-  order: {
-    from: string;
-    to: string;
-  };
-  review: {
-    rating: number;
-    heading: string;
-    comment: string;
-  };
-  link: string;
-}
-
 export const tierMapping: any = {
   M1: {
     label: "master",

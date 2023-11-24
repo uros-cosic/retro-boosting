@@ -1,5 +1,5 @@
 import React from "react";
-import { ReviewInterface, nameify } from "@/lib/utils";
+import { nameify } from "@/lib/utils";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
@@ -7,8 +7,9 @@ import { tierMapping } from "@/lib/utils";
 import { FaGreaterThan } from "react-icons/fa6";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ReviewCardInterface } from "@/lib/apiUtils";
 
-function Review({ data }: { data: ReviewInterface }) {
+function Review({ data }: { data: ReviewCardInterface }) {
   const stars = [...Array(Math.ceil(data.review.rating))];
   return (
     <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-5 lg:h-[30vh] space-y-2">
@@ -78,12 +79,14 @@ function Review({ data }: { data: ReviewInterface }) {
         <p className="text-xs font-medium text-gray-500">
           {nameify(data.review.comment, 200)}
         </p>
-        <Link
-          href={data.link}
-          className="text-primary text-xs font-bold underline hover:text-primary/90 transition-colors"
-        >
-          Continue Reading
-        </Link>
+        {data.review.comment.length >= 200 && (
+          <Link
+            href={data.link}
+            className="text-primary text-xs font-bold underline hover:text-primary/90 transition-colors"
+          >
+            Continue Reading
+          </Link>
+        )}
       </div>
     </div>
   );

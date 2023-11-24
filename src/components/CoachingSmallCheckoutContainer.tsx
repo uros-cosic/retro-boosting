@@ -17,6 +17,7 @@ import {
   CoachingOrderDataContext,
 } from "@/lib/CoachingDataContext";
 import { coachingSwitchableOptions as switchableOptions } from "@/lib/data";
+import { getOrderPrice } from "@/lib/apiUtils";
 
 function CoachingSmallCheckoutContainer() {
   const { coachingOrderData, setCoachingOrderData } =
@@ -28,28 +29,19 @@ function CoachingSmallCheckoutContainer() {
     priceLoading: true,
   });
 
-  // temp func simulating price loading from api
-  const tempFunc = async () => {
+  const handleOptionsChange = async () => {
+    const data = await getOrderPrice();
+    setPriceObj(data);
+  };
+
+  useEffect(() => {
     setPriceObj((prev: any) => {
       return {
         ...prev,
         priceLoading: true,
       };
     });
-    const data = await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve({
-          total: 6969,
-          discountedPrice: null,
-          priceLoading: false,
-        });
-      }, 500);
-    });
-    setPriceObj((prev: any) => data);
-  };
-
-  useEffect(() => {
-    tempFunc();
+    handleOptionsChange();
   }, [coachingOrderData]);
 
   const handleSwitchChange = (checked: boolean, id: string) => {

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,15 +13,32 @@ import { registerFormSchema, RegisterFormValues } from "@/lib/formUtil";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "./ui/input";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
+import { UserContent, UserContext } from "@/lib/UserContext";
+import { handleRegister } from "@/lib/apiUtils";
+import { UserDataInterface } from "@/lib/apiUtils";
+import { ImSpinner2 } from "react-icons/im";
 
 function RegisterForm() {
+  const [loading, setLoading] = useState(false);
+
+  const { user, setUser } = useContext<UserContent>(UserContext);
+
   const form = useForm<RegisterFormValues>({
     resolver: zodResolver(registerFormSchema),
     mode: "onSubmit",
   });
 
-  const onSubmit = (values: RegisterFormValues) => {
-    // todo
+  const onSubmit = async (values: RegisterFormValues) => {
+    // temp - will pass values to handleRegister
+    setLoading(true);
+    const data: UserDataInterface | any = await handleRegister();
+    if (data.status === "success") {
+      setUser(data);
+      window.location.assign("/");
+    } else {
+      // handle 404 / 500
+    }
+    setLoading(false);
   };
 
   return (
@@ -104,8 +121,14 @@ function RegisterForm() {
         <Button
           type="submit"
           className="bg-primary text-white text-lg font-bold w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+          disabled={loading}
+          aria-disabled={loading}
         >
-          register
+          {loading ? (
+            <ImSpinner2 className="text-lg text-center animate-spin" />
+          ) : (
+            "register"
+          )}
         </Button>
       </form>
     </Form>

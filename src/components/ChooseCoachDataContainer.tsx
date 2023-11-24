@@ -66,8 +66,6 @@ function ChooseCoachDataContainer() {
   const [coaches, setCoaches] = useState(coachesContent);
   const [searchVal, setSearchVal] = useState("");
 
-  const handleChange = () => {};
-
   const handleCoachChange = (coachObj: any) => {
     setSearchVal("");
     setCoaches(coachesContent);

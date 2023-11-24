@@ -2,21 +2,11 @@ import React from "react";
 import Image from "next/image";
 import CoachCard from "./CoachCard";
 import Link from "next/link";
+import { getTopCoaches, CoachCardInterface } from "@/lib/apiUtils";
 
-function CoachingServiceSection() {
-  // temp coach content
-  const coachesContent = [
-    {
-      avatar: "/img/temp/coaches/lexa.png",
-      name: "lexa",
-      link: "/coaches/lexa",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "ASCO",
-      link: "/coaches/asco",
-    },
-  ];
+async function CoachingServiceSection() {
+  const coachesContent: Array<CoachCardInterface> | any = await getTopCoaches();
+
   return (
     <section className="flex items-center justify-center w-full relative h-[65vh]">
       <Image
@@ -29,7 +19,7 @@ function CoachingServiceSection() {
       <div className="absolute h-full w-full bg-primary/50" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col-reverse lg:flex-row justify-between items-center">
         <div className="w-fit sm:w-1/3 h-[40%] lg:h-full flex lg:flex-col justify-center items-end lg:items-start lg:space-y-5">
-          {coachesContent.map((coach, idx) => (
+          {coachesContent.map((coach: CoachCardInterface, idx: number) => (
             <CoachCard key={idx} data={{ coach, idx }} />
           ))}
         </div>
@@ -48,7 +38,7 @@ function CoachingServiceSection() {
             with our tailored coaching sessions.
           </p>
           <Link
-            href="/coaches"
+            href="/coaching"
             className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:text-white/80 transition-colors"
           >
             connect with coach
