@@ -233,3 +233,15 @@ export const handleLogin = async () => {
     }, 500);
   });
 };
+
+export const sendContactMessage = async () => {
+  // temp
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: null,
+      });
+    }, 500);
+  });
+};

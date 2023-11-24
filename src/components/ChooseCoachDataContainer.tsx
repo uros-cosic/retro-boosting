@@ -12,11 +12,6 @@ import {
 } from "@/lib/CoachingDataContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaSearch } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";

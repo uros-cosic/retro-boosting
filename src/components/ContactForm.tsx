@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,15 +14,19 @@ import { Input } from "@/components/ui/input";
 import { ContactFormValues, contactFormSchema } from "@/lib/formUtil";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Textarea } from "./ui/textarea";
+import { ImSpinner2 } from "react-icons/im";
 
 function ContactForm() {
+  const [loading, setLoading] = useState(false);
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
     mode: "onSubmit",
   });
 
   const onSubmit = (values: ContactFormValues) => {
-    // TODO: POST to backend, toast for success/error
+    // TODO: POST to backend, toast for success/error sendContactMessage
+    setLoading(true);
   };
 
   return (
@@ -107,8 +111,14 @@ function ContactForm() {
           <Button
             type="submit"
             className="bg-white text-black text-lg font-black w-full  py-5 hover:bg-white/90 transition-colors uppercase"
+            disabled={loading}
+            aria-disabled={loading}
           >
-            send message
+            {loading ? (
+              <ImSpinner2 className="text-lg text-center animate-spin" />
+            ) : (
+              "send message"
+            )}
           </Button>
         </form>
       </Form>
