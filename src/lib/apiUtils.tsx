@@ -139,6 +139,51 @@ export const getTopReviews = async () => {
   });
 };
 
+export const getCoachesByOptions = async () => {
+  // temp
+  const coachesContent = [
+    {
+      avatar: "/img/temp/coaches/lexa.png",
+      name: "lexa",
+      link: "/coaches/lexa",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "ASCO",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/lexa.jpg",
+      name: "123",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "321",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/lexa.jpg",
+      name: "444",
+      link: "/coaches/asco",
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "qqq",
+      link: "/coaches/asco",
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: coachesContent,
+      });
+    }, 500);
+  });
+};
+
 export interface UserDataInterface {
   status: string;
   data?: {
@@ -148,6 +193,7 @@ export interface UserDataInterface {
 }
 
 export const getMe = async () => {
+  // temp
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve({
@@ -159,6 +205,7 @@ export const getMe = async () => {
 };
 
 export const handleRegister = async () => {
+  // temp
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve({
@@ -173,6 +220,7 @@ export const handleRegister = async () => {
 };
 
 export const handleLogin = async () => {
+  // temp
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve({

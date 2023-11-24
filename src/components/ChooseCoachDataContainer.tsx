@@ -3,6 +3,7 @@ import React, {
   ChangeEventHandler,
   ReactElement,
   useContext,
+  useEffect,
   useState,
 } from "react";
 import {
@@ -20,55 +21,26 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { FaSearch } from "react-icons/fa";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogTrigger, DialogContent, DialogClose } from "./ui/dialog";
+import { getCoachesByOptions } from "@/lib/apiUtils";
 
 function ChooseCoachDataContainer() {
   const { coachingOrderData, setCoachingOrderData } =
     useContext<CoachingOrderDataContent>(CoachingOrderDataContext);
-  // TEMP COACH DATA - fetch from api
-
-  const coachesContent = [
-    {
-      avatar: "/img/temp/coaches/lexa.png",
-      name: "lexa",
-      link: "/coaches/lexa",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "ASCO",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "123",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "321",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "444",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "qqq",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "www",
-      link: "/coaches/asco",
-    },
-  ];
-  const [coaches, setCoaches] = useState(coachesContent);
+  const [coaches, setCoaches] = useState<Array<any>>([]);
   const [searchVal, setSearchVal] = useState("");
+
+  const getCoaches = async () => {
+    const data: any = await getCoachesByOptions();
+    setCoaches(data.data);
+  };
+
+  useEffect(() => {
+    getCoaches();
+  }, []);
 
   const handleCoachChange = (coachObj: any) => {
     setSearchVal("");
-    setCoaches(coachesContent);
+    getCoaches();
     setCoachingOrderData((prev: any) => {
       return {
         ...prev,
@@ -81,11 +53,11 @@ function ChooseCoachDataContainer() {
     const val = e.target.value;
     setSearchVal(val);
     if (!val.trim()) {
-      setCoaches(coachesContent);
+      getCoaches();
       return;
     }
     setCoaches(
-      coachesContent.filter((coachObj) =>
+      coaches.filter((coachObj) =>
         coachObj.name.toLowerCase().startsWith(val.toLowerCase())
       )
     );
