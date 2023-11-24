@@ -158,29 +158,31 @@ function ChooseCoachDataContainer() {
                   key={coachObj.name}
                   className="h-14 w-full flex items-center justify-between pr-1"
                 >
-                  <Avatar className="h-full w-auto">
-                    <AvatarImage
-                      src={coachObj.avatar}
-                      className="h-full w-auto"
-                    />
-                    <AvatarFallback>{coachObj.name}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="flex space-x-1">
-                      <Badge
-                        variant={"outline"}
-                        className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
-                      >
-                        challenger
-                      </Badge>
-                      <Badge
-                        variant={"outline"}
-                        className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
-                      >
-                        any role
-                      </Badge>
+                  <div className="flex space-x-2 items-center h-full w-full">
+                    <Avatar className="h-full w-auto">
+                      <AvatarImage
+                        src={coachObj.avatar}
+                        className="h-full w-auto"
+                      />
+                      <AvatarFallback>{coachObj.name}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <div className="flex space-x-1">
+                        <Badge
+                          variant={"outline"}
+                          className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                        >
+                          challenger
+                        </Badge>
+                        <Badge
+                          variant={"outline"}
+                          className="text-white bg-primary uppercase font-bold px-1 text-[9px]"
+                        >
+                          any role
+                        </Badge>
+                      </div>
+                      <p>{coachObj.name}</p>
                     </div>
-                    <p>{coachObj.name}</p>
                   </div>
                   <DialogClose asChild>
                     <Button
