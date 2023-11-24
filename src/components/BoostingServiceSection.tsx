@@ -38,18 +38,18 @@ function BoostingServiceSection() {
           <h1 className="text-white text-2xl lg:text-4xl font-black">
             boosting service
           </h1>
-          <p className="text-secondary text-xs lg:text-base font-black">
+          <p className="text-gray-300 text-xs lg:text-base font-black">
             Master the competitive realm of League of Legends with our unmatched
             boosting service. Experience unparalleled success as our dedicated
             professionals propel you to new heights of victory.
           </p>
-          <p className="text-secondary text-xs lg:text-base font-black">
+          <p className="text-gray-300 text-xs lg:text-base font-black">
             Unlock your true potential, surge ahead in the rankings, and cement
             your legacy as a true legend in the game.
           </p>
           <Link
             href="/boosters"
-            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-lg font-bold rounded w-fit hover:bg-black/90 transition-colors"
+            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-lg font-bold rounded w-fit hover:text-white/80 transition-colors"
           >
             connect with booster
           </Link>

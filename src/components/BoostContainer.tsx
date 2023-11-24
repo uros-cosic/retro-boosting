@@ -18,15 +18,82 @@ function SoloBoostContainer({
   extraOptions: boolean;
   switchableOptions: Array<any>;
 }) {
-  const [orderData, setOrderData] = useState<any>({
-    from: "D4",
-    to: "M1",
-  });
+  const [orderData, setOrderData] = useState<any>(
+    extraOptions
+      ? {
+          from: "D4",
+          to: "M1",
+          options: {
+            currLP: "0-20",
+            server: "euw",
+            queue: "solo",
+            offlineMode: false,
+            priorityOrder: false,
+            streamGames: false,
+            soloOnly: false,
+            extraOptions: {
+              lane: "any",
+              flashPlacement: "any",
+            },
+          },
+        }
+      : {
+          from: "D4",
+          to: "M1",
+          options: {
+            currLP: "0-20",
+            server: "euw",
+            queue: "solo",
+            priorityOrder: false,
+          },
+        }
+  );
+
+  const handleLpChange = (val: string) => {
+    setOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          currLP: val,
+        },
+      };
+    });
+  };
+
+  const handleServerChange = (val: string) => {
+    setOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          server: val,
+        },
+      };
+    });
+  };
+
+  const handleQueueChange = (val: string) => {
+    setOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          queue: val,
+        },
+      };
+    });
+  };
 
   return (
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <OrderDataContext.Provider
-        value={{ from: orderData.from, to: orderData.to, setOrderData }}
+        value={{
+          from: orderData.from,
+          to: orderData.to,
+          options: orderData.options,
+          setOrderData,
+        }}
       >
         <div className="w-full lg:w-4/6 h-full lg:pr-5">
           <div className="h-2/3 w-full pb-5 flex flex-col justify-between space-y-5 lg:space-y-0">
@@ -38,7 +105,7 @@ function SoloBoostContainer({
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Current LP</h2>
-                <Select>
+                <Select onValueChange={handleLpChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="LP 0-20" />
                   </SelectTrigger>
@@ -53,7 +120,7 @@ function SoloBoostContainer({
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Server</h2>
-                <Select>
+                <Select onValueChange={handleServerChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
@@ -68,7 +135,7 @@ function SoloBoostContainer({
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Queue</h2>
-                <Select>
+                <Select onValueChange={handleQueueChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Solo/Duo" />
                   </SelectTrigger>

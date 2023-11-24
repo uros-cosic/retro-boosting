@@ -15,13 +15,64 @@ function WinBoostContainer() {
   const [winOrderData, setWinOrderData] = useState<any>({
     currentRank: "M1",
     numOfGames: 1,
+    options: {
+      currLP: "0-20",
+      server: "euw",
+      queue: "solo",
+      offlineMode: false,
+      priorityOrder: false,
+      streamGames: false,
+      soloOnly: false,
+      extraOptions: {
+        lane: "any",
+        flashPlacement: "any",
+      },
+    },
   });
+
+  const handleLpChange = (val: string) => {
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          currLP: val,
+        },
+      };
+    });
+  };
+
+  const handleServerChange = (val: string) => {
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          server: val,
+        },
+      };
+    });
+  };
+
+  const handleQueueChange = (val: string) => {
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          queue: val,
+        },
+      };
+    });
+  };
+
   return (
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <WinOrderDataContext.Provider
         value={{
           currentRank: winOrderData.currentRank,
           numOfGames: winOrderData.numOfGames,
+          options: winOrderData.options,
           setWinOrderData,
         }}
       >
@@ -34,7 +85,7 @@ function WinBoostContainer() {
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Current LP</h2>
-                <Select>
+                <Select onValueChange={handleLpChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="LP 0-20" />
                   </SelectTrigger>
@@ -49,7 +100,7 @@ function WinBoostContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Server</h2>
-                <Select>
+                <Select onValueChange={handleServerChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
@@ -64,7 +115,7 @@ function WinBoostContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Queue</h2>
-                <Select>
+                <Select onValueChange={handleQueueChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Solo/Duo" />
                   </SelectTrigger>

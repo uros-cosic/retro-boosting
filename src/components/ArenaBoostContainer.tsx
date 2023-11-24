@@ -15,13 +15,64 @@ function ArenaBoostContainer() {
   const [arenaOrderData, setArenaOrderData] = useState<any>({
     currentRank: "G1",
     numOfGames: 1,
+    options: {
+      serviceType: "solo",
+      server: "euw",
+      queue: "arena",
+      offlineMode: false,
+      champion: false,
+      priorityOrder: false,
+      streamGames: false,
+      extraOptions: {
+        lane: "any",
+        flashPlacement: "any",
+      },
+    },
   });
+
+  const handleTypeChange = (val: string) => {
+    setArenaOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          serviceType: val,
+        },
+      };
+    });
+  };
+
+  const handleServerChange = (val: string) => {
+    setArenaOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          server: val,
+        },
+      };
+    });
+  };
+
+  const handleQueueChange = (val: string) => {
+    setArenaOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          queue: val,
+        },
+      };
+    });
+  };
+
   return (
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <ArenaOrderDataContext.Provider
         value={{
           currentRank: arenaOrderData.currentRank,
           numOfGames: arenaOrderData.numOfGames,
+          options: arenaOrderData.options,
           setArenaOrderData,
         }}
       >
@@ -34,7 +85,7 @@ function ArenaBoostContainer() {
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Type of Service</h2>
-                <Select>
+                <Select onValueChange={handleTypeChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Solo" />
                   </SelectTrigger>
@@ -46,7 +97,7 @@ function ArenaBoostContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Server</h2>
-                <Select>
+                <Select onValueChange={handleServerChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
@@ -61,7 +112,7 @@ function ArenaBoostContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Queue</h2>
-                <Select>
+                <Select onValueChange={handleQueueChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Arena" />
                   </SelectTrigger>

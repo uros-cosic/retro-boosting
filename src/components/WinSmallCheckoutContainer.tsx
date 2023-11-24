@@ -33,7 +33,50 @@ import SmallCheckoutPrice from "./SmallCheckoutPrice";
 import { winBoostSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function WinSmallCheckoutContainer() {
-  const { currentRank } = useContext<WinOrderDataContent>(WinOrderDataContext);
+  const { currentRank, setWinOrderData } =
+    useContext<WinOrderDataContent>(WinOrderDataContext);
+
+  const handleSwitchChange = (checked: boolean, id: string) => {
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          [id]: checked,
+        },
+      };
+    });
+  };
+
+  const handleLaneChange = (val: string) => {
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          extraOptions: {
+            ...prev.options.extraOptions,
+            lane: val,
+          },
+        },
+      };
+    });
+  };
+
+  const handleFlashChange = (val: string) => {
+    setWinOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          extraOptions: {
+            ...prev.options.extraOptions,
+            flashPlacement: val,
+          },
+        },
+      };
+    });
+  };
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
@@ -72,7 +115,7 @@ function WinSmallCheckoutContainer() {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-bold">Lane</h3>
-              <Select>
+              <Select onValueChange={handleLaneChange}>
                 <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
                   <SelectValue placeholder="any" />
                 </SelectTrigger>
@@ -88,7 +131,7 @@ function WinSmallCheckoutContainer() {
             </div>
             <div>
               <h3 className="text-lg font-bold">Flash Placement</h3>
-              <Select>
+              <Select onValueChange={handleFlashChange}>
                 <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
                   <SelectValue placeholder="any" />
                 </SelectTrigger>
@@ -118,7 +161,12 @@ function WinSmallCheckoutContainer() {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            <Switch id={optionObj.label} />
+            <Switch
+              id={optionObj.label}
+              onCheckedChange={(checked) => {
+                handleSwitchChange(checked, optionObj.id);
+              }}
+            />
           </div>
         ))}
       </div>

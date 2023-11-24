@@ -37,19 +37,19 @@ function CoachingServiceSection() {
           <h1 className="text-white text-2xl lg:text-4xl font-black">
             coaching service
           </h1>
-          <p className="text-secondary text-xs lg:text-base font-bold">
+          <p className="text-gray-300 text-xs lg:text-base font-bold">
             Take your gaming to the next level with our exceptional coaching
             service. Enhance your strategic gameplay, refine your skills, and
             gain a competitive edge.
           </p>
-          <p className="text-secondary text-xs lg:text-base font-bold">
+          <p className="text-gray-300 text-xs lg:text-base font-bold">
             Embrace the opportunity to grow as a player, unlock your true
             abilities, and embark on a journey to become a true gaming champion
             with our tailored coaching sessions.
           </p>
           <Link
             href="/coaches"
-            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:bg-black/90 transition-colors"
+            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:text-white/80 transition-colors"
           >
             connect with coach
           </Link>

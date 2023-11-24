@@ -11,6 +11,7 @@ function LandingPage() {
         className="h-full w-full object-cover"
         width={1634}
         height={610}
+        priority={true}
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 uppercase space-y-3 sm:space-y-5 w-full">
         <h1 className="text-white text-lg sm:text-4xl font-black text-center">

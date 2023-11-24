@@ -10,6 +10,7 @@ function ContentTop({ heading }: { heading: string }) {
         className="h-full w-full object-cover"
         width={1634}
         height={610}
+        priority={true}
       />
       <h1 className="absolute text-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 uppercase font-black text-5xl text-center">
         {heading}

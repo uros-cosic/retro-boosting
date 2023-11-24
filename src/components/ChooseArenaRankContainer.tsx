@@ -44,7 +44,6 @@ function ChooseArenaRankContainer() {
           alt={arenaTierMapping[currentRank].label}
           height={250}
           width={250}
-          className="h-auto w-auto"
         />
       </div>
       <div className="flex flex-col items-center justify-center text-center w-full space-y-5">

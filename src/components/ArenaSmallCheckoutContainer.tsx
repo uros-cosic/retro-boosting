@@ -36,9 +36,52 @@ import SmallCheckoutPrice from "./SmallCheckoutPrice";
 import { arenaSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function ArenaSmallCheckoutContainer() {
-  const { currentRank } = useContext<ArenaOrderDataContent>(
+  const { currentRank, setArenaOrderData } = useContext<ArenaOrderDataContent>(
     ArenaOrderDataContext
   );
+
+  const handleSwitchChange = (checked: boolean, id: string) => {
+    setArenaOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          [id]: checked,
+        },
+      };
+    });
+  };
+
+  const handleLaneChange = (val: string) => {
+    setArenaOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          extraOptions: {
+            ...prev.options.extraOptions,
+            lane: val,
+          },
+        },
+      };
+    });
+  };
+
+  const handleFlashChange = (val: string) => {
+    setArenaOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          extraOptions: {
+            ...prev.options.extraOptions,
+            flashPlacement: val,
+          },
+        },
+      };
+    });
+  };
+
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-black uppercase text-center text-2xl">checkout</h1>
@@ -76,7 +119,7 @@ function ArenaSmallCheckoutContainer() {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-bold">Lane</h3>
-              <Select>
+              <Select onValueChange={handleLaneChange}>
                 <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
                   <SelectValue placeholder="any" />
                 </SelectTrigger>
@@ -92,7 +135,7 @@ function ArenaSmallCheckoutContainer() {
             </div>
             <div>
               <h3 className="text-lg font-bold">Flash Placement</h3>
-              <Select>
+              <Select onValueChange={handleFlashChange}>
                 <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
                   <SelectValue placeholder="any" />
                 </SelectTrigger>
@@ -122,7 +165,12 @@ function ArenaSmallCheckoutContainer() {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            <Switch id={optionObj.label} />
+            <Switch
+              id={optionObj.label}
+              onCheckedChange={(checked) => {
+                handleSwitchChange(checked, optionObj.id);
+              }}
+            />
           </div>
         ))}
       </div>

@@ -15,13 +15,55 @@ function NormalsBoostContainer() {
   const [normalsOrderData, setNormalsOrderData] = useState<any>({
     boosterRank: "M1",
     numOfGames: 1,
+    options: {
+      boosterRank: "M1",
+      numOfGames: 1,
+      options: {
+        server: "euw",
+        queue: "summoners-rift",
+        offlineMode: false,
+        priorityOrder: false,
+        streamGames: false,
+        soloOnly: false,
+        extraOptions: {
+          lane: "any",
+          flashPlacement: "any",
+        },
+      },
+    },
   });
+
+  const handleServerChange = (val: string) => {
+    setNormalsOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          server: val,
+        },
+      };
+    });
+  };
+
+  const handleQueueChange = (val: string) => {
+    setNormalsOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          queue: val,
+        },
+      };
+    });
+  };
+
   return (
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <NormalsOrderDataContext.Provider
         value={{
           boosterRank: normalsOrderData.boosterRank,
           numOfGames: normalsOrderData.numOfGames,
+          options: normalsOrderData.options,
           setNormalsOrderData,
         }}
       >
@@ -34,7 +76,7 @@ function NormalsBoostContainer() {
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Server</h2>
-                <Select>
+                <Select onValueChange={handleServerChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
@@ -49,13 +91,15 @@ function NormalsBoostContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Queue</h2>
-                <Select>
+                <Select onValueChange={handleQueueChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
-                    <SelectValue placeholder="Solo/Duo" />
+                    <SelectValue placeholder="Summoners Rift" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
-                    <SelectItem value="solo">Solo/Duo</SelectItem>
-                    <SelectItem value="flex">Flex</SelectItem>
+                    <SelectItem value="summoners-rift">
+                      Summoners Rift
+                    </SelectItem>
+                    <SelectItem value="aram">Aram</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
