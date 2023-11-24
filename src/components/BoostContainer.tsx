@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChooseRankContainer from "./ChooseRankContainer";
 import { OrderDataContext } from "@/lib/OrderDataContext";
 import {
@@ -89,9 +89,7 @@ function SoloBoostContainer({
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <OrderDataContext.Provider
         value={{
-          from: orderData.from,
-          to: orderData.to,
-          options: orderData.options,
+          orderData,
           setOrderData,
         }}
       >

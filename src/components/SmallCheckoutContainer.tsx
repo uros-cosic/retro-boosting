@@ -3,7 +3,7 @@ import { OrderDataContent, OrderDataContext } from "@/lib/OrderDataContext";
 import { tierMapping } from "@/lib/utils";
 import Image from "next/image";
 import { FaGreaterThan, FaGear, FaCircleQuestion } from "react-icons/fa6";
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -39,8 +39,38 @@ function SmallCheckoutContainer({
   extraOptions: boolean;
   switchableOptions: Array<any>;
 }) {
-  const { from, to, setOrderData } =
+  const { orderData, setOrderData } =
     useContext<OrderDataContent>(OrderDataContext);
+
+  const [priceObj, setPriceObj] = useState<any>({
+    total: 420,
+    discountedPrice: null,
+    priceLoading: true,
+  });
+
+  // temp func simulating price loading from api
+  const tempFunc = async () => {
+    setPriceObj((prev: any) => {
+      return {
+        ...prev,
+        priceLoading: true,
+      };
+    });
+    const data = await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          total: 6969,
+          discountedPrice: null,
+          priceLoading: false,
+        });
+      }, 500);
+    });
+    setPriceObj((prev: any) => data);
+  };
+
+  useEffect(() => {
+    tempFunc();
+  }, [orderData]);
 
   const handleSwitchChange = (checked: boolean, id: string) => {
     setOrderData((prev: any) => {
@@ -90,25 +120,25 @@ function SmallCheckoutContainer({
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-1/3 space-y-2">
           <Image
-            src={tierMapping[from].href}
-            alt={tierMapping[from].label}
+            src={tierMapping[orderData.from].href}
+            alt={tierMapping[orderData.from].label}
             height={150}
             width={150}
           />
           <p className="uppercase text-center text-sm">
-            {tierMapping[from].label}
+            {tierMapping[orderData.from].label}
           </p>
         </div>
         <FaGreaterThan className="text-3xl" />
         <div className="flex items-center justify-center flex-col w-1/3 space-y-2">
           <Image
-            src={tierMapping[to].href}
-            alt={tierMapping[to].label}
+            src={tierMapping[orderData.to].href}
+            alt={tierMapping[orderData.to].label}
             height={150}
             width={150}
           />
           <p className="uppercase text-center text-sm">
-            {tierMapping[to].label}
+            {tierMapping[orderData.to].label}
           </p>
         </div>
       </div>
@@ -199,7 +229,7 @@ function SmallCheckoutContainer({
           apply
         </Button>
       </div>
-      <SmallCheckoutPrice />
+      <SmallCheckoutPrice priceObj={priceObj} />
       <Link
         href="/checkout"
         className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm hover:bg-primary/90 transition-colors"

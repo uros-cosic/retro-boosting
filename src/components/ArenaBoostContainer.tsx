@@ -70,9 +70,7 @@ function ArenaBoostContainer() {
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <ArenaOrderDataContext.Provider
         value={{
-          currentRank: arenaOrderData.currentRank,
-          numOfGames: arenaOrderData.numOfGames,
-          options: arenaOrderData.options,
+          arenaOrderData,
           setArenaOrderData,
         }}
       >

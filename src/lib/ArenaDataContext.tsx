@@ -16,26 +16,30 @@ interface OptionsInterface {
 }
 
 export type ArenaOrderDataContent = {
-  currentRank: string;
-  numOfGames: number;
-  options: OptionsInterface;
+  arenaOrderData: {
+    currentRank: string;
+    numOfGames: number;
+    options: OptionsInterface;
+  };
   setArenaOrderData: (s: any) => void;
 };
 
 export const ArenaOrderDataContext: any = createContext<ArenaOrderDataContent>({
-  currentRank: "G1",
-  numOfGames: 1,
-  options: {
-    serviceType: "solo",
-    server: "euw",
-    queue: "arena",
-    offlineMode: false,
-    champion: false,
-    priorityOrder: false,
-    streamGames: false,
-    extraOptions: {
-      lane: "any",
-      flashPlacement: "any",
+  arenaOrderData: {
+    currentRank: "G1",
+    numOfGames: 1,
+    options: {
+      serviceType: "solo",
+      server: "euw",
+      queue: "arena",
+      offlineMode: false,
+      champion: false,
+      priorityOrder: false,
+      streamGames: false,
+      extraOptions: {
+        lane: "any",
+        flashPlacement: "any",
+      },
     },
   },
   setArenaOrderData: () => {},

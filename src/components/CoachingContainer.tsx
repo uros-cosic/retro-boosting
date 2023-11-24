@@ -21,16 +21,43 @@ function CoachingContainer() {
       name: "any",
       avatar: "/img/temp/coaches/any.png",
     },
+    options: {
+      priorityOrder: false,
+    },
   });
+
+  const handleRoleChange = (val: string) => {
+    setCoachingData((prev: any) => {
+      return {
+        ...prev,
+        role: val,
+      };
+    });
+  };
+
+  const handleServerChange = (val: string) => {
+    setCoachingData((prev: any) => {
+      return {
+        ...prev,
+        server: val,
+      };
+    });
+  };
+
+  const handleLanguageChange = (val: string) => {
+    setCoachingData((prev: any) => {
+      return {
+        ...prev,
+        language: val,
+      };
+    });
+  };
+
   return (
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <CoachingOrderDataContext.Provider
         value={{
-          coachingHours: coachingData.coachingHours,
-          server: coachingData.server,
-          role: coachingData.role,
-          language: coachingData.language,
-          coach: coachingData.coach,
+          coachingOrderData: coachingData,
           setCoachingOrderData: setCoachingData,
         }}
       >
@@ -43,7 +70,7 @@ function CoachingContainer() {
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Role</h2>
-                <Select>
+                <Select onValueChange={handleRoleChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Jungle" />
                   </SelectTrigger>
@@ -58,7 +85,7 @@ function CoachingContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Server</h2>
-                <Select>
+                <Select onValueChange={handleServerChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
@@ -73,7 +100,7 @@ function CoachingContainer() {
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-bold">Language</h2>
-                <Select>
+                <Select onValueChange={handleLanguageChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
                     <SelectValue placeholder="English" />
                   </SelectTrigger>

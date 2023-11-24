@@ -1,7 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { WinOrderDataContent, WinOrderDataContext } from "@/lib/WinDataContext";
+import {
+  NormalsOrderDataContent,
+  NormalsOrderDataContext,
+} from "@/lib/NormalsDataContext";
 import { tierMapping } from "@/lib/utils";
 import {
   Dialog,
@@ -33,11 +36,41 @@ import SmallCheckoutPrice from "./SmallCheckoutPrice";
 import { normalsSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function NormalsSmallCheckoutContainer() {
-  const { currentRank, setWinOrderData } =
-    useContext<WinOrderDataContent>(WinOrderDataContext);
+  const { normalsOrderData, setNormalsOrderData } =
+    useContext<NormalsOrderDataContent>(NormalsOrderDataContext);
+
+  const [priceObj, setPriceObj] = useState<any>({
+    total: 420,
+    discountedPrice: null,
+    priceLoading: true,
+  });
+
+  // temp func simulating price loading from api
+  const tempFunc = async () => {
+    setPriceObj((prev: any) => {
+      return {
+        ...prev,
+        priceLoading: true,
+      };
+    });
+    const data = await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          total: 6969,
+          discountedPrice: null,
+          priceLoading: false,
+        });
+      }, 500);
+    });
+    setPriceObj((prev: any) => data);
+  };
+
+  useEffect(() => {
+    tempFunc();
+  }, [normalsOrderData]);
 
   const handleSwitchChange = (checked: boolean, id: string) => {
-    setWinOrderData((prev: any) => {
+    setNormalsOrderData((prev: any) => {
       return {
         ...prev,
         options: {
@@ -49,7 +82,7 @@ function NormalsSmallCheckoutContainer() {
   };
 
   const handleLaneChange = (val: string) => {
-    setWinOrderData((prev: any) => {
+    setNormalsOrderData((prev: any) => {
       return {
         ...prev,
         options: {
@@ -64,7 +97,7 @@ function NormalsSmallCheckoutContainer() {
   };
 
   const handleFlashChange = (val: string) => {
-    setWinOrderData((prev: any) => {
+    setNormalsOrderData((prev: any) => {
       return {
         ...prev,
         options: {
@@ -84,14 +117,14 @@ function NormalsSmallCheckoutContainer() {
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
           <Image
-            src={tierMapping[currentRank].href}
-            alt={tierMapping[currentRank].label}
+            src={tierMapping[normalsOrderData.boosterRank].href}
+            alt={tierMapping[normalsOrderData.boosterRank].label}
             height={100}
             width={100}
             className="h-auto w-auto max-h-[100px]"
           />
           <p className="uppercase text-center text-sm">
-            {tierMapping[currentRank].label}
+            {tierMapping[normalsOrderData.boosterRank].label}
           </p>
         </div>
       </div>
@@ -180,7 +213,7 @@ function NormalsSmallCheckoutContainer() {
           apply
         </Button>
       </div>
-      <SmallCheckoutPrice />
+      <SmallCheckoutPrice priceObj={priceObj} />
       <Link
         href="/checkout"
         className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm hover:bg-primary/90 transition-colors"

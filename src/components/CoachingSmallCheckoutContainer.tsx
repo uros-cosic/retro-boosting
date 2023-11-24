@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FaCircleQuestion } from "react-icons/fa6";
 import { Button } from "./ui/button";
 import { Label } from "@/components/ui/label";
@@ -19,21 +19,65 @@ import {
 import { coachingSwitchableOptions as switchableOptions } from "@/lib/data";
 
 function CoachingSmallCheckoutContainer() {
-  const { coach, coachingHours } = useContext<CoachingOrderDataContent>(
-    CoachingOrderDataContext
-  );
+  const { coachingOrderData, setCoachingOrderData } =
+    useContext<CoachingOrderDataContent>(CoachingOrderDataContext);
+
+  const [priceObj, setPriceObj] = useState<any>({
+    total: 420,
+    discountedPrice: null,
+    priceLoading: true,
+  });
+
+  // temp func simulating price loading from api
+  const tempFunc = async () => {
+    setPriceObj((prev: any) => {
+      return {
+        ...prev,
+        priceLoading: true,
+      };
+    });
+    const data = await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          total: 6969,
+          discountedPrice: null,
+          priceLoading: false,
+        });
+      }, 500);
+    });
+    setPriceObj((prev: any) => data);
+  };
+
+  useEffect(() => {
+    tempFunc();
+  }, [coachingOrderData]);
+
+  const handleSwitchChange = (checked: boolean, id: string) => {
+    setCoachingOrderData((prev: any) => {
+      return {
+        ...prev,
+        options: {
+          ...prev.options,
+          [id]: checked,
+        },
+      };
+    });
+  };
+
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-black uppercase text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
           <h2 className="text-lg font-bold uppercase text-center">
-            {coachingHours > 1
-              ? `${coachingHours} hours of coaching with`
-              : `${coachingHours} hour of coaching with`}
+            {coachingOrderData.coachingHours > 1
+              ? `${coachingOrderData.coachingHours} hours of coaching with`
+              : `${coachingOrderData.coachingHours} hour of coaching with`}
           </h2>
           <p className="uppercase text-center font-black">
-            {coach.name === "any" ? "any coach" : `coach ${coach.name}`}
+            {coachingOrderData.coach.name === "any"
+              ? "any coach"
+              : `coach ${coachingOrderData.coach.name}`}
           </p>
         </div>
       </div>
@@ -56,7 +100,12 @@ function CoachingSmallCheckoutContainer() {
                 </Tooltip>
               </TooltipProvider>
             </div>
-            <Switch id={optionObj.label} />
+            <Switch
+              id={optionObj.label}
+              onCheckedChange={(checked) => {
+                handleSwitchChange(checked, optionObj.id);
+              }}
+            />
           </div>
         ))}
       </div>
@@ -70,7 +119,7 @@ function CoachingSmallCheckoutContainer() {
           apply
         </Button>
       </div>
-      <SmallCheckoutPrice />
+      <SmallCheckoutPrice priceObj={priceObj} />
       <Link
         href="/checkout"
         className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm hover:bg-primary/90 transition-colors"

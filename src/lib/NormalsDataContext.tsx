@@ -15,26 +15,30 @@ interface OptionsInterface {
 }
 
 export type NormalsOrderDataContent = {
-  boosterRank: string;
-  numOfGames: number;
-  options: OptionsInterface;
+  normalsOrderData: {
+    boosterRank: string;
+    numOfGames: number;
+    options: OptionsInterface;
+  };
   setNormalsOrderData: (s: any) => void;
 };
 
 export const NormalsOrderDataContext: any =
   createContext<NormalsOrderDataContent>({
-    boosterRank: "M1",
-    numOfGames: 1,
-    options: {
-      server: "euw",
-      queue: "summoners-rift",
-      offlineMode: false,
-      priorityOrder: false,
-      streamGames: false,
-      soloOnly: false,
-      extraOptions: {
-        lane: "any",
-        flashPlacement: "any",
+    normalsOrderData: {
+      boosterRank: "M1",
+      numOfGames: 1,
+      options: {
+        server: "euw",
+        queue: "summoners-rift",
+        offlineMode: false,
+        priorityOrder: false,
+        streamGames: false,
+        soloOnly: false,
+        extraOptions: {
+          lane: "any",
+          flashPlacement: "any",
+        },
       },
     },
     setNormalsOrderData: () => {},

@@ -60,3 +60,15 @@ export const arenaDivisionsOrdered: Array<string> = ["G1"];
 export function nameify(name: string, limit = 45) {
   return name.length > limit ? name.slice(0, limit) + "..." : name;
 }
+
+export function priceify(number: number) {
+  const numberStr = String(number);
+  const parts = numberStr.split(".");
+  const integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+  if (parts.length === 1) {
+    return integerPart;
+  } else {
+    return integerPart + "." + parts[1];
+  }
+}

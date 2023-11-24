@@ -12,7 +12,7 @@ import {
 import { Input } from "./ui/input";
 
 function ChooseWinRankContainer() {
-  const { currentRank, numOfGames, setWinOrderData } =
+  const { winOrderData, setWinOrderData } =
     useContext<WinOrderDataContent>(WinOrderDataContext);
 
   const handleChange = (val: string) => {
@@ -37,8 +37,8 @@ function ChooseWinRankContainer() {
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center">
         <Image
-          src={tierMapping[currentRank].href}
-          alt={tierMapping[currentRank].label}
+          src={tierMapping[winOrderData.currentRank].href}
+          alt={tierMapping[winOrderData.currentRank].label}
           height={250}
           width={250}
           className="h-auto w-auto"
@@ -51,7 +51,9 @@ function ChooseWinRankContainer() {
             <SelectTrigger className="w-40 font-black border border-primary">
               <SelectValue
                 className="uppercase"
-                placeholder={tierMapping[currentRank].label.toUpperCase()}
+                placeholder={tierMapping[
+                  winOrderData.currentRank
+                ].label.toUpperCase()}
               />
             </SelectTrigger>
             <SelectContent className="border border-primary">
@@ -70,7 +72,7 @@ function ChooseWinRankContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={numOfGames}
+            value={winOrderData.numOfGames}
             onChange={handleNumOfGamesChange}
             min={1}
             max={99}

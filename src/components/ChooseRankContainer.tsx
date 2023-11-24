@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 
 function ChooseRankContainer({ idx }: { idx: number }) {
-  const { from, to, setOrderData } =
+  const { orderData, setOrderData } =
     useContext<OrderDataContent>(OrderDataContext);
 
   const handleChange = (idx: number, val: string) => {
@@ -29,12 +29,12 @@ function ChooseRankContainer({ idx }: { idx: number }) {
 
   const filterDivisions = (arr: Array<string>) => {
     if (idx === 0) {
-      let end = arr.indexOf(to);
+      let end = arr.indexOf(orderData.to);
       if (end > arr.length) return arr.slice(0, arr.length - 1);
       return arr.slice(0, end);
     }
     let end = arr.length;
-    let start = arr.indexOf(from) + 1;
+    let start = arr.indexOf(orderData.from) + 1;
     if (start < 0) return arr.slice(1, end);
     return arr.slice(start, end);
   };
@@ -42,8 +42,16 @@ function ChooseRankContainer({ idx }: { idx: number }) {
   return (
     <div className="px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between border border-primary">
       <Image
-        src={idx === 0 ? tierMapping[from].href : tierMapping[to].href}
-        alt={idx === 0 ? tierMapping[from].label : tierMapping[to].label}
+        src={
+          idx === 0
+            ? tierMapping[orderData.from].href
+            : tierMapping[orderData.to].href
+        }
+        alt={
+          idx === 0
+            ? tierMapping[orderData.from].label
+            : tierMapping[orderData.to].label
+        }
         height={150}
         width={150}
         className="h-2/3 w-auto"
@@ -59,8 +67,8 @@ function ChooseRankContainer({ idx }: { idx: number }) {
                 className="uppercase"
                 placeholder={
                   idx === 0
-                    ? tierMapping[from].label.toUpperCase()
-                    : tierMapping[to].label.toUpperCase()
+                    ? tierMapping[orderData.from].label.toUpperCase()
+                    : tierMapping[orderData.to].label.toUpperCase()
                 }
               />
             </SelectTrigger>

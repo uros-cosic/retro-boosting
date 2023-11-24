@@ -61,9 +61,7 @@ function NormalsBoostContainer() {
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <NormalsOrderDataContext.Provider
         value={{
-          boosterRank: normalsOrderData.boosterRank,
-          numOfGames: normalsOrderData.numOfGames,
-          options: normalsOrderData.options,
+          normalsOrderData,
           setNormalsOrderData,
         }}
       >

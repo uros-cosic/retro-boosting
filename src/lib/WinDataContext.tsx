@@ -16,26 +16,30 @@ interface OptionsInterface {
 }
 
 export type WinOrderDataContent = {
-  currentRank: string;
-  numOfGames: number;
-  options: OptionsInterface;
+  winOrderData: {
+    currentRank: string;
+    numOfGames: number;
+    options: OptionsInterface;
+  };
   setWinOrderData: (s: any) => void;
 };
 
 export const WinOrderDataContext: any = createContext<WinOrderDataContent>({
-  currentRank: "M1",
-  numOfGames: 1,
-  options: {
-    currLP: "0-20",
-    server: "euw",
-    queue: "solo",
-    offlineMode: false,
-    priorityOrder: false,
-    streamGames: false,
-    soloOnly: false,
-    extraOptions: {
-      lane: "any",
-      flashPlacement: "any",
+  winOrderData: {
+    currentRank: "M1",
+    numOfGames: 1,
+    options: {
+      currLP: "0-20",
+      server: "euw",
+      queue: "solo",
+      offlineMode: false,
+      priorityOrder: false,
+      streamGames: false,
+      soloOnly: false,
+      extraOptions: {
+        lane: "any",
+        flashPlacement: "any",
+      },
     },
   },
   setWinOrderData: () => {},

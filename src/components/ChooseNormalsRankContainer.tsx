@@ -15,7 +15,7 @@ import {
 import { Input } from "./ui/input";
 
 function ChooseNormalsRankContainer() {
-  const { boosterRank, numOfGames, setNormalsOrderData } =
+  const { normalsOrderData, setNormalsOrderData } =
     useContext<NormalsOrderDataContent>(NormalsOrderDataContext);
 
   const handleChange = (val: string) => {
@@ -40,8 +40,8 @@ function ChooseNormalsRankContainer() {
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center">
         <Image
-          src={tierMapping[boosterRank].href}
-          alt={tierMapping[boosterRank].label}
+          src={tierMapping[normalsOrderData.boosterRank].href}
+          alt={tierMapping[normalsOrderData.boosterRank].label}
           height={250}
           width={250}
           className="h-auto w-auto"
@@ -54,7 +54,9 @@ function ChooseNormalsRankContainer() {
             <SelectTrigger className="w-40 font-black border border-primary">
               <SelectValue
                 className="uppercase"
-                placeholder={tierMapping[boosterRank].label.toUpperCase()}
+                placeholder={tierMapping[
+                  normalsOrderData.boosterRank
+                ].label.toUpperCase()}
               />
             </SelectTrigger>
             <SelectContent className="border border-primary">
@@ -73,7 +75,7 @@ function ChooseNormalsRankContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={numOfGames}
+            value={normalsOrderData.numOfGames}
             onChange={handleNumOfGamesChange}
             min={1}
             max={99}

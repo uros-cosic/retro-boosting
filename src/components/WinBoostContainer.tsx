@@ -70,9 +70,7 @@ function WinBoostContainer() {
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <WinOrderDataContext.Provider
         value={{
-          currentRank: winOrderData.currentRank,
-          numOfGames: winOrderData.numOfGames,
-          options: winOrderData.options,
+          winOrderData,
           setWinOrderData,
         }}
       >

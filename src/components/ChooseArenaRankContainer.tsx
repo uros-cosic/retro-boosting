@@ -15,7 +15,7 @@ import {
 import { Input } from "./ui/input";
 
 function ChooseArenaRankContainer() {
-  const { currentRank, numOfGames, setArenaOrderData } =
+  const { arenaOrderData, setArenaOrderData } =
     useContext<ArenaOrderDataContent>(ArenaOrderDataContext);
 
   const handleChange = (val: string) => {
@@ -40,8 +40,8 @@ function ChooseArenaRankContainer() {
     <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center">
         <Image
-          src={arenaTierMapping[currentRank].href}
-          alt={arenaTierMapping[currentRank].label}
+          src={arenaTierMapping[arenaOrderData.currentRank].href}
+          alt={arenaTierMapping[arenaOrderData.currentRank].label}
           height={250}
           width={250}
         />
@@ -53,7 +53,9 @@ function ChooseArenaRankContainer() {
             <SelectTrigger className="w-40 font-black border border-primary">
               <SelectValue
                 className="uppercase"
-                placeholder={arenaTierMapping[currentRank].label.toUpperCase()}
+                placeholder={arenaTierMapping[
+                  arenaOrderData.currentRank
+                ].label.toUpperCase()}
               />
             </SelectTrigger>
             <SelectContent className="border border-primary">
@@ -70,7 +72,7 @@ function ChooseArenaRankContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={numOfGames}
+            value={arenaOrderData.numOfGames}
             onChange={handleNumOfGamesChange}
             min={1}
             max={99}

@@ -22,7 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogTrigger, DialogContent, DialogClose } from "./ui/dialog";
 
 function ChooseCoachDataContainer() {
-  const { coachingHours, language, role, server, coach, setCoachingOrderData } =
+  const { coachingOrderData, setCoachingOrderData } =
     useContext<CoachingOrderDataContent>(CoachingOrderDataContext);
   // TEMP COACH DATA - fetch from api
 
@@ -113,12 +113,14 @@ function ChooseCoachDataContainer() {
         <h2 className="font-bold uppercase text-xl">coach</h2>
         <Avatar className="h-1/2 w-fit">
           <AvatarImage
-            src={coach.avatar}
-            className={`${coach.name === "any" ? "bg-white" : ""}`}
+            src={coachingOrderData.coach.avatar}
+            className={`${
+              coachingOrderData.coach.name === "any" ? "bg-white" : ""
+            }`}
           />
-          <AvatarFallback>{coach.name}</AvatarFallback>
+          <AvatarFallback>{coachingOrderData.coach.name}</AvatarFallback>
         </Avatar>
-        <h3 className="font-bold uppercase">{coach.name}</h3>
+        <h3 className="font-bold uppercase">{coachingOrderData.coach.name}</h3>
       </div>
       <div className="flex flex-col items-center justify-center text-center w-full space-y-5">
         <div className="flex flex-col items-center space-y-5">
@@ -126,7 +128,7 @@ function ChooseCoachDataContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={coachingHours}
+            value={coachingOrderData.coachingHours}
             onChange={handleCoachingHoursChange}
             min={1}
             max={99}
