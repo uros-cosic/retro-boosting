@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import React from "react";
 import Link from "next/link";
-import { FaHeadphones } from "react-icons/fa6";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CoachCardInterface } from "@/lib/apiUtils";
+import { twMerge } from "tailwind-merge";
 
 function CoachCard({
   data,
@@ -15,38 +15,38 @@ function CoachCard({
 }) {
   return (
     <div
-      className={clsx(
-        "w-full h-full lg:h-1/4 flex items-center justify-center lg:items-start lg:justify-start",
-        {
+      className={twMerge(
+        clsx("lg:w-full flex h-full lg:h-fit pt-3 lg:pt-0", {
           "lg:justify-end": data.idx === 1,
-        }
+        })
       )}
     >
       <Link
         href={data.coach.link}
-        className="w-[90%] h-full bg-black shadow-lg shadow-primary border border-primary rounded-xl px-6 py-2 sm:px-10 lg:p-3 flex flex-col lg:flex-row items-center justify-between hover:scale-105 transition-transform lg:space-x-3"
+        className="w-40 lg:w-[95%] h-full lg:h-32 bg-black shadow-lg hover:shadow-2xl transition-colors rounded-xl border-primary border p-2 lg:p-5 flex flex-col lg:flex-row items-center justify-center space-y-1"
       >
-        <div className="flex flex-col space-y-2 lg:flex-row h-full lg:space-x-3">
-          <Avatar className="h-1/2 lg:h-full w-auto">
-            <AvatarImage src={data.coach.avatar} className="h-full" />
+        <div className="h-fit lg:h-full flex flex-col lg:flex-row w-full items-center text-center lg:text-left space-x-0 lg:space-x-3">
+          <Avatar className="h-12 w-auto lg:h-full">
+            <AvatarImage src={data.coach.avatar} />
             <AvatarFallback className="text-white">
               {data.coach.name}
             </AvatarFallback>
           </Avatar>
-          <div className="flex flex-col justify-center">
-            <p className="text-white text-base lg:text-2xl font-bold text-center lg:text-left">
-              {data.coach.name}
-            </p>
-            <div className="flex py-2 items-center justify-center lg:items-start lg:justify-start">
+          <div className="text-white lg:h-full w-full flex flex-col justify-start lg:justify-between">
+            <p className="font-black">{data.coach.name}</p>
+            <div className="flex items-center justify-center lg:items-start lg:justify-start">
               <div className="bg-secondary rounded-full p-3 lg:p-4 z-10" />
               <div className="bg-primary rounded-full p-3 lg:p-4 z-20 -ml-2" />
               <div className="bg-green-500 rounded-full p-3 lg:p-4 z-30 -ml-2" />
             </div>
           </div>
         </div>
-        <div className="flex h-full w-full lg:w-fit items-center justify-center text-center lg:items-start lg:justify-start">
-          <FaHeadphones className="text-white text-base lg:text-2xl text-center" />
-        </div>
+        <Link
+          href={data.coach.link}
+          className="text-primary hover:underline hover:text-primary/90 transition-colors"
+        >
+          profile
+        </Link>
       </Link>
     </div>
   );

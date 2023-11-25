@@ -19,7 +19,7 @@ async function BoostingServiceSection() {
       />
       <div className="absolute h-full w-full bg-primary/50" />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col lg:flex-row justify-between items-center">
-        <div className="w-full lg:w-1/2 h-full flex flex-col justify-center lg:justify-between space-y-3 lg:space-y-5 text-center lg:text-left items-center lg:items-start">
+        <div className="w-full lg:w-1/2 h-2/3 lg:h-full flex flex-col justify-center lg:justify-between space-y-3 lg:space-y-5 text-center lg:text-left items-center lg:items-start">
           <h1 className="text-white text-2xl lg:text-4xl font-black">
             boosting service
           </h1>
@@ -39,7 +39,12 @@ async function BoostingServiceSection() {
             connect with booster
           </Link>
         </div>
-        <div className="w-fit sm:w-1/3 h-[40%] lg:h-full flex lg:flex-col justify-center items-end lg:items-start lg:space-y-2 lg:justify-between">
+        {/* <div className="w-fit sm:w-1/3 h-[40%] lg:h-full flex lg:flex-col justify-center items-end lg:items-start lg:space-y-2 lg:justify-between">
+          {boostersContent.map((booster: BoosterCardInterface, idx: number) => (
+            <BoosterCard key={idx} data={{ booster, idx }} />
+          ))}
+        </div> */}
+        <div className="w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-start lg:space-y-5 space-x-3 lg:space-x-0 mx-auto overflow-x-scroll lg:overflow-x-auto">
           {boostersContent.map((booster: BoosterCardInterface, idx: number) => (
             <BoosterCard key={idx} data={{ booster, idx }} />
           ))}

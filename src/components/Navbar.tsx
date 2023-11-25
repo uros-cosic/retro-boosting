@@ -52,7 +52,7 @@ function Navbar() {
   return (
     <nav className="text-white mx-auto flex items-center justify-between h-full">
       <div className="h-full flex space-x-5 items-center">
-        <div className="h-full flex items-center space-x-5 md:space-x-0">
+        <div className="h-full flex items-center space-x-2 md:space-x-0">
           <div className="md:hidden h-full flex items-center">
             <Sheet>
               <SheetTrigger>
