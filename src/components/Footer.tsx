@@ -120,7 +120,7 @@ function Footer() {
               {idx === 1 ? (
                 <Link
                   href={link.href}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 hover:underline"
+                  className="lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 hover:underline"
                 >
                   {link.label}
                 </Link>

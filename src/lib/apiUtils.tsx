@@ -402,3 +402,127 @@ export const getBoosterReviews = async (boosterId: string) => {
     }, 500);
   });
 };
+
+export const getCoachBySlug = async (slug: string) => {
+  // TEMP FETCHING SIMULATION
+  const coachesContent = [
+    {
+      avatar: "/img/temp/coaches/lexa.png",
+      name: "lexa",
+      link: "/coaches/lexa",
+      rating: 5,
+      ratingsQuantity: 20,
+      slug: "lexa",
+      _id: "lexa",
+      roles: ["jungle", "support"],
+      elo: "challenger",
+      about:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+      boostingSince: 2023,
+      ordersCompleted: 15,
+    },
+    {
+      avatar: "/img/temp/coaches/ASCO.jpg",
+      name: "ASCO",
+      link: "/coaches/asco",
+      rating: 5,
+      ratingsQuantity: 20,
+      slug: "asco",
+      _id: "asco",
+      roles: ["jungle", "support"],
+      elo: "challenger",
+      about:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+      boostingSince: 2023,
+      ordersCompleted: 15,
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: coachesContent.filter((obj) => obj.slug === slug)[0],
+      });
+    }, 500);
+  });
+};
+
+export const getCoachReviews = async (coachId: string) => {
+  // TEMP FETCHING SIMULATION
+  const reviews = [
+    {
+      customer: {
+        name: "customer",
+        tag: "@customer",
+        avatar: "/img/temp/customer/customer.png",
+      },
+      order: {
+        from: "D4",
+        to: "M1",
+      },
+      review: {
+        rating: 4.5,
+        heading: "Lorem Ipsum",
+        comment:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam excepturi earum vitae. Facilis nihil id facere at voluptatem. Quae deleniti dolorem maxime fugiat, vel quas temporibus veniam ratione, fuga perferendis laboriosam doloremque eum nobis perspiciatis. Vitae necessitatibus harum natus quae quisquam magni dolores eaque reprehenderit ipsa cupiditate. Consectetur, est!",
+      },
+      link: "/reviews/custom_id_1",
+    },
+    {
+      customer: {
+        name: "customer",
+        tag: "@customer",
+        avatar: "/img/temp/customer/customer.png",
+      },
+      order: {
+        from: "D4",
+        to: "M1",
+      },
+      review: {
+        rating: 4.5,
+        heading: "Lorem Ipsum",
+        comment:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam excepturi earum vitae. Facilis nihil id facere at voluptatem. Quae deleniti dolorem maxime fugiat, vel quas temporibus veniam ratione, fuga perferendis laboriosam doloremque eum nobis perspiciatis. Vitae necessitatibus harum natus quae quisquam magni dolores eaque reprehenderit ipsa cupiditate. Consectetur, est!",
+      },
+      link: "/reviews/custom_id_2",
+    },
+    {
+      customer: {
+        name: "customer",
+        tag: "@customer",
+        avatar: "/img/temp/customer/customer.png",
+      },
+      order: {
+        from: "D4",
+        to: "M1",
+      },
+      review: {
+        rating: 4.5,
+        heading: "Lorem Ipsum",
+        comment:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam excepturi earum vitae. Facilis nihil id facere at voluptatem. Quae deleniti dolorem maxime fugiat, vel quas temporibus veniam ratione, fuga perferendis laboriosam doloremque eum nobis perspiciatis. Vitae necessitatibus harum natus quae quisquam magni dolores eaque reprehenderit ipsa cupiditate. Consectetur, est!",
+      },
+      link: "/reviews/custom_id_2",
+    },
+  ];
+  const coachesContent = [
+    {
+      _id: "lexa",
+      reviews,
+    },
+    {
+      _id: "asco",
+      reviews,
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: coachesContent.filter((obj) => obj._id === coachId)[0].reviews,
+      });
+    }, 500);
+  });
+};
