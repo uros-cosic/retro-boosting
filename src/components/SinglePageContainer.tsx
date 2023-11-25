@@ -26,7 +26,7 @@ function SinglePageContainer({
       <div className="flex items-center justify-between">
         <div className="flex space-x-3 lg:space-x-5 items-center h-28">
           <Avatar className="h-full w-fit">
-            <AvatarImage src={data.avatar} />
+            <AvatarImage src={data.avatar} className="h-full w-auto" />
             <AvatarFallback className="text-white">{data.name}</AvatarFallback>
           </Avatar>
           <div className="flex flex-col justify-center space-y-3 h-full">

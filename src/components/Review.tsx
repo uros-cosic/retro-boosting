@@ -17,7 +17,7 @@ function Review({ data }: { data: ReviewCardInterface }) {
           <Avatar className="md:h-20 w-auto">
             <AvatarImage
               src={data.customer.avatar}
-              className="bg-white h-full"
+              className="bg-white h-full w-auto"
             />
             <AvatarFallback className="text-white">
               {data.customer.name}
