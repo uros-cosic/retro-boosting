@@ -1,11 +1,4 @@
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  ReactElement,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import React, { ChangeEvent, useContext, useEffect, useState } from "react";
 import {
   CoachingOrderDataContent,
   CoachingOrderDataContext,
@@ -23,6 +16,7 @@ function ChooseCoachDataContainer() {
     useContext<CoachingOrderDataContent>(CoachingOrderDataContext);
   const [coaches, setCoaches] = useState<Array<any>>([]);
   const [searchVal, setSearchVal] = useState("");
+  const [numberVal, setNumberVal] = useState(coachingOrderData.coachingHours);
 
   const getCoaches = async () => {
     const data: any = await getCoachesByOptions();
@@ -62,14 +56,22 @@ function ChooseCoachDataContainer() {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     let val: any = e.target.value;
-    if (val.length > 2) return;
-    if (!val || Number(val) <= 0) val = 1;
-    setCoachingOrderData((prev: any) => {
-      return {
-        ...prev,
-        coachingHours: val,
-      };
-    });
+    if (val && Number(val) <= 0) {
+      val = 1;
+    } else if (val && Number(val) > 99) {
+      val = 99;
+    }
+
+    setNumberVal(val);
+
+    if (val) {
+      setCoachingOrderData((prev: any) => {
+        return {
+          ...prev,
+          coachingHours: val,
+        };
+      });
+    }
   };
 
   return (
@@ -95,7 +97,7 @@ function ChooseCoachDataContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={coachingOrderData.coachingHours}
+            value={numberVal}
             onChange={handleCoachingHoursChange}
             min={1}
             max={99}

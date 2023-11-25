@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import { WinOrderDataContent, WinOrderDataContext } from "@/lib/WinDataContext";
 import { tierMapping, divisionsOrdered } from "@/lib/utils";
@@ -15,6 +15,8 @@ function ChooseWinRankContainer() {
   const { winOrderData, setWinOrderData } =
     useContext<WinOrderDataContent>(WinOrderDataContext);
 
+  const [numberVal, setNumberVal] = useState(winOrderData.numOfGames);
+
   const handleChange = (val: string) => {
     setWinOrderData((prev: any) => {
       return { ...prev, currentRank: val };
@@ -23,14 +25,22 @@ function ChooseWinRankContainer() {
 
   const handleNumOfGamesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let val: any = e.target.value;
-    if (val.length > 2) return;
-    if (!val || Number(val) <= 0) val = 1;
-    setWinOrderData((prev: any) => {
-      return {
-        ...prev,
-        numOfGames: val,
-      };
-    });
+    if (val && Number(val) <= 0) {
+      val = 1;
+    } else if (val && Number(val) > 99) {
+      val = 99;
+    }
+
+    setNumberVal(val);
+
+    if (val) {
+      setWinOrderData((prev: any) => {
+        return {
+          ...prev,
+          numOfGames: val,
+        };
+      });
+    }
   };
 
   return (
@@ -72,7 +82,7 @@ function ChooseWinRankContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={winOrderData.numOfGames}
+            value={numberVal}
             onChange={handleNumOfGamesChange}
             min={1}
             max={99}

@@ -166,26 +166,6 @@ export const getCoachesByOptions = async () => {
       name: "ASCO",
       link: "/coaches/asco",
     },
-    {
-      avatar: "/img/temp/coaches/lexa.jpg",
-      name: "123",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "321",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/lexa.jpg",
-      name: "444",
-      link: "/coaches/asco",
-    },
-    {
-      avatar: "/img/temp/coaches/ASCO.jpg",
-      name: "qqq",
-      link: "/coaches/asco",
-    },
   ];
 
   return await new Promise((resolve) => {

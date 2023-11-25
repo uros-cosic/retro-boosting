@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import {
   ArenaOrderDataContent,
@@ -18,6 +18,8 @@ function ChooseArenaRankContainer() {
   const { arenaOrderData, setArenaOrderData } =
     useContext<ArenaOrderDataContent>(ArenaOrderDataContext);
 
+  const [numberVal, setNumberVal] = useState(arenaOrderData.numOfGames);
+
   const handleChange = (val: string) => {
     setArenaOrderData((prev: any) => {
       return { ...prev, currentRank: val };
@@ -26,14 +28,22 @@ function ChooseArenaRankContainer() {
 
   const handleNumOfGamesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let val: any = e.target.value;
-    if (val.length > 2) return;
-    if (!val || Number(val) <= 0) val = 1;
-    setArenaOrderData((prev: any) => {
-      return {
-        ...prev,
-        numOfGames: val,
-      };
-    });
+    if (val && Number(val) <= 0) {
+      val = 1;
+    } else if (val && Number(val) > 99) {
+      val = 99;
+    }
+
+    setNumberVal(val);
+
+    if (val) {
+      setArenaOrderData((prev: any) => {
+        return {
+          ...prev,
+          numOfGames: val,
+        };
+      });
+    }
   };
 
   return (
@@ -72,7 +82,7 @@ function ChooseArenaRankContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={arenaOrderData.numOfGames}
+            value={numberVal}
             onChange={handleNumOfGamesChange}
             min={1}
             max={99}

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Image from "next/image";
 import {
   NormalsOrderDataContent,
@@ -18,6 +18,8 @@ function ChooseNormalsRankContainer() {
   const { normalsOrderData, setNormalsOrderData } =
     useContext<NormalsOrderDataContent>(NormalsOrderDataContext);
 
+  const [numberVal, setNumberVal] = useState(normalsOrderData.numOfGames);
+
   const handleChange = (val: string) => {
     setNormalsOrderData((prev: any) => {
       return { ...prev, boosterRank: val };
@@ -26,14 +28,22 @@ function ChooseNormalsRankContainer() {
 
   const handleNumOfGamesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     let val: any = e.target.value;
-    if (val.length > 2) return;
-    if (!val || Number(val) <= 0) val = 1;
-    setNormalsOrderData((prev: any) => {
-      return {
-        ...prev,
-        numOfGames: val,
-      };
-    });
+    if (val && Number(val) <= 0) {
+      val = 1;
+    } else if (val && Number(val) > 99) {
+      val = 99;
+    }
+
+    setNumberVal(val);
+
+    if (val) {
+      setNormalsOrderData((prev: any) => {
+        return {
+          ...prev,
+          numOfGames: val,
+        };
+      });
+    }
   };
 
   return (
@@ -75,7 +85,7 @@ function ChooseNormalsRankContainer() {
           <Input
             className="w-40 font-black border border-primary"
             type="number"
-            value={normalsOrderData.numOfGames}
+            value={numberVal}
             onChange={handleNumOfGamesChange}
             min={1}
             max={99}
