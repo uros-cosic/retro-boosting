@@ -93,12 +93,16 @@ function BoosterPageContainer({
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
             <h3 className="text-sm lg:text-2xl uppercase font-black">Roles</h3>
             <div className="text-sm lg:text-xl font-bold space-x-3 w-full flex text-center items-center justify-center">
-              {booster.roles?.map((role, idx) => (
-                // TODO: Add Role Icon :)
-                <p key={idx} className="text-center">
-                  {role}
-                </p>
-              ))}
+              {booster.roles?.length === 5 ? (
+                <p className="text-center">any</p>
+              ) : (
+                booster.roles?.map((role, idx) => (
+                  // TODO: Add Role Icon :)
+                  <p key={idx} className="text-center">
+                    {role}
+                  </p>
+                ))
+              )}
             </div>
           </div>
         </div>
