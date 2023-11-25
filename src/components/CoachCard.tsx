@@ -41,12 +41,9 @@ function CoachCard({
             </div>
           </div>
         </div>
-        <Link
-          href={data.coach.link}
-          className="text-primary hover:underline hover:text-primary/90 transition-colors"
-        >
+        <p className="text-primary hover:underline hover:text-primary/90 transition-colors">
           profile
-        </Link>
+        </p>
       </Link>
     </div>
   );

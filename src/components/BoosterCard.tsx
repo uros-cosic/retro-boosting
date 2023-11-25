@@ -41,12 +41,9 @@ function BoosterCard({
             </div>
           </div>
         </div>
-        <Link
-          href={data.booster.link}
-          className="text-primary hover:underline hover:text-primary/90 transition-colors"
-        >
+        <p className="text-primary hover:underline hover:text-primary/90 transition-colors">
           profile
-        </Link>
+        </p>
       </Link>
     </div>
   );

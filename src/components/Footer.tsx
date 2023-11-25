@@ -83,10 +83,6 @@ function Footer() {
 
   const nav = [
     {
-      label: "about",
-      href: "/about",
-    },
-    {
       label: "boosting",
       href: "/boosting",
     },
@@ -116,20 +112,9 @@ function Footer() {
       <ul className="w-4/5 lg:w-1/3 flex justify-between uppercase font-medium items-center text-center mx-auto relative">
         {nav.map((link, idx) => (
           <li key={link.label}>
-            <>
-              {idx === 1 ? (
-                <Link
-                  href={link.href}
-                  className="lg:absolute lg:top-1/2 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 hover:underline"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <Link href={link.href} className="hover:underline">
-                  {link.label}
-                </Link>
-              )}
-            </>
+            <Link href={link.href} className="hover:underline">
+              {link.label}
+            </Link>
           </li>
         ))}
       </ul>

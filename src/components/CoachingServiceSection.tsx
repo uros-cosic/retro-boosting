@@ -39,7 +39,7 @@ async function CoachingServiceSection() {
           </p>
           <Link
             href="/coaching"
-            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:text-white/80 transition-colors"
+            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl font-bold rounded w-fit hover:text-white/80 transition-colors hover:shadow-lg shadow-primary"
           >
             connect with coach
           </Link>

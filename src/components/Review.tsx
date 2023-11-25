@@ -5,7 +5,6 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { tierMapping } from "@/lib/utils";
 import { FaGreaterThan } from "react-icons/fa";
-import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ReviewCardInterface } from "@/lib/apiUtils";
 
