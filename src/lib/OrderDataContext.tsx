@@ -4,6 +4,7 @@ interface OptionsInterface {
   currLP: string;
   server: string;
   queue: string;
+  lpGains: string;
   offlineMode: boolean;
   priorityOrder: boolean;
   streamGames: boolean;
@@ -31,6 +32,7 @@ export const OrderDataContext: any = createContext<OrderDataContent>({
       currLP: "0-20",
       server: "euw",
       queue: "solo",
+      lpGains: "<15",
       offlineMode: false,
       priorityOrder: false,
       streamGames: false,

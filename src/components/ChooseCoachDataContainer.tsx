@@ -83,7 +83,9 @@ function ChooseCoachDataContainer() {
               coachingOrderData.coach.name === "any" ? "bg-white" : ""
             }`}
           />
-          <AvatarFallback>{coachingOrderData.coach.name}</AvatarFallback>
+          <AvatarFallback className="text-white">
+            {coachingOrderData.coach.name}
+          </AvatarFallback>
         </Avatar>
         <h3 className="font-bold uppercase">{coachingOrderData.coach.name}</h3>
       </div>
@@ -129,7 +131,9 @@ function ChooseCoachDataContainer() {
                         src={coachObj.avatar}
                         className="h-full w-auto"
                       />
-                      <AvatarFallback>{coachObj.name}</AvatarFallback>
+                      <AvatarFallback className="text-white">
+                        {coachObj.name}
+                      </AvatarFallback>
                     </Avatar>
                     <div>
                       <div className="flex space-x-1">

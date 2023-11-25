@@ -50,7 +50,9 @@ function AccountForm() {
                     src={user.data.avatar}
                     className="bg-white h-full w-auto"
                   />
-                  <AvatarFallback>{user.data.name}</AvatarFallback>
+                  <AvatarFallback className="text-white">
+                    {user.data.name}
+                  </AvatarFallback>
                 </Avatar>
                 <Label
                   htmlFor={user.data.name + "-file"}

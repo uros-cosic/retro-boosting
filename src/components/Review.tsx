@@ -20,7 +20,9 @@ function Review({ data }: { data: ReviewCardInterface }) {
               src={data.customer.avatar}
               className="bg-white h-full"
             />
-            <AvatarFallback>{data.customer.name}</AvatarFallback>
+            <AvatarFallback className="text-white">
+              {data.customer.name}
+            </AvatarFallback>
           </Avatar>
           <div className="flex flex-col h-full justify-around">
             <div>

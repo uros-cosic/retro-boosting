@@ -27,6 +27,7 @@ function SoloBoostContainer({
             currLP: "0-20",
             server: "euw",
             queue: "solo",
+            lpGains: "<15",
             offlineMode: false,
             priorityOrder: false,
             streamGames: false,

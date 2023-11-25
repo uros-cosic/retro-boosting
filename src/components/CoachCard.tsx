@@ -29,7 +29,9 @@ function CoachCard({
         <div className="flex flex-col space-y-2 lg:flex-row h-full lg:space-x-3">
           <Avatar className="h-1/2 lg:h-full w-auto">
             <AvatarImage src={data.coach.avatar} className="h-full" />
-            <AvatarFallback>{data.coach.name}</AvatarFallback>
+            <AvatarFallback className="text-white">
+              {data.coach.name}
+            </AvatarFallback>
           </Avatar>
           <div className="flex flex-col justify-center">
             <p className="text-white text-base lg:text-2xl font-bold text-center lg:text-left">
