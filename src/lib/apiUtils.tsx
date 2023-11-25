@@ -4,9 +4,11 @@ export const getOrderPrice = async () => {
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        total: price,
-        discountedPrice: null,
-        priceLoading: false,
+        status: "success",
+        data: {
+          total: price,
+          discountedPrice: null,
+        },
       });
     }, 500);
   });
@@ -16,6 +18,15 @@ export interface BoosterCardInterface {
   avatar: string;
   name: string;
   link: string;
+  slug: string;
+  rating?: number;
+  ratingsQuantity?: number;
+  about?: string;
+  elo?: string;
+  roles?: Array<string>;
+  boostingSince?: number;
+  ordersCompleted?: number;
+  _id: string;
 }
 
 export const getTopBoosters = async () => {
@@ -25,16 +36,19 @@ export const getTopBoosters = async () => {
       avatar: "/img/temp/boosters/prince.png",
       name: "prince",
       link: "/boosters/prince",
+      slug: "prince",
     },
     {
       avatar: "/img/temp/boosters/lexa.png",
       name: "lexa",
       link: "/boosters/lexa",
+      slug: "lexa",
     },
     {
       avatar: "/img/temp/boosters/tama.png",
       name: "tama",
       link: "/boosters/tama",
+      slug: "tama",
     },
   ];
 
@@ -241,6 +255,149 @@ export const sendContactMessage = async () => {
       resolve({
         status: "success",
         data: null,
+      });
+    }, 500);
+  });
+};
+
+export const getBoosterBySlug = async (slug: string) => {
+  // TEMP FETCHING SIMULATION
+  const boostersContent = [
+    {
+      avatar: "/img/temp/boosters/prince.png",
+      name: "prince",
+      link: "/boosters/prince",
+      rating: 5,
+      ratingsQuantity: 20,
+      slug: "prince",
+      _id: "prince",
+      roles: ["jungle"],
+      elo: "challenger",
+      about:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+      boostingSince: 2023,
+      ordersCompleted: 15,
+    },
+    {
+      avatar: "/img/temp/boosters/lexa.png",
+      name: "lexa",
+      link: "/boosters/lexa",
+      rating: 5,
+      ratingsQuantity: 20,
+      slug: "lexa",
+      _id: "lexa",
+      roles: ["jungle", "support"],
+      elo: "challenger",
+      about:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+      boostingSince: 2023,
+      ordersCompleted: 15,
+    },
+    {
+      avatar: "/img/temp/boosters/tama.png",
+      name: "tama",
+      link: "/boosters/tama",
+      rating: 5,
+      ratingsQuantity: 20,
+      slug: "tama",
+      _id: "tama",
+      roles: ["jungle", "support", "adc", "mid", "top"],
+      elo: "challenger",
+      about:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+      boostingSince: 2023,
+      ordersCompleted: 15,
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: boostersContent.filter((obj) => obj.slug === slug)[0],
+      });
+    }, 500);
+  });
+};
+
+export const getBoosterReviews = async (boosterId: string) => {
+  // TEMP FETCHING SIMULATION
+  const reviews = [
+    {
+      customer: {
+        name: "customer",
+        tag: "@customer",
+        avatar: "/img/temp/customer/customer.png",
+      },
+      order: {
+        from: "D4",
+        to: "M1",
+      },
+      review: {
+        rating: 4.5,
+        heading: "Lorem Ipsum",
+        comment:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam excepturi earum vitae. Facilis nihil id facere at voluptatem. Quae deleniti dolorem maxime fugiat, vel quas temporibus veniam ratione, fuga perferendis laboriosam doloremque eum nobis perspiciatis. Vitae necessitatibus harum natus quae quisquam magni dolores eaque reprehenderit ipsa cupiditate. Consectetur, est!",
+      },
+      link: "/reviews/custom_id_1",
+    },
+    {
+      customer: {
+        name: "customer",
+        tag: "@customer",
+        avatar: "/img/temp/customer/customer.png",
+      },
+      order: {
+        from: "D4",
+        to: "M1",
+      },
+      review: {
+        rating: 4.5,
+        heading: "Lorem Ipsum",
+        comment:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam excepturi earum vitae. Facilis nihil id facere at voluptatem. Quae deleniti dolorem maxime fugiat, vel quas temporibus veniam ratione, fuga perferendis laboriosam doloremque eum nobis perspiciatis. Vitae necessitatibus harum natus quae quisquam magni dolores eaque reprehenderit ipsa cupiditate. Consectetur, est!",
+      },
+      link: "/reviews/custom_id_2",
+    },
+    {
+      customer: {
+        name: "customer",
+        tag: "@customer",
+        avatar: "/img/temp/customer/customer.png",
+      },
+      order: {
+        from: "D4",
+        to: "M1",
+      },
+      review: {
+        rating: 4.5,
+        heading: "Lorem Ipsum",
+        comment:
+          "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea aperiam excepturi earum vitae. Facilis nihil id facere at voluptatem. Quae deleniti dolorem maxime fugiat, vel quas temporibus veniam ratione, fuga perferendis laboriosam doloremque eum nobis perspiciatis. Vitae necessitatibus harum natus quae quisquam magni dolores eaque reprehenderit ipsa cupiditate. Consectetur, est!",
+      },
+      link: "/reviews/custom_id_2",
+    },
+  ];
+  const boostersContent = [
+    {
+      _id: "prince",
+      reviews,
+    },
+    {
+      _id: "lexa",
+      reviews,
+    },
+    {
+      _id: "tama",
+      reviews,
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: boostersContent.filter((obj) => obj._id === boosterId)[0].reviews,
       });
     }, 500);
   });

@@ -44,8 +44,13 @@ function WinSmallCheckoutContainer() {
   });
 
   const handleOptionsChange = async () => {
-    const data = await getOrderPrice();
-    setPriceObj(data);
+    const data: any = await getOrderPrice();
+
+    setPriceObj({
+      total: data.data.total,
+      discountedPrice: data.data.discountedPrice,
+      priceLoading: false,
+    });
   };
 
   useEffect(() => {
