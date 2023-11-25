@@ -110,12 +110,12 @@ function SinglePageContainer({
             {reviews.map((review, idx) => (
               <div
                 key={idx}
-                className="w-full rounded-xl border border-primary bg-black p-5 lg:max-h-[30vh]"
+                className="rounded-xl border border-primary bg-black p-1 sm:p-7 flex items-center justify-center"
               >
-                <div className="w-[90vw] lg:w-[30rem] h-full space-y-2">
-                  <div className="w-full flex items-center justify-between h-1/3">
+                <div className="w-[97vw] lg:w-[30rem] h-full space-y-7 flex flex-col items-center justify-center">
+                  <div className="w-full flex items-center justify-between">
                     <div className="w-[40%] h-full flex items-center space-x-2 md:justify-between">
-                      <Avatar className="md:h-full w-auto">
+                      <Avatar className="md:h-20 w-auto">
                         <AvatarImage
                           src={review.customer.avatar}
                           className="bg-white h-full"
@@ -148,27 +148,27 @@ function SinglePageContainer({
                         </div>
                       </div>
                     </div>
-                    <div className="w-1/2 flex justify-between h-full items-center">
-                      <div className="h-[90%] w-[45%] flex flex-col items-center justify-center">
+                    <div className="flex justify-between h-full items-center space-x-2">
+                      <div className="h-16 sm:h-20 flex flex-col items-center justify-center">
                         <Image
                           src={tierMapping[review.order.from].href}
                           alt={tierMapping[review.order.from].label}
                           height={500}
                           width={500}
-                          className="w-auto h-full"
+                          className="w-auto h-14 sm:h-16"
                         />
                         <p className="text-white uppercase text-center text-xs">
                           {tierMapping[review.order.from].label}
                         </p>
                       </div>
                       <FaGreaterThan className="text-white text-2xl" />
-                      <div className="h-[90%] w-[45%] flex flex-col items-center justify-center">
+                      <div className="h-16 sm:h-20 flex flex-col items-center justify-center">
                         <Image
                           src={tierMapping[review.order.to].href}
                           alt={tierMapping[review.order.to].label}
                           height={500}
                           width={500}
-                          className="w-auto h-full"
+                          className="w-auto h-14 sm:h-16"
                         />
                         <p className="text-white uppercase text-center text-xs">
                           {tierMapping[review.order.to].label}

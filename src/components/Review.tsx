@@ -4,7 +4,7 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import { tierMapping } from "@/lib/utils";
-import { FaGreaterThan } from "react-icons/fa6";
+import { FaGreaterThan } from "react-icons/fa";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ReviewCardInterface } from "@/lib/apiUtils";
@@ -12,10 +12,10 @@ import { ReviewCardInterface } from "@/lib/apiUtils";
 function Review({ data }: { data: ReviewCardInterface }) {
   const stars = [...Array(Math.ceil(data.review.rating))];
   return (
-    <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-5 lg:h-[30vh] space-y-2">
-      <div className="flex items-center justify-between h-1/3">
+    <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-1 sm:p-7 space-y-2">
+      <div className="flex items-center justify-between">
         <div className="w-[40%] h-full flex items-center space-x-2 md:justify-between">
-          <Avatar className="md:h-full w-auto">
+          <Avatar className="md:h-20 w-auto">
             <AvatarImage
               src={data.customer.avatar}
               className="bg-white h-full"
@@ -48,27 +48,27 @@ function Review({ data }: { data: ReviewCardInterface }) {
             </div>
           </div>
         </div>
-        <div className="w-1/2 flex justify-between h-full items-center">
-          <div className="h-[90%] w-[45%] flex flex-col items-center justify-center">
+        <div className="flex h-full items-center space-x-2">
+          <div className="h-16 sm:h-20 flex flex-col items-center justify-center">
             <Image
               src={tierMapping[data.order.from].href}
               alt={tierMapping[data.order.from].label}
               height={500}
               width={500}
-              className="w-auto h-full"
+              className="w-auto h-14 sm:h-16"
             />
             <p className="text-white uppercase text-center text-xs">
               {tierMapping[data.order.from].label}
             </p>
           </div>
           <FaGreaterThan className="text-white text-2xl" />
-          <div className="h-[90%] w-[45%] flex flex-col items-center justify-center">
+          <div className="h-16 sm:h-20 flex flex-col items-center justify-center">
             <Image
               src={tierMapping[data.order.to].href}
               alt={tierMapping[data.order.to].label}
               height={500}
               width={500}
-              className="w-auto h-full"
+              className="w-auto h-14 sm:h-16"
             />
             <p className="text-white uppercase text-center text-xs">
               {tierMapping[data.order.to].label}
@@ -81,14 +81,6 @@ function Review({ data }: { data: ReviewCardInterface }) {
         <p className="text-xs font-medium text-gray-500">
           {nameify(data.review.comment, 200)}
         </p>
-        {data.review.comment.length >= 200 && (
-          <Link
-            href={data.link}
-            className="text-primary text-xs font-bold underline hover:text-primary/90 transition-colors"
-          >
-            Continue Reading
-          </Link>
-        )}
       </div>
     </div>
   );
