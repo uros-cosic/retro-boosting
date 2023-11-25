@@ -75,7 +75,7 @@ function ChooseCoachDataContainer() {
   };
 
   return (
-    <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
+    <div className="px-10 space-x-5 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center flex-col space-y-3">
         <h2 className="font-bold uppercase text-xl">coach</h2>
         <Avatar className="h-1/2 w-fit">
@@ -105,7 +105,7 @@ function ChooseCoachDataContainer() {
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="font-bold capitalize text-xl bg-primary hover:bg-primary/90">
+            <Button className="font-bold capitalize bg-primary hover:bg-primary/90 w-40">
               choose your coach
             </Button>
           </DialogTrigger>
