@@ -76,7 +76,7 @@ function SinglePageContainer({
             <h3 className="text-sm lg:text-2xl uppercase font-bold">
               Orders Completed
             </h3>
-            <p className="text-sm lg:text-xl font-normal">
+            <p className="text-xs lg:text-xl font-normal">
               {data.ordersCompleted}
             </p>
           </div>
@@ -84,21 +84,36 @@ function SinglePageContainer({
             <h3 className="text-sm lg:text-2xl uppercase font-bold">
               {type === "booster" ? "Boosting Since" : "Coaching Since"}
             </h3>
-            <p className="text-sm lg:text-xl font-normal">
+            <p className="text-xs lg:text-xl font-normal">
               {data.boostingSince}
             </p>
           </div>
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
             <h3 className="text-sm lg:text-2xl uppercase font-bold">Roles</h3>
-            <div className="text-sm lg:text-xl font-normal space-x-3 w-full flex text-center items-center justify-center">
+            <div className="text-xs lg:text-xl font-normal space-x-0 lg:space-x-3 space-y-1 lg:space-y-0 w-full flex flex-col lg:flex-row text-center items-center justify-center">
               {data.roles?.length === 5 ? (
-                <p className="text-center">any</p>
+                <div className="flex items-center">
+                  <Image
+                    src="/img/lanes/any.svg"
+                    alt="any"
+                    height={50}
+                    width={50}
+                    className="max-h-5 max-w-5"
+                  />
+                  <p className="text-center">any</p>
+                </div>
               ) : (
                 data.roles?.map((role: string, idx: number) => (
-                  // TODO: Add Role Icon :)
-                  <p key={idx} className="text-center">
-                    {role}
-                  </p>
+                  <div key={idx} className="flex items-center h-full w-full">
+                    <Image
+                      src={`/img/lanes/${role}.svg`}
+                      alt={role}
+                      height={50}
+                      width={50}
+                      className="max-h-4 max-w-4"
+                    />
+                    <p className="text-center">{role}</p>
+                  </div>
                 ))
               )}
             </div>

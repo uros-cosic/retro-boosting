@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BoosterCardInterface } from "@/lib/apiUtils";
 import { twMerge } from "tailwind-merge";
+import Image from "next/image";
+import { FaHeadphones } from "react-icons/fa";
 
 function BoosterCard({
   data,
@@ -35,9 +37,25 @@ function BoosterCard({
           <div className="text-white lg:h-full w-full flex flex-col justify-start lg:justify-between">
             <p className="font-bold">{data.booster.name}</p>
             <div className="flex items-center justify-center lg:items-start lg:justify-start">
-              <div className="bg-secondary rounded-full p-3 lg:p-4 z-10" />
-              <div className="bg-primary rounded-full p-3 lg:p-4 z-20 -ml-2" />
-              <div className="bg-green-500 rounded-full p-3 lg:p-4 z-30 -ml-2" />
+              <div className="border border-white rounded-full bg-black h-6 w-6 lg:h-8 lg:w-8 flex items-center justify-center">
+                <Image
+                  src={`/img/tiers/${data.booster.elo}.svg`}
+                  alt={data.booster.elo || ""}
+                  height={50}
+                  width={50}
+                />
+              </div>
+              <div className="border border-white rounded-full bg-black h-6 w-6 lg:h-8 lg:w-8 flex items-center justify-center -ml-2 p-2">
+                <Image
+                  src={`/img/lanes/${data.booster.mainRole}.svg`}
+                  alt={data.booster.mainRole || ""}
+                  height={50}
+                  width={50}
+                />
+              </div>
+              <div className="border border-white rounded-full bg-black h-6 w-6 lg:h-8 lg:w-8 flex items-center justify-center -ml-2 p-2">
+                <FaHeadphones />
+              </div>
             </div>
           </div>
         </div>

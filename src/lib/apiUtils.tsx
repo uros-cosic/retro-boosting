@@ -19,6 +19,7 @@ export interface BoosterCardInterface {
   name: string;
   link: string;
   slug: string;
+  mainRole?: string;
   rating?: number;
   ratingsQuantity?: number;
   about?: string;
@@ -37,18 +38,24 @@ export const getTopBoosters = async () => {
       name: "prince",
       link: "/boosters/prince",
       slug: "prince",
+      mainRole: "any",
+      elo: "challenger",
     },
     {
       avatar: "/img/temp/boosters/lexa.png",
       name: "lexa",
       link: "/boosters/lexa",
       slug: "lexa",
+      mainRole: "any",
+      elo: "challenger",
     },
     {
       avatar: "/img/temp/boosters/tama.png",
       name: "tama",
       link: "/boosters/tama",
       slug: "tama",
+      mainRole: "any",
+      elo: "challenger",
     },
   ];
 
@@ -63,6 +70,8 @@ export interface CoachCardInterface {
   avatar: string;
   name: string;
   link: string;
+  mainRole?: string;
+  elo?: string;
 }
 
 export const getTopCoaches = async () => {
@@ -72,11 +81,15 @@ export const getTopCoaches = async () => {
       avatar: "/img/temp/coaches/lexa.png",
       name: "lexa",
       link: "/coaches/lexa",
+      elo: "challenger",
+      mainRole: "any",
     },
     {
       avatar: "/img/temp/coaches/ASCO.jpg",
       name: "ASCO",
       link: "/coaches/asco",
+      elo: "challenger",
+      mainRole: "jungle",
     },
   ];
 
