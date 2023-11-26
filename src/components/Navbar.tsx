@@ -82,7 +82,7 @@ function Navbar() {
             <Logo />
           </Link>
         </div>
-        <ul className="hidden md:flex uppercase items-center text-sm font-bold space-x-5">
+        <ul className="hidden md:flex uppercase items-center text-sm font-normal space-x-5">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -114,10 +114,10 @@ function Navbar() {
           <div className="h-full space-x-2 md:space-x-5 flex items-center">
             {loading ? (
               <>
-                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-bold text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
+                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-normal text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
                   x register
                 </Skeleton>
-                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-bold text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
+                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-normal text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
                   x login
                 </Skeleton>
               </>

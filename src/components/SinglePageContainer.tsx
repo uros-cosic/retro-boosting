@@ -32,16 +32,16 @@ function SinglePageContainer({
           <div className="flex flex-col justify-center space-y-3 h-full">
             <Badge
               variant={"outline"}
-              className="text-white bg-primary uppercase font-bold text-[9px]"
+              className="text-white bg-primary uppercase font-normal text-[9px]"
             >
               {data.elo}
             </Badge>
-            <h2 className="text-white text-2xl font-black">{data.name}</h2>
+            <h2 className="text-white text-2xl font-bold">{data.name}</h2>
           </div>
         </div>
         {data.rating && (
           <div className="flex space-x-2 text-white">
-            <p className="font-bold text-3xl">{data.rating}</p>
+            <p className="font-normal text-3xl">{data.rating}</p>
             <div className="flex flex-col space-y-1 text-center">
               <div className="flex space-x-1 items-center text-lg">
                 {stars.length &&
@@ -66,29 +66,31 @@ function SinglePageContainer({
       </div>
       <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 text-white">
         <div className="bg-black rounded-xl border-primary border w-full lg:w-2/3 p-5 space-y-5 flex flex-col items-center">
-          <h1 className="font-black text-3xl">About</h1>
+          <h1 className="font-bold text-3xl">About</h1>
           <div className="h-full flex items-center">
             <p className="text-center">{data.about}</p>
           </div>
         </div>
         <div className="flex lg:flex-col h-full w-full space-x-1 lg:space-x-0 lg:w-1/3 lg:space-y-5">
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
-            <h3 className="text-sm lg:text-2xl uppercase font-black">
+            <h3 className="text-sm lg:text-2xl uppercase font-bold">
               Orders Completed
             </h3>
-            <p className="text-sm lg:text-xl font-bold">
+            <p className="text-sm lg:text-xl font-normal">
               {data.ordersCompleted}
             </p>
           </div>
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
-            <h3 className="text-sm lg:text-2xl uppercase font-black">
+            <h3 className="text-sm lg:text-2xl uppercase font-bold">
               {type === "booster" ? "Boosting Since" : "Coaching Since"}
             </h3>
-            <p className="text-sm lg:text-xl font-bold">{data.boostingSince}</p>
+            <p className="text-sm lg:text-xl font-normal">
+              {data.boostingSince}
+            </p>
           </div>
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
-            <h3 className="text-sm lg:text-2xl uppercase font-black">Roles</h3>
-            <div className="text-sm lg:text-xl font-bold space-x-3 w-full flex text-center items-center justify-center">
+            <h3 className="text-sm lg:text-2xl uppercase font-bold">Roles</h3>
+            <div className="text-sm lg:text-xl font-normal space-x-3 w-full flex text-center items-center justify-center">
               {data.roles?.length === 5 ? (
                 <p className="text-center">any</p>
               ) : (
@@ -105,7 +107,7 @@ function SinglePageContainer({
       </div>
       {reviews.length && (
         <div className="w-full text-white space-y-10">
-          <h1 className="font-black text-3xl">Read Reviews</h1>
+          <h1 className="font-bold text-3xl">Read Reviews</h1>
           <div className="w-full pb-5 overflow-x-scroll flex space-x-5 max-w-7xl">
             {reviews.map((review, idx) => (
               <div
@@ -177,7 +179,7 @@ function SinglePageContainer({
                     </div>
                   </div>
                   <div className="w-full h-2/3 text-white space-y-2">
-                    <h3 className="font-bold">{review.review.heading}</h3>
+                    <h3 className="font-normal">{review.review.heading}</h3>
                     <p className="text-xs font-medium text-gray-500">
                       {nameify(review.review.comment, 200)}
                     </p>

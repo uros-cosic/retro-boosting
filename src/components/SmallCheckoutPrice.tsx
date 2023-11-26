@@ -17,8 +17,8 @@ function SmallCheckoutPrice({
       {priceObj.priceLoading ? (
         <div className="flex flex-col w-full items-end space-y-1">
           <div className="flex justify-between w-full items-center">
-            <p className="font-bold">Total Price:</p>
-            <Skeleton className="font-black text-lg text-muted-foreground bg-muted-foreground rounded-xl">
+            <p className="font-normal">Total Price:</p>
+            <Skeleton className="font-bold text-lg text-muted-foreground bg-muted-foreground rounded-xl">
               00000
             </Skeleton>
           </div>
@@ -26,13 +26,13 @@ function SmallCheckoutPrice({
       ) : (
         <div className="flex flex-col w-full items-end space-y-1">
           {priceObj.discountedPrice && (
-            <p className="line-through text-sm font-black">{`${priceify(
+            <p className="line-through text-sm font-bold">{`${priceify(
               priceObj.total
             )}$`}</p>
           )}
           <div className="flex justify-between w-full items-center">
-            <p className="font-bold">Total Price:</p>
-            <p className="font-black text-lg">
+            <p className="font-normal">Total Price:</p>
+            <p className="font-bold text-lg">
               {priceObj.discountedPrice
                 ? `${priceify(priceObj.discountedPrice)}$`
                 : `${priceify(priceObj.total)}$`}

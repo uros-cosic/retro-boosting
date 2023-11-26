@@ -55,10 +55,10 @@ function ChooseWinRankContainer() {
         />
       </div>
       <div className="flex flex-col items-center justify-center text-center w-full space-y-5">
-        <h2 className="font-bold capitalize text-2xl">current rank</h2>
+        <h2 className="font-normal capitalize text-2xl">current rank</h2>
         <div>
           <Select onValueChange={(val) => handleChange(val)}>
-            <SelectTrigger className="w-40 font-black border border-primary">
+            <SelectTrigger className="w-40 font-bold border border-primary">
               <SelectValue
                 className="uppercase"
                 placeholder={tierMapping[
@@ -76,11 +76,11 @@ function ChooseWinRankContainer() {
           </Select>
         </div>
         <div className="flex flex-col items-center space-y-5">
-          <h2 className="font-bold capitalize text-sm lg:text-xl">
+          <h2 className="font-normal capitalize text-sm lg:text-xl">
             number of games
           </h2>
           <Input
-            className="w-40 font-black border border-primary"
+            className="w-40 font-bold border border-primary"
             type="number"
             value={numberVal}
             onChange={handleNumOfGamesChange}

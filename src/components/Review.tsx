@@ -76,7 +76,7 @@ function Review({ data }: { data: ReviewCardInterface }) {
         </div>
       </div>
       <div className="w-full h-2/3 text-white space-y-2">
-        <h3 className="font-bold">{data.review.heading}</h3>
+        <h3 className="font-normal">{data.review.heading}</h3>
         <p className="text-xs font-medium text-gray-500">
           {nameify(data.review.comment, 200)}
         </p>

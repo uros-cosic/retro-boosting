@@ -36,7 +36,7 @@ function ContactForm() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="text-white max-w-3xl mx-auto p-5 rounded-xl bg-black shadow-xl uppercase space-y-5 border border-primary"
         >
-          <h1 className="font-bold text-3xl">contact us</h1>
+          <h1 className="font-normal text-3xl">contact us</h1>
           <FormField
             control={form.control}
             name="name"
@@ -47,7 +47,7 @@ function ContactForm() {
                   <Input
                     placeholder="name..."
                     {...field}
-                    className="bg-white text-black  text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
                   />
                 </FormControl>
                 <FormMessage />
@@ -65,7 +65,7 @@ function ContactForm() {
                     placeholder="email..."
                     {...field}
                     type="email"
-                    className="bg-white text-black  text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
                   />
                 </FormControl>
                 <FormMessage />
@@ -82,7 +82,7 @@ function ContactForm() {
                   <Input
                     placeholder="subject..."
                     {...field}
-                    className="bg-white text-black  text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
                   />
                 </FormControl>
                 <FormMessage />
@@ -99,7 +99,7 @@ function ContactForm() {
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    className="bg-white text-black  text-xs placeholder:text-black font-black"
+                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
                     placeholder="question..."
                     {...field}
                   />
@@ -110,7 +110,7 @@ function ContactForm() {
           />
           <Button
             type="submit"
-            className="bg-white text-black text-lg font-black w-full  py-5 hover:bg-white/90 transition-colors uppercase"
+            className="bg-white text-black text-lg font-bold w-full  py-5 hover:bg-white/90 transition-colors uppercase"
             disabled={loading}
             aria-disabled={loading}
           >

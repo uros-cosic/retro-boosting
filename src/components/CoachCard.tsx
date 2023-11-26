@@ -33,7 +33,7 @@ function CoachCard({
             </AvatarFallback>
           </Avatar>
           <div className="text-white lg:h-full w-full flex flex-col justify-start lg:justify-between">
-            <p className="font-black">{data.coach.name}</p>
+            <p className="font-bold">{data.coach.name}</p>
             <div className="flex items-center justify-center lg:items-start lg:justify-start">
               <div className="bg-secondary rounded-full p-3 lg:p-4 z-10" />
               <div className="bg-primary rounded-full p-3 lg:p-4 z-20 -ml-2" />

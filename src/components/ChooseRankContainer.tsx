@@ -68,11 +68,11 @@ function ChooseRankContainer({ idx }: { idx: number }) {
       <div className="flex flex-col items-center justify-center text-center w-full">
         <div className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-5 justify-center w-full items-center">
           <div className="space-y-5">
-            <h2 className="font-bold capitalize text-2xl text-left">
+            <h2 className="font-normal capitalize text-2xl text-left">
               {idx === 0 ? "current rank" : "desired rank"}
             </h2>
             <Select onValueChange={(val) => handleChange(idx, val)}>
-              <SelectTrigger className="w-40 font-black border border-primary">
+              <SelectTrigger className="w-40 font-bold border border-primary">
                 <SelectValue
                   className="uppercase"
                   placeholder={
@@ -93,11 +93,11 @@ function ChooseRankContainer({ idx }: { idx: number }) {
           </div>
           {idx === 0 && (
             <div className="space-y-5">
-              <h2 className="font-bold capitalize text-2xl text-left">
+              <h2 className="font-normal capitalize text-2xl text-left">
                 LP gains
               </h2>
               <Select onValueChange={handleLpGainsChange}>
-                <SelectTrigger className="w-40 font-black border border-primary">
+                <SelectTrigger className="w-40 font-bold border border-primary">
                   <SelectValue className="uppercase" placeholder="< 15" />
                 </SelectTrigger>
                 <SelectContent className="border border-primary">

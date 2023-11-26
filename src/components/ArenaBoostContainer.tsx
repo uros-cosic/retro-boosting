@@ -79,12 +79,12 @@ function ArenaBoostContainer() {
             <ChooseArenaRankContainer />
           </div>
           <div className="lg:h-1/3 w-full space-y-3 flex flex-col justify-end">
-            <h1 className="text-3xl font-bold">Set Other Info</h1>
+            <h1 className="text-3xl font-normal">Set Other Info</h1>
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-bold">Type of Service</h2>
+                <h2 className="text-lg font-normal">Type of Service</h2>
                 <Select onValueChange={handleTypeChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
                     <SelectValue placeholder="Solo" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -94,9 +94,9 @@ function ArenaBoostContainer() {
                 </Select>
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-bold">Server</h2>
+                <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -109,9 +109,9 @@ function ArenaBoostContainer() {
                 </Select>
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-bold">Queue</h2>
+                <h2 className="text-lg font-normal">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
                     <SelectValue placeholder="Arena" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">

@@ -110,7 +110,7 @@ function ArenaSmallCheckoutContainer() {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
-      <h1 className="font-black uppercase text-center text-2xl">checkout</h1>
+      <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
           <Image
@@ -135,7 +135,7 @@ function ArenaSmallCheckoutContainer() {
         </DialogTrigger>
         <DialogContent className="bg-black border-primary border text-white">
           <DialogHeader className="space-y-3">
-            <DialogTitle className="uppercase font-bold">
+            <DialogTitle className="uppercase font-normal">
               extra options
             </DialogTitle>
             <DialogDescription className="text-secondary text-xs">
@@ -144,9 +144,9 @@ function ArenaSmallCheckoutContainer() {
           </DialogHeader>
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-lg font-bold">Lane</h3>
+              <h3 className="text-lg font-normal">Lane</h3>
               <Select onValueChange={handleLaneChange}>
-                <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
+                <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
                   <SelectValue placeholder="any" />
                 </SelectTrigger>
                 <SelectContent className="border border-primary">
@@ -160,9 +160,9 @@ function ArenaSmallCheckoutContainer() {
               </Select>
             </div>
             <div>
-              <h3 className="text-lg font-bold">Flash Placement</h3>
+              <h3 className="text-lg font-normal">Flash Placement</h3>
               <Select onValueChange={handleFlashChange}>
-                <SelectTrigger className="bg-black py-5 rounded-xl font-black border border-primary text-center w-40">
+                <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
                   <SelectValue placeholder="any" />
                 </SelectTrigger>
                 <SelectContent className="border border-primary">
@@ -200,20 +200,20 @@ function ArenaSmallCheckoutContainer() {
           </div>
         ))}
       </div>
-      <div className="w-full relative font-black">
+      <div className="w-full relative font-bold">
         <Input
           maxLength={20}
           placeholder="discount code"
           className="uppercase border border-primary h-fit placeholder:text-white"
         />
-        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-black">
+        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold">
           apply
         </Button>
       </div>
       <SmallCheckoutPrice priceObj={priceObj} />
       <Link
         href="/checkout"
-        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-bold text-sm hover:bg-primary/90 transition-colors"
+        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-normal text-sm hover:bg-primary/90 transition-colors"
       >
         purchase boost
       </Link>

@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Inter, Russo_One } from "next/font/google";
+import { Russo_One } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
 const russo = Russo_One({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "RETRO-BOOSTING",
-  description: "TEMP_DESC",
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi a illo ipsam, vero ipsum voluptates recusandae saepe repellat numquam.",
 };
 
 export default function RootLayout({
