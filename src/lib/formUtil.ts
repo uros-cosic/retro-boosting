@@ -63,3 +63,9 @@ export const accountFormSchema = z.object({
 });
 
 export type AccountFormValues = z.infer<typeof accountFormSchema>;
+
+export const forgotPasswordSchema = z.object({
+  email: z.string().email(),
+});
+
+export type ForgotPasswordValues = z.infer<typeof forgotPasswordSchema>;

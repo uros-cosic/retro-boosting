@@ -521,3 +521,14 @@ export const getDiscountedPrice = async (total: number) => {
     }, 500);
   });
 };
+
+export const handleForgotPassword = async () => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: null,
+      });
+    }, 500);
+  });
+};
