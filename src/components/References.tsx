@@ -27,7 +27,7 @@ function References() {
   ];
 
   return (
-    <section className="mx-auto my-10 grid grid-cols-4 gap-5 h-24 bg-black">
+    <section className="mx-auto my-10 grid grid-cols-4 gap-5 h-24 bg-black px-1 lg:px-0">
       {references.map((reference) => (
         <Reference key={reference.label} data={reference} />
       ))}

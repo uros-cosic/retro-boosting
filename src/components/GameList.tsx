@@ -27,7 +27,7 @@ function GameList() {
   ];
 
   return (
-    <section className="py-10 max-w-5xl mx-auto space-y-5">
+    <section className="py-10 max-w-5xl mx-auto space-y-5 px-1 lg:px-0">
       <h1 className="text-3xl font-normal text-center text-white uppercase">
         game list
       </h1>
