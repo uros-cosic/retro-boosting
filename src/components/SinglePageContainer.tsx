@@ -104,7 +104,7 @@ function SinglePageContainer({
                 </div>
               ) : (
                 data.roles?.map((role: string, idx: number) => (
-                  <div key={idx} className="flex items-center h-full w-full">
+                  <div key={idx} className="flex items-center">
                     <Image
                       src={`/img/lanes/${role}.svg`}
                       alt={role}
