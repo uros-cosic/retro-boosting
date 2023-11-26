@@ -1,19 +1,3 @@
-export const getOrderPrice = async () => {
-  // TEMP FETCHING SIMULATION
-  const price = Math.round(Math.random() * 7000);
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          total: price,
-          discountedPrice: null,
-        },
-      });
-    }, 500);
-  });
-};
-
 export interface BoosterCardInterface {
   avatar: string;
   name: string;
@@ -29,6 +13,56 @@ export interface BoosterCardInterface {
   ordersCompleted?: number;
   _id: string;
 }
+
+export interface CoachCardInterface {
+  avatar: string;
+  name: string;
+  link: string;
+  mainRole?: string;
+  elo?: string;
+}
+
+export interface ReviewCardInterface {
+  customer: {
+    name: string;
+    tag: string;
+    avatar: string;
+  };
+  order: {
+    from: string;
+    to: string;
+  };
+  review: {
+    rating: number;
+    heading: string;
+    comment: string;
+  };
+  link: string;
+}
+
+export interface UserDataInterface {
+  status: string;
+  data?: {
+    name: string;
+    avatar: string;
+  };
+}
+
+export const getOrderPrice = async () => {
+  // TEMP FETCHING SIMULATION
+  const price = Math.round(Math.random() * 7000);
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: {
+          total: price,
+          discountedPrice: null,
+        },
+      });
+    }, 500);
+  });
+};
 
 export const getTopBoosters = async () => {
   // TEMP FETCHING SIMULATION
@@ -66,14 +100,6 @@ export const getTopBoosters = async () => {
   });
 };
 
-export interface CoachCardInterface {
-  avatar: string;
-  name: string;
-  link: string;
-  mainRole?: string;
-  elo?: string;
-}
-
 export const getTopCoaches = async () => {
   // TEMP FETCHING SIMULATION
   const coachesContent = [
@@ -99,24 +125,6 @@ export const getTopCoaches = async () => {
     }, 500);
   });
 };
-
-export interface ReviewCardInterface {
-  customer: {
-    name: string;
-    tag: string;
-    avatar: string;
-  };
-  order: {
-    from: string;
-    to: string;
-  };
-  review: {
-    rating: number;
-    heading: string;
-    comment: string;
-  };
-  link: string;
-}
 
 export const getTopReviews = async () => {
   // TEMP FETCHING SIMULATION
@@ -190,14 +198,6 @@ export const getCoachesByOptions = async () => {
     }, 500);
   });
 };
-
-export interface UserDataInterface {
-  status: string;
-  data?: {
-    name: string;
-    avatar: string;
-  };
-}
 
 export const getMe = async () => {
   // temp

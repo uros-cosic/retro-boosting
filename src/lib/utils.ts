@@ -6,6 +6,14 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const tierMapping: any = {
+  CH1: {
+    label: "challenger",
+    href: "/img/tiers/challenger.svg",
+  },
+  GM1: {
+    label: "grandmaster",
+    href: "/img/tiers/grandmaster.svg",
+  },
   M1: {
     label: "master",
     href: "/img/tiers/master.svg",
@@ -150,6 +158,8 @@ export const divisionsOrdered: Array<string> = [
   "D2",
   "D1",
   "M1",
+  "GM1",
+  "CH1",
 ];
 
 export const arenaTierMapping: any = {

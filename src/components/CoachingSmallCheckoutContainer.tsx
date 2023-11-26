@@ -17,7 +17,7 @@ import {
   CoachingOrderDataContext,
 } from "@/lib/CoachingDataContext";
 import { coachingSwitchableOptions as switchableOptions } from "@/lib/data";
-import { getOrderPrice } from "@/lib/apiUtils";
+import { getOrderPrice, getDiscountedPrice } from "@/lib/apiUtils";
 
 function CoachingSmallCheckoutContainer() {
   const { coachingOrderData, setCoachingOrderData } =
@@ -57,6 +57,25 @@ function CoachingSmallCheckoutContainer() {
           ...prev.options,
           [id]: checked,
         },
+      };
+    });
+  };
+
+  const handleDiscountClick = async () => {
+    setPriceObj((prev: any) => {
+      return {
+        ...prev,
+        priceLoading: true,
+      };
+    });
+
+    const data: any = await getDiscountedPrice(priceObj.total);
+
+    setPriceObj((prev: any) => {
+      return {
+        priceLoading: false,
+        total: data.data.total,
+        discountedPrice: data.data.discountedPrice,
       };
     });
   };
@@ -112,7 +131,10 @@ function CoachingSmallCheckoutContainer() {
           placeholder="discount code"
           className="uppercase border border-primary h-fit placeholder:text-white"
         />
-        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold">
+        <Button
+          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold"
+          onClick={handleDiscountClick}
+        >
           apply
         </Button>
       </div>
