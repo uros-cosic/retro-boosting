@@ -1,4 +1,11 @@
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RETRO-BOOSTING - Privacy",
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi a illo ipsam, vero ipsum voluptates recusandae saepe repellat numquam.",
+};
 
 function Page() {
   return (

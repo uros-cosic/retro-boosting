@@ -11,7 +11,7 @@ async function BoostingServiceSection() {
   return (
     <section className="flex items-center justify-center w-full relative h-[65vh]">
       <Image
-        src="/img/riven-cover.jpg"
+        src="/img/boosting-service.jpg"
         alt="Boosting Service"
         height={500}
         width={1700}

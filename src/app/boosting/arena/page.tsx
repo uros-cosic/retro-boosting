@@ -1,5 +1,12 @@
 import ArenaBoostContainer from "@/components/ArenaBoostContainer";
 import React from "react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "RETRO-BOOSTING - League of Legends Arena Boosting",
+  description:
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi a illo ipsam, vero ipsum voluptates recusandae saepe repellat numquam.",
+};
 
 function Page() {
   return (
