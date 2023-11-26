@@ -8,10 +8,6 @@ interface OptionsInterface {
   priorityOrder: boolean;
   streamGames: boolean;
   soloOnly: boolean;
-  extraOptions: {
-    lane: string;
-    flashPlacement: string;
-  };
 }
 
 export type NormalsOrderDataContent = {
@@ -35,10 +31,6 @@ export const NormalsOrderDataContext: any =
         priorityOrder: false,
         streamGames: false,
         soloOnly: false,
-        extraOptions: {
-          lane: "any",
-          flashPlacement: "any",
-        },
       },
     },
     setNormalsOrderData: () => {},

@@ -1,6 +1,6 @@
 "use client";
 import { OrderDataContent, OrderDataContext } from "@/lib/OrderDataContext";
-import { tierMapping } from "@/lib/utils";
+import { extraOptionsMapping, tierMapping } from "@/lib/utils";
 import Image from "next/image";
 import { FaGreaterThan, FaGear, FaCircleQuestion } from "react-icons/fa6";
 import React, { useContext, useEffect, useState } from "react";
@@ -31,7 +31,7 @@ import {
   SelectItem,
 } from "./ui/select";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
-import { getOrderPrice } from "@/lib/apiUtils";
+import { getDiscountedPrice, getOrderPrice } from "@/lib/apiUtils";
 
 function SmallCheckoutContainer({
   extraOptions,
@@ -111,6 +111,23 @@ function SmallCheckoutContainer({
     });
   };
 
+  const handleDiscountClick = async () => {
+    setPriceObj((prev: any) => {
+      return {
+        ...prev,
+        priceLoading: true,
+      };
+    });
+    const data: any = await getDiscountedPrice(priceObj.total);
+    setPriceObj((prev: any) => {
+      return {
+        priceLoading: false,
+        total: data.data.total,
+        discountedPrice: data.data.discountedPrice,
+      };
+    });
+  };
+
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
@@ -122,7 +139,7 @@ function SmallCheckoutContainer({
             height={150}
             width={150}
           />
-          <p className="uppercase text-center text-sm">
+          <p className="uppercase text-center text-xs">
             {tierMapping[orderData.from].label}
           </p>
         </div>
@@ -134,7 +151,7 @@ function SmallCheckoutContainer({
             height={150}
             width={150}
           />
-          <p className="uppercase text-center text-sm">
+          <p className="uppercase text-center text-xs">
             {tierMapping[orderData.to].label}
           </p>
         </div>
@@ -162,7 +179,11 @@ function SmallCheckoutContainer({
                 <h3 className="text-lg font-normal">Lane</h3>
                 <Select onValueChange={handleLaneChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
-                    <SelectValue placeholder="any" />
+                    <SelectValue
+                      placeholder={
+                        extraOptionsMapping[orderData.options.extraOptions.lane]
+                      }
+                    />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
                     <SelectItem value="any">any</SelectItem>
@@ -178,7 +199,13 @@ function SmallCheckoutContainer({
                 <h3 className="text-lg font-normal">Flash Placement</h3>
                 <Select onValueChange={handleFlashChange}>
                   <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
-                    <SelectValue placeholder="any" />
+                    <SelectValue
+                      placeholder={
+                        extraOptionsMapping[
+                          orderData.options.extraOptions.flashPlacement
+                        ]
+                      }
+                    />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
                     <SelectItem value="any">any</SelectItem>
@@ -224,7 +251,10 @@ function SmallCheckoutContainer({
           placeholder="discount code"
           className="uppercase border border-primary h-fit placeholder:text-white"
         />
-        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold">
+        <Button
+          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold"
+          onClick={handleDiscountClick}
+        >
           apply
         </Button>
       </div>

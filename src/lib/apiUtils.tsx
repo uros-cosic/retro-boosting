@@ -506,3 +506,18 @@ export const getCoachReviews = async (coachId: string) => {
     }, 500);
   });
 };
+
+export const getDiscountedPrice = async (total: number) => {
+  // temp - will always get 10% off
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: {
+          total,
+          discountedPrice: total - total * 0.1,
+        },
+      });
+    }, 500);
+  });
+};

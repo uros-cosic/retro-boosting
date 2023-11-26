@@ -16,20 +16,12 @@ function NormalsBoostContainer() {
     boosterRank: "M1",
     numOfGames: 1,
     options: {
-      boosterRank: "M1",
-      numOfGames: 1,
-      options: {
-        server: "euw",
-        queue: "summoners-rift",
-        offlineMode: false,
-        priorityOrder: false,
-        streamGames: false,
-        soloOnly: false,
-        extraOptions: {
-          lane: "any",
-          flashPlacement: "any",
-        },
-      },
+      server: "euw",
+      queue: "summoners-rift",
+      offlineMode: false,
+      priorityOrder: false,
+      streamGames: false,
+      soloOnly: false,
     },
   });
 

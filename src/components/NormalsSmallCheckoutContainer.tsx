@@ -5,7 +5,7 @@ import {
   NormalsOrderDataContent,
   NormalsOrderDataContext,
 } from "@/lib/NormalsDataContext";
-import { tierMapping } from "@/lib/utils";
+import { extraOptionsMapping, tierMapping } from "@/lib/utils";
 import {
   Dialog,
   DialogTrigger,
@@ -34,7 +34,7 @@ import {
 import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
 import { normalsSwitchableOptions as switchableOptions } from "@/lib/data";
-import { getOrderPrice } from "@/lib/apiUtils";
+import { getOrderPrice, getDiscountedPrice } from "@/lib/apiUtils";
 
 function NormalsSmallCheckoutContainer() {
   const { normalsOrderData, setNormalsOrderData } =
@@ -108,6 +108,23 @@ function NormalsSmallCheckoutContainer() {
     });
   };
 
+  const handleDiscountClick = async () => {
+    setPriceObj((prev: any) => {
+      return {
+        ...prev,
+        priceLoading: true,
+      };
+    });
+    const data: any = await getDiscountedPrice(priceObj.total);
+    setPriceObj((prev: any) => {
+      return {
+        priceLoading: false,
+        total: data.data.total,
+        discountedPrice: data.data.discountedPrice,
+      };
+    });
+  };
+
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
       <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
@@ -120,7 +137,7 @@ function NormalsSmallCheckoutContainer() {
             width={100}
             className="h-auto w-auto max-h-[100px]"
           />
-          <p className="uppercase text-center text-sm">
+          <p className="uppercase text-center text-xs">
             {tierMapping[normalsOrderData.boosterRank].label}
           </p>
         </div>
@@ -128,53 +145,6 @@ function NormalsSmallCheckoutContainer() {
       <div className="w-full">
         <hr className="border-primary border-2" />
       </div>
-      <Dialog>
-        <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
-          <FaGear className="text-xl" />
-          <p className="uppercase font-medium text-xs">extra options</p>
-        </DialogTrigger>
-        <DialogContent className="bg-black border-primary border text-white">
-          <DialogHeader className="space-y-3">
-            <DialogTitle className="uppercase font-normal">
-              extra options
-            </DialogTitle>
-            <DialogDescription className="text-secondary text-xs">
-              Customize your order free of charge.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="text-lg font-normal">Lane</h3>
-              <Select onValueChange={handleLaneChange}>
-                <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
-                  <SelectValue placeholder="any" />
-                </SelectTrigger>
-                <SelectContent className="border border-primary">
-                  <SelectItem value="any">any</SelectItem>
-                  <SelectItem value="jg">Jungle</SelectItem>
-                  <SelectItem value="mid">Mid</SelectItem>
-                  <SelectItem value="adc">Adc</SelectItem>
-                  <SelectItem value="top">Top</SelectItem>
-                  <SelectItem value="supp">Support</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <h3 className="text-lg font-normal">Flash Placement</h3>
-              <Select onValueChange={handleFlashChange}>
-                <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
-                  <SelectValue placeholder="any" />
-                </SelectTrigger>
-                <SelectContent className="border border-primary">
-                  <SelectItem value="any">any</SelectItem>
-                  <SelectItem value="D">D</SelectItem>
-                  <SelectItem value="F">F</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </DialogContent>
-      </Dialog>
       <div className="flex flex-col w-full space-y-2">
         {switchableOptions.map((optionObj) => (
           <div key={optionObj.label} className="flex justify-between w-full">
@@ -206,7 +176,10 @@ function NormalsSmallCheckoutContainer() {
           placeholder="discount code"
           className="uppercase border border-primary h-fit placeholder:text-white"
         />
-        <Button className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold">
+        <Button
+          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold"
+          onClick={handleDiscountClick}
+        >
           apply
         </Button>
       </div>

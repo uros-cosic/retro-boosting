@@ -49,7 +49,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
   };
 
   return (
-    <div className="px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between border border-primary space-x-5">
+    <div className="px-5 lg:px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between border border-primary space-x-3">
       <Image
         src={
           idx === 0
@@ -63,7 +63,6 @@ function ChooseRankContainer({ idx }: { idx: number }) {
         }
         height={150}
         width={150}
-        className="h-2/3 w-auto"
       />
       <div className="flex flex-col items-center justify-center text-center w-full">
         <div className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-5 justify-center w-full items-center">

@@ -47,7 +47,7 @@ function ChooseArenaRankContainer() {
   };
 
   return (
-    <div className="px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary space-x-5">
+    <div className="px-5 lg:px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary space-x-3">
       <div className="h-full w-full flex items-center justify-start lg:justify-center">
         <Image
           src={arenaTierMapping[arenaOrderData.currentRank].href}
