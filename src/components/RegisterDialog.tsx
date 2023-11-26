@@ -22,7 +22,7 @@ function RegisterDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="h-1/2 bg-secondary rounded px-2 md:px-5 flex items-center text-black hover:bg-secondary/80 transition-colors uppercase font-bold text-xs md:text-sm ">
+        <Button className="h-1/2 bg-secondary rounded px-2 md:px-5 flex items-center text-black hover:bg-secondary/80 transition-colors uppercase font-bold text-xs md:text-sm">
           <PiUserCirclePlusLight className="text-xl mr-1" />
           register
         </Button>

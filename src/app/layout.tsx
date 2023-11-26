@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Russo_One } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
+const russo = Russo_One({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "RETRO-BOOSTING",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-muted`}>
+      <body className={`${russo.className} antialiased bg-muted`}>
         <Header />
         <main>{children}</main>
         <Footer />

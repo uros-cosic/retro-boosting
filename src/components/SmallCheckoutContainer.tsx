@@ -198,14 +198,16 @@ function SmallCheckoutContainer({
               <Label htmlFor={optionObj.label} className="cursor-pointer">
                 {optionObj.label}
               </Label>
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger>
-                    <FaCircleQuestion className="text-primary text-xs" />
-                  </TooltipTrigger>
-                  <TooltipContent>{optionObj.detail}</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
+              <div className="h-full lg:flex items-start hidden">
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <FaCircleQuestion className="text-primary text-xs" />
+                    </TooltipTrigger>
+                    <TooltipContent>{optionObj.detail}</TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              </div>
             </div>
             <Switch
               id={optionObj.label}

@@ -11,12 +11,15 @@ import LoginDialog from "./LoginDialog";
 import { UserContext } from "@/lib/UserContext";
 import { getMe, UserDataInterface } from "@/lib/apiUtils";
 import AccountDialog from "./AccountDialog";
+import { Skeleton } from "./ui/skeleton";
 
 function Navbar() {
   const [user, setUser] = useState({
     isLoggedIn: false,
     data: null,
   });
+
+  const [loading, setLoading] = useState(true);
 
   const checkUser = async () => {
     const data: UserDataInterface | any = await getMe();
@@ -26,6 +29,7 @@ function Navbar() {
         data: data.data,
       });
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -108,8 +112,21 @@ function Navbar() {
           </div>
         ) : (
           <div className="h-full space-x-2 md:space-x-5 flex items-center">
-            <RegisterDialog />
-            <LoginDialog />
+            {loading ? (
+              <>
+                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-bold text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
+                  x register
+                </Skeleton>
+                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-bold text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
+                  x login
+                </Skeleton>
+              </>
+            ) : (
+              <>
+                <RegisterDialog />
+                <LoginDialog />
+              </>
+            )}
           </div>
         )}
       </UserContext.Provider>
