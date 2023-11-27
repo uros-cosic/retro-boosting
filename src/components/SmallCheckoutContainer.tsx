@@ -129,7 +129,7 @@ function SmallCheckoutContainer({
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
+    <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0 shadow-base">
       <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-1/3 space-y-2">

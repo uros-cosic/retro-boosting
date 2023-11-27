@@ -65,14 +65,14 @@ function SinglePageContainer({
         )}
       </div>
       <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 text-white">
-        <div className="bg-black rounded-xl border-primary border w-full lg:w-2/3 p-5 space-y-5 flex flex-col items-center">
+        <div className="bg-black rounded-xl border-primary border w-full lg:w-2/3 p-5 space-y-5 flex flex-col items-center shadow-base shadow-primary">
           <h1 className="font-bold text-3xl">About</h1>
           <div className="h-full flex items-center">
             <p className="text-center">{data.about}</p>
           </div>
         </div>
         <div className="flex lg:flex-col h-full w-full space-x-1 lg:space-x-0 lg:w-1/3 lg:space-y-5">
-          <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
+          <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary">
             <h3 className="text-sm lg:text-2xl uppercase font-bold">
               Orders Completed
             </h3>
@@ -80,7 +80,7 @@ function SinglePageContainer({
               {data.ordersCompleted}
             </p>
           </div>
-          <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
+          <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary">
             <h3 className="text-sm lg:text-2xl uppercase font-bold">
               {type === "booster" ? "Boosting Since" : "Coaching Since"}
             </h3>
@@ -88,7 +88,7 @@ function SinglePageContainer({
               {data.boostingSince}
             </p>
           </div>
-          <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5">
+          <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary">
             <h3 className="text-sm lg:text-2xl uppercase font-bold">Roles</h3>
             <div className="text-xs lg:text-xl font-normal space-x-0 lg:space-x-3 space-y-1 lg:space-y-0 w-full flex flex-col lg:flex-row text-center items-center justify-center">
               {data.roles?.length === 5 ? (
@@ -127,7 +127,7 @@ function SinglePageContainer({
             {reviews.map((review, idx) => (
               <div
                 key={idx}
-                className="rounded-xl border border-primary bg-black p-1 sm:p-7 flex items-center justify-center"
+                className="rounded-xl border border-primary bg-black p-1 sm:p-7 flex items-center justify-center shadow-base shadow-primary"
               >
                 <div className="w-[97vw] lg:w-[30rem] h-full space-y-7 flex flex-col items-center justify-center">
                   <div className="w-full flex items-center justify-between">

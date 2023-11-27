@@ -25,13 +25,13 @@ function LandingPage() {
         <div className="flex space-x-3 sm:space-x-5 text-white font-normal text-sm sm:text-xl items-center justify-center">
           <Link
             href="/boosting#nav"
-            className="bg-primary hover:bg-primary/90 px-10 py-2 rounded transition-colors shadow-xl"
+            className="bg-primary hover:bg-primary/90 px-10 py-2 rounded transition-colors"
           >
             Boosting
           </Link>
           <Link
             href="/coaching"
-            className="bg-secondary text-black px-10 py-2 rounded hover:bg-secondary/90 transition-colors shadow-xl"
+            className="bg-secondary text-black px-10 py-2 rounded hover:bg-secondary/90 transition-colors"
           >
             Coaching
           </Link>

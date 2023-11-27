@@ -122,7 +122,7 @@ function ArenaBoostContainer() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary">
+        <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary shadow-base shadow-primary">
           <ArenaSmallCheckoutContainer />
         </div>
       </ArenaOrderDataContext.Provider>

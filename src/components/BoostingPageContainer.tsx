@@ -7,7 +7,6 @@ import BoostingPageNavigation from "./BoostingPageNavigation";
 function BoostingPageContainer() {
   const pathname = usePathname();
 
-  // prolly doesnt work with /boosting#nav etc
   const mapping: any = {
     "/boosting": "solo boosting",
     "/boosting/duo": "duo boosting",

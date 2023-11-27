@@ -11,7 +11,7 @@ import { ReviewCardInterface } from "@/lib/apiUtils";
 function Review({ data }: { data: ReviewCardInterface }) {
   const stars = [...Array(Math.ceil(data.review.rating))];
   return (
-    <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-1 sm:p-7 space-y-2">
+    <div className="w-full lg:w-[48%] rounded-xl border border-primary bg-black p-1 sm:p-7 space-y-2 shadow-base shadow-primary">
       <div className="flex items-center justify-between">
         <div className="w-[40%] h-full flex items-center space-x-2 md:justify-between">
           <Avatar className="md:h-20 w-auto">

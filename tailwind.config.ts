@@ -22,6 +22,9 @@ module.exports = {
       width: {
         "10xl": "1800px",
       },
+      boxShadow: {
+        base: "0px 5px 15px rgba(0, 0, 0, 0.35)",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

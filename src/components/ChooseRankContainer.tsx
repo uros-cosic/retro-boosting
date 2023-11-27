@@ -49,7 +49,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
   };
 
   return (
-    <div className="px-5 lg:px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between border border-primary space-x-3">
+    <div className="px-5 lg:px-10 py-5 bg-black rounded-xl h-[47%] flex items-center justify-between border border-primary space-x-3 shadow-base shadow-primary">
       <Image
         src={
           idx === 0
