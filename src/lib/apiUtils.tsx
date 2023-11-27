@@ -14,6 +14,13 @@ export interface BoosterCardInterface {
   _id: string;
 }
 
+export type OrderPayment = {
+  id: string;
+  amount: number;
+  status: "taken" | "unclaimed" | "canceled";
+  type: string;
+};
+
 export interface CoachCardInterface {
   avatar: string;
   name: string;
@@ -541,6 +548,172 @@ export const handleForgotPassword = async () => {
       resolve({
         status: "success",
         data: null,
+      });
+    }, 500);
+  });
+};
+
+export const getChartData = async () => {
+  const data = [
+    {
+      name: "Jan",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Feb",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Mar",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Apr",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "May",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Jun",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Jul",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Aug",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Sep",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Oct",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Nov",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+    {
+      name: "Dec",
+      total: Math.floor(Math.random() * 5000) + 1000,
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: data,
+      });
+    }, 500);
+  });
+};
+
+export const getAnalytics = async () => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: {
+          totalRevenue: 45231,
+          users: 2350,
+          sales: 12234,
+          activeNow: 500,
+        },
+      });
+    }, 500);
+  });
+};
+
+export const getRecentOrders = async () => {
+  // get <= 10 recent orders
+  const data = [
+    {
+      customer: "anon",
+      total: 1234,
+      type: "Solo Boost",
+    },
+    {
+      customer: "anon",
+      total: 2345,
+      type: "Coaching",
+    },
+    {
+      customer: "ASCO",
+      total: 1337,
+      type: "Win Boost",
+    },
+    {
+      customer: "anon",
+      total: 1111,
+      type: "Solo Boost",
+    },
+    {
+      customer: "anon",
+      total: 2222,
+      type: "Coaching",
+    },
+    {
+      customer: "ASCO",
+      total: 1337,
+      type: "Win Boost",
+    },
+  ];
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: data,
+      });
+    }, 500);
+  });
+};
+
+export const getOrdersData = async () => {
+  const data: OrderPayment[] = [
+    {
+      id: "m5gr84i9",
+      amount: 316,
+      status: "unclaimed",
+      type: "Solo Boost",
+    },
+    {
+      id: "3u1reuv4",
+      amount: 242,
+      status: "taken",
+      type: "Solo Boost",
+    },
+    {
+      id: "derv1ws0",
+      amount: 837,
+      status: "canceled",
+      type: "Win Boost",
+    },
+    {
+      id: "5kma53ae",
+      amount: 874,
+      status: "taken",
+      type: "Coaching",
+    },
+    {
+      id: "bhqecj4p",
+      amount: 721,
+      status: "taken",
+      type: "Normal Boost",
+    },
+  ];
+
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: data,
       });
     }, 500);
   });

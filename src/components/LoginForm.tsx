@@ -32,8 +32,9 @@ function LoginForm() {
     setLoading(true);
     const data: UserDataInterface | any = await handleLogin();
     if (data.status === "success") {
-      setUser(data);
-      window.location.assign("/");
+      setUser(data.data);
+      if (data.data?.role === "administrator") window.location.assign("/admin");
+      else window.location.assign("/");
     } else {
       // handle 404 / 500
     }
