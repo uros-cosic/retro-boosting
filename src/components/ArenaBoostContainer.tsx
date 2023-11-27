@@ -84,7 +84,7 @@ function ArenaBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Type of Service</h2>
                 <Select onValueChange={handleTypeChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Solo" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -96,7 +96,7 @@ function ArenaBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -111,7 +111,7 @@ function ArenaBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Arena" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">

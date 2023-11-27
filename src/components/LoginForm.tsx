@@ -13,7 +13,6 @@ import { loginFormSchema, LoginFormValues } from "@/lib/formUtil";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "./ui/input";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import Link from "next/link";
 import { UserContent, UserContext } from "@/lib/UserContext";
 import { UserDataInterface, handleLogin } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
@@ -95,12 +94,6 @@ function LoginForm() {
             "login"
           )}
         </Button>
-        <Link
-          href="/forgotPassword"
-          className="text-primary underline hover:text-primary/90 text-sm"
-        >
-          Forgot Password
-        </Link>
       </form>
     </Form>
   );

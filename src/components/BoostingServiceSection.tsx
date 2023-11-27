@@ -23,12 +23,12 @@ async function BoostingServiceSection() {
           <h1 className="text-white text-2xl lg:text-4xl font-bold">
             boosting service
           </h1>
-          <p className="text-gray-300 text-xs lg:text-base font-bold">
+          <p className="text-gray-300 text-xs lg:text-base">
             Master the competitive realm of League of Legends with our unmatched
             boosting service. Experience unparalleled success as our dedicated
             professionals propel you to new heights of victory.
           </p>
-          <p className="text-gray-300 text-xs lg:text-base font-bold">
+          <p className="text-gray-300 text-xs lg:text-base">
             Unlock your true potential, surge ahead in the rankings, and cement
             your legacy as a true legend in the game.
           </p>

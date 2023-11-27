@@ -85,12 +85,12 @@ function CoachingSmallCheckoutContainer() {
       <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
-          <h2 className="text-lg font-normal uppercase text-center">
+          <h2 className="text-lg uppercase text-center">
             {coachingOrderData.coachingHours > 1
               ? `${coachingOrderData.coachingHours} hours of coaching with`
               : `${coachingOrderData.coachingHours} hour of coaching with`}
           </h2>
-          <p className="uppercase text-center font-bold">
+          <p className="uppercase text-center">
             {coachingOrderData.coach.name === "any"
               ? "any coach"
               : `coach ${coachingOrderData.coach.name}`}
@@ -125,14 +125,14 @@ function CoachingSmallCheckoutContainer() {
           </div>
         ))}
       </div>
-      <div className="w-full relative font-bold">
+      <div className="w-full relative">
         <Input
           maxLength={20}
           placeholder="discount code"
           className="uppercase border border-primary h-fit placeholder:text-white"
         />
         <Button
-          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold"
+          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90"
           onClick={handleDiscountClick}
         >
           apply

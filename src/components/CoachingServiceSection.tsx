@@ -27,19 +27,19 @@ async function CoachingServiceSection() {
           <h1 className="text-white text-2xl lg:text-4xl font-bold">
             coaching service
           </h1>
-          <p className="text-gray-300 text-xs lg:text-base font-normal">
+          <p className="text-gray-300 text-xs lg:text-base">
             Take your gaming to the next level with our exceptional coaching
             service. Enhance your strategic gameplay, refine your skills, and
             gain a competitive edge.
           </p>
-          <p className="text-gray-300 text-xs lg:text-base font-normal">
+          <p className="text-gray-300 text-xs lg:text-base">
             Embrace the opportunity to grow as a player, unlock your true
             abilities, and embark on a journey to become a true gaming champion
             with our tailored coaching sessions.
           </p>
           <Link
             href="/coaching"
-            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl font-normal rounded w-fit hover:text-white/70 transition-colors shadow-base shadow-primary"
+            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-xl rounded w-fit hover:text-white/70 transition-colors shadow-base shadow-primary"
           >
             connect with coach
           </Link>

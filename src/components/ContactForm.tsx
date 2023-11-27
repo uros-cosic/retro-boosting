@@ -110,7 +110,7 @@ function ContactForm() {
           />
           <Button
             type="submit"
-            className="bg-white text-black text-lg font-bold w-full  py-5 hover:bg-white/90 transition-colors uppercase"
+            className="bg-white text-black text-lg w-full py-5 hover:bg-white/90 transition-colors uppercase"
             disabled={loading}
             aria-disabled={loading}
           >

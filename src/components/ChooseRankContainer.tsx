@@ -71,7 +71,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
               {idx === 0 ? "current rank" : "desired rank"}
             </h2>
             <Select onValueChange={(val) => handleChange(idx, val)}>
-              <SelectTrigger className="w-40 font-bold border border-primary">
+              <SelectTrigger className="w-40 border border-primary">
                 <SelectValue
                   className="uppercase"
                   placeholder={
@@ -96,7 +96,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
                 LP gains
               </h2>
               <Select onValueChange={handleLpGainsChange}>
-                <SelectTrigger className="w-40 font-bold border border-primary">
+                <SelectTrigger className="w-40 border border-primary">
                   <SelectValue className="uppercase" placeholder="< 15" />
                 </SelectTrigger>
                 <SelectContent className="border border-primary">

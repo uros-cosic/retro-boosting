@@ -226,14 +226,14 @@ function WinSmallCheckoutContainer() {
           </div>
         ))}
       </div>
-      <div className="w-full relative font-bold">
+      <div className="w-full relative">
         <Input
           maxLength={20}
           placeholder="discount code"
           className="uppercase border border-primary h-fit placeholder:text-white"
         />
         <Button
-          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90 font-bold"
+          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90"
           onClick={handleDiscountClick}
         >
           apply

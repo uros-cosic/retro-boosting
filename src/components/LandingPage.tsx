@@ -19,10 +19,10 @@ function LandingPage() {
           <br />
           Get Your Winning Edge with a Booster!
         </h1>
-        <h2 className="text-gray-300 text-xs sm:text-xl font-normal text-center">
+        <h2 className="text-gray-300 text-xs sm:text-xl text-center">
           Or unleash your true potential with coaching
         </h2>
-        <div className="flex space-x-3 sm:space-x-5 text-white font-normal text-sm sm:text-xl items-center justify-center">
+        <div className="flex space-x-3 sm:space-x-5 text-white text-sm sm:text-xl items-center justify-center">
           <Link
             href="/boosting#nav"
             className="bg-primary hover:bg-primary/90 px-10 py-2 rounded transition-colors"

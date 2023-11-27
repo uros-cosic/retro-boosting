@@ -97,7 +97,7 @@ function ChooseCoachDataContainer() {
         <div className="flex flex-col items-center space-y-5">
           <h2 className="font-normal capitalize text-xl">hours of coaching</h2>
           <Input
-            className="w-40 font-bold border border-primary"
+            className="w-40 border border-primary"
             type="number"
             value={numberVal}
             onChange={handleCoachingHoursChange}

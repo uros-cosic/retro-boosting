@@ -84,7 +84,7 @@ function WinBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Current LP</h2>
                 <Select onValueChange={handleLpChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="LP 0-20" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -99,7 +99,7 @@ function WinBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -114,7 +114,7 @@ function WinBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Solo/Duo" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">

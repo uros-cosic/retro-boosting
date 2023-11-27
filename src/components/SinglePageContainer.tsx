@@ -32,11 +32,11 @@ function SinglePageContainer({
           <div className="flex flex-col justify-center space-y-3 h-full">
             <Badge
               variant={"outline"}
-              className="text-white bg-primary uppercase font-normal text-[9px]"
+              className="text-white bg-primary uppercase font-normal text-[10px] lg:text-xs"
             >
               {data.elo}
             </Badge>
-            <h2 className="text-white text-2xl font-bold">{data.name}</h2>
+            <h2 className="text-white text-2xl">{data.name}</h2>
           </div>
         </div>
         {data.rating && (
@@ -79,7 +79,7 @@ function SinglePageContainer({
           />
           <div className="h-full w-full absolute top-0 left-0 bg-primary/50" />
           <div className="absolute h-full w-full flex flex-col items-center justify-center p-5">
-            <h1 className="font-bold text-3xl z-10">About</h1>
+            <h1 className="font-bold text-3xl z-10 uppercase">About</h1>
             <div className="h-full flex items-center z-10">
               <p className="text-center text-xs lg:text-sm text-gray-300">
                 {data.about}
@@ -92,21 +92,17 @@ function SinglePageContainer({
             <h3 className="text-sm lg:text-2xl uppercase font-bold">
               Orders Completed
             </h3>
-            <p className="text-xs lg:text-xl font-normal">
-              {data.ordersCompleted}
-            </p>
+            <p className="text-xs lg:text-xl">{data.ordersCompleted}</p>
           </div>
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary flex flex-col items-center justify-center">
             <h3 className="text-sm lg:text-2xl uppercase font-bold">
               {type === "booster" ? "Boosting Since" : "Coaching Since"}
             </h3>
-            <p className="text-xs lg:text-xl font-normal">
-              {data.boostingSince}
-            </p>
+            <p className="text-xs lg:text-xl">{data.boostingSince}</p>
           </div>
           <div className="bg-black rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary flex flex-col items-center justify-center">
             <h3 className="text-sm lg:text-2xl uppercase font-bold">Roles</h3>
-            <div className="text-xs lg:text-xl font-normal space-x-0 lg:space-x-3 space-y-1 lg:space-y-0 w-full flex flex-col lg:flex-row text-center items-center justify-center">
+            <div className="text-xs lg:text-xl space-x-0 lg:space-x-3 space-y-1 lg:space-y-0 w-full flex flex-col lg:flex-row text-center items-center justify-center">
               {data.roles?.length === 5 ? (
                 <div className="flex items-center">
                   <Image

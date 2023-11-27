@@ -60,7 +60,7 @@ function ChooseArenaRankContainer() {
         <h2 className="font-normal capitalize text-2xl">current rank</h2>
         <div>
           <Select onValueChange={(val) => handleChange(val)}>
-            <SelectTrigger className="w-40 font-bold border border-primary">
+            <SelectTrigger className="w-40 border border-primary">
               <SelectValue
                 className="uppercase"
                 placeholder={arenaTierMapping[
@@ -80,7 +80,7 @@ function ChooseArenaRankContainer() {
         <div className="flex flex-col items-center space-y-5">
           <h2 className="font-normal capitalize text-xl">number of games</h2>
           <Input
-            className="w-40 font-bold border border-primary"
+            className="w-40 border border-primary"
             type="number"
             value={numberVal}
             onChange={handleNumOfGamesChange}

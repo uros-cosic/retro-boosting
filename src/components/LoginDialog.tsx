@@ -12,6 +12,8 @@ import { FaGoogle } from "react-icons/fa";
 import LoginForm from "./LoginForm";
 import { UserContent, UserContext } from "@/lib/UserContext";
 import { ImSpinner2 } from "react-icons/im";
+import { DialogClose } from "@radix-ui/react-dialog";
+import Link from "next/link";
 
 function LoginDialog() {
   const { user, setUser } = useContext<UserContent>(UserContext);
@@ -37,6 +39,14 @@ function LoginDialog() {
           </DialogTitle>
         </DialogHeader>
         <LoginForm />
+        <DialogClose asChild>
+          <Link
+            href="/forgotPassword"
+            className="text-primary underline hover:text-primary/90 text-sm"
+          >
+            Forgot Password
+          </Link>
+        </DialogClose>
         <div className="before:border-t flex before:flex-1 items-center before:border-white after:border-t after:flex-1 after:border-white text-white">
           <p className="text-center uppercase mx-4 font-normal text-sm">or</p>
         </div>

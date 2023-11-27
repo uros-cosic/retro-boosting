@@ -71,7 +71,7 @@ function CoachingContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Role</h2>
                 <Select onValueChange={handleRoleChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Jungle" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -86,7 +86,7 @@ function CoachingContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -101,7 +101,7 @@ function CoachingContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Language</h2>
                 <Select onValueChange={handleLanguageChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary">
+                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="English" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
