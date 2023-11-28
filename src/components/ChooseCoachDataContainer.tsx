@@ -78,7 +78,7 @@ function ChooseCoachDataContainer() {
     <div className="px-5 lg:px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary space-x-3 shadow-base shadow-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center flex-col space-y-3">
         <h2 className="font-normal uppercase text-xl">coach</h2>
-        <Avatar className="h-1/2 w-fit">
+        <Avatar className="h-1/2 w-fit border border">
           <AvatarImage
             src={coachingOrderData.coach.avatar}
             className={`${
@@ -130,7 +130,7 @@ function ChooseCoachDataContainer() {
                   className="h-14 w-full flex items-center justify-between pr-1"
                 >
                   <div className="flex space-x-2 items-center h-full w-full">
-                    <Avatar className="h-full w-auto">
+                    <Avatar className="h-full w-auto border">
                       <AvatarImage
                         src={coachObj.avatar}
                         className="h-full w-auto"

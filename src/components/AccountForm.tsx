@@ -45,7 +45,7 @@ function AccountForm() {
           render={({ field }) => (
             <FormItem className="flex items-center justify-center">
               <div className="relative w-fit">
-                <Avatar className="h-24 w-fit">
+                <Avatar className="h-24 w-fit border">
                   <AvatarImage
                     src={user.data.avatar}
                     className="bg-white h-full w-auto"

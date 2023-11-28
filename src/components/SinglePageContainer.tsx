@@ -25,14 +25,14 @@ function SinglePageContainer({
     <div className="flex flex-col space-y-10 max-w-7xl mx-auto px-1">
       <div className="flex items-center justify-between">
         <div className="flex space-x-3 lg:space-x-5 items-center h-28">
-          <Avatar className="h-full w-fit">
+          <Avatar className="h-full w-fit border">
             <AvatarImage src={data.avatar} className="h-full w-auto" />
             <AvatarFallback className="text-white">{data.name}</AvatarFallback>
           </Avatar>
           <div className="flex flex-col justify-center space-y-3 h-full">
             <Badge
               variant={"outline"}
-              className="text-white bg-primary uppercase font-normal text-[10px] lg:text-xs"
+              className="text-white bg-primary uppercase text-[10px] lg:text-xs text-center w-fit"
             >
               {data.elo}
             </Badge>
@@ -144,7 +144,7 @@ function SinglePageContainer({
                 <div className="w-[97vw] lg:w-[30rem] h-full space-y-7 flex flex-col items-center justify-center">
                   <div className="w-full flex items-center justify-between">
                     <div className="w-[40%] h-full flex items-center space-x-2 md:justify-between">
-                      <Avatar className="md:h-20 w-auto">
+                      <Avatar className="md:h-20 w-auto border">
                         <AvatarImage
                           src={review.customer.avatar}
                           className="bg-white h-full"

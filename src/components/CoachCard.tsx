@@ -28,7 +28,7 @@ function CoachCard({
         className="w-40 lg:w-[95%] h-full lg:h-32 bg-black shadow-base shadow-primary hover:bg-black/90 transition-colors rounded-xl border-primary border p-2 lg:p-5 flex flex-col lg:flex-row items-center justify-center space-y-1"
       >
         <div className="h-fit lg:h-full flex flex-col lg:flex-row w-full items-center text-center lg:text-left space-x-0 lg:space-x-3">
-          <Avatar className="h-12 w-auto lg:h-full">
+          <Avatar className="h-12 w-auto lg:h-full border">
             <AvatarImage src={data.coach.avatar} className="h-full w-auto" />
             <AvatarFallback className="text-white">
               {data.coach.name}

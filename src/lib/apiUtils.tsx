@@ -11,6 +11,7 @@ export interface BoosterCardInterface {
   roles: Array<string>;
   boostingSince: number;
   ordersCompleted: number;
+  type: Array<string>;
   _id: string;
   discordTag?: string;
   activeOrders?: Array<any>;
@@ -51,6 +52,7 @@ export interface CoachCardInterface {
   mainRole: string;
   elo: string;
   discordTag?: string;
+  type: Array<string>;
 }
 
 export interface ReviewCardInterface {
@@ -123,7 +125,7 @@ const boostersContent = [
   {
     avatar: "/img/temp/boosters/prince.png",
     name: "prince",
-    link: "/boosters/prince",
+    link: "/team/boosters/prince",
     rating: 5,
     ratingsQuantity: 20,
     slug: "prince",
@@ -135,12 +137,13 @@ const boostersContent = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
     boostingSince: 2023,
     ordersCompleted: 15,
-    reviews,
+    type: ["booster"],
+    reviews: [...reviews, ...reviews],
   },
   {
     avatar: "/img/temp/boosters/lexa.png",
     name: "lexa",
-    link: "/boosters/lexa",
+    link: "/team/boosters/lexa",
     rating: 5,
     ratingsQuantity: 20,
     slug: "lexa",
@@ -152,12 +155,13 @@ const boostersContent = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
     boostingSince: 2023,
     ordersCompleted: 15,
-    reviews,
+    type: ["booster"],
+    reviews: [...reviews, ...reviews],
   },
   {
     avatar: "/img/temp/boosters/tama.png",
     name: "tama",
-    link: "/boosters/tama",
+    link: "/team/boosters/tama",
     rating: 5,
     ratingsQuantity: 20,
     slug: "tama",
@@ -169,7 +173,26 @@ const boostersContent = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
     boostingSince: 2023,
     ordersCompleted: 15,
-    reviews,
+    type: ["booster"],
+    reviews: [...reviews, ...reviews],
+  },
+  {
+    avatar: "/img/temp/boosters/electrising.jpg",
+    name: "Electrising",
+    link: "/team/boosters/Electrising",
+    rating: 5,
+    ratingsQuantity: 20,
+    slug: "Electrising",
+    _id: "Electrising",
+    roles: ["jungle", "support", "adc", "mid", "top"],
+    mainRole: "any",
+    elo: "gladiator",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+    boostingSince: 2023,
+    ordersCompleted: 15,
+    type: ["arena booster"],
+    reviews: [...reviews, ...reviews],
   },
 ];
 
@@ -177,7 +200,7 @@ const coachesContent = [
   {
     avatar: "/img/temp/coaches/lexa.png",
     name: "lexa",
-    link: "/coaches/lexa",
+    link: "/team/coaches/lexa",
     rating: 5,
     ratingsQuantity: 20,
     slug: "lexa",
@@ -189,12 +212,13 @@ const coachesContent = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
     boostingSince: 2023,
     ordersCompleted: 15,
-    reviews,
+    type: ["booster", "coach"],
+    reviews: [...reviews, ...reviews],
   },
   {
     avatar: "/img/temp/coaches/ASCO.jpg",
     name: "ASCO",
-    link: "/coaches/asco",
+    link: "/team/coaches/asco",
     rating: 5,
     ratingsQuantity: 20,
     slug: "asco",
@@ -206,7 +230,8 @@ const coachesContent = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
     boostingSince: 2023,
     ordersCompleted: 15,
-    reviews,
+    type: ["booster", "coach"],
+    reviews: [...reviews, ...reviews],
   },
 ];
 
@@ -568,6 +593,17 @@ export const getOrdersData = async () => {
       resolve({
         status: "success",
         data: data,
+      });
+    }, 500);
+  });
+};
+
+export const getTeam = async () => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: { team: [...boostersContent, ...coachesContent], pages: 3 },
       });
     }, 500);
   });

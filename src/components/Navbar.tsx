@@ -49,6 +49,10 @@ function Navbar() {
       label: "coaching",
       href: "/coaching",
     },
+    {
+      label: "our team",
+      href: "/team",
+    },
   ];
 
   const pathname = usePathname();
@@ -56,8 +60,8 @@ function Navbar() {
   return (
     <nav className="text-white mx-auto flex items-center justify-between h-full">
       <div className="h-full flex space-x-5 items-center">
-        <div className="h-full flex items-center space-x-2 md:space-x-0">
-          <div className="md:hidden h-full flex items-center">
+        <div className="h-full flex items-center space-x-2 lg:space-x-0">
+          <div className="lg:hidden h-full flex items-center">
             <Sheet>
               <SheetTrigger>
                 <AiOutlineMenu className="text-2xl" />
@@ -82,7 +86,7 @@ function Navbar() {
             <Logo />
           </Link>
         </div>
-        <ul className="hidden md:flex uppercase items-center text-sm font-normal space-x-5">
+        <ul className="hidden lg:flex uppercase items-center text-sm font-normal space-x-5">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link

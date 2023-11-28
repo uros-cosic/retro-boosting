@@ -90,6 +90,10 @@ function Footer() {
       label: "coaching",
       href: "/coaching",
     },
+    {
+      label: "our team",
+      href: "/team",
+    },
   ];
 
   return (
