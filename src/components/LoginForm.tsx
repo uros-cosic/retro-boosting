@@ -14,7 +14,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "./ui/input";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { UserContent, UserContext } from "@/lib/UserContext";
-import { UserDataInterface, handleLogin } from "@/lib/apiUtils";
+import { handleLogin } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
 
 function LoginForm() {
@@ -30,7 +30,7 @@ function LoginForm() {
   const onSubmit = async (values: LoginFormValues) => {
     // temp - will pass values to handleLogin
     setLoading(true);
-    const data: UserDataInterface | any = await handleLogin();
+    const data: any = await handleLogin();
     if (data.status === "success") {
       setUser(data.data);
       if (data.data?.role === "administrator") window.location.assign("/admin");

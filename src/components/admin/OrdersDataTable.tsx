@@ -36,6 +36,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { OrderPayment } from "@/lib/apiUtils";
+import { AdminDataContent, AdminDataContext } from "@/lib/AdminContext";
 
 export const columns: ColumnDef<OrderPayment>[] = [
   {
@@ -86,6 +87,13 @@ export const columns: ColumnDef<OrderPayment>[] = [
     cell: ({ row }) => <div className="lowercase">{row.getValue("type")}</div>,
   },
   {
+    accessorKey: "createdAt",
+    header: () => <div>Created At</div>,
+    cell: ({ row }) => (
+      <div className="lowercase">{row.getValue("createdAt")}</div>
+    ),
+  },
+  {
     accessorKey: "amount",
     header: () => <div className="text-right">Amount</div>,
     cell: ({ row }) => {
@@ -124,6 +132,16 @@ export const columns: ColumnDef<OrderPayment>[] = [
             >
               Copy Order ID
             </DropdownMenuItem>
+            {payment.claimedBy && (
+              <DropdownMenuItem
+                className="hover:bg-muted-foreground hover:text-white"
+                onClick={() =>
+                  navigator.clipboard.writeText(payment.claimedBy || "")
+                }
+              >
+                Copy Claimer ID
+              </DropdownMenuItem>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
       );
@@ -131,7 +149,8 @@ export const columns: ColumnDef<OrderPayment>[] = [
   },
 ];
 
-function OrdersDataTable({ data }: { data: Array<OrderPayment> }) {
+function OrdersDataTable() {
+  const { data } = React.useContext<AdminDataContent>(AdminDataContext);
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -141,7 +160,7 @@ function OrdersDataTable({ data }: { data: Array<OrderPayment> }) {
   const [rowSelection, setRowSelection] = React.useState({});
 
   const table = useReactTable({
-    data,
+    data: data.ordersData,
     columns,
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,

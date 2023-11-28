@@ -1,11 +1,14 @@
 "use client";
 
+import { AdminDataContent, AdminDataContext } from "@/lib/AdminContext";
+import { useContext } from "react";
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
-export function Overview({ data }: { data: Array<any> }) {
+export function Overview() {
+  const { data } = useContext<AdminDataContent>(AdminDataContext);
   return (
     <ResponsiveContainer width="100%" height={350}>
-      <BarChart data={data}>
+      <BarChart data={data.chartData}>
         <XAxis
           dataKey="name"
           stroke="#fff"

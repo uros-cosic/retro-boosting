@@ -15,7 +15,6 @@ import { Input } from "./ui/input";
 import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { UserContent, UserContext } from "@/lib/UserContext";
 import { handleRegister } from "@/lib/apiUtils";
-import { UserDataInterface } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
 
 function RegisterForm() {
@@ -31,7 +30,7 @@ function RegisterForm() {
   const onSubmit = async (values: RegisterFormValues) => {
     // temp - will pass values to handleRegister
     setLoading(true);
-    const data: UserDataInterface | any = await handleRegister();
+    const data: any = await handleRegister();
     if (data.status === "success") {
       setUser(data);
       window.location.assign("/");

@@ -9,7 +9,7 @@ import { twMerge } from "tailwind-merge";
 import RegisterDialog from "./RegisterDialog";
 import LoginDialog from "./LoginDialog";
 import { UserContext } from "@/lib/UserContext";
-import { getMe, UserDataInterface } from "@/lib/apiUtils";
+import { getMe } from "@/lib/apiUtils";
 import AccountDialog from "./AccountDialog";
 import { Skeleton } from "./ui/skeleton";
 
@@ -22,7 +22,7 @@ function Navbar() {
   const [loading, setLoading] = useState(true);
 
   const checkUser = async () => {
-    const data: UserDataInterface | any = await getMe();
+    const data: any = await getMe();
     if (data.status === "success") {
       setUser({
         isLoggedIn: true,
