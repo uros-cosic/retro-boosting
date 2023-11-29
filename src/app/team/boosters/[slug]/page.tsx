@@ -1,10 +1,6 @@
 import NotFound from "@/app/not-found";
 import SinglePageContainer from "@/components/SinglePageContainer";
-import {
-  BoosterCardInterface,
-  getBoosterBySlug,
-  getBoosterReviews,
-} from "@/lib/apiUtils";
+import { getBoosterBySlug, getBoosterReviews } from "@/lib/apiUtils";
 import React from "react";
 
 async function Page({ params }: { params: { slug: string } }) {

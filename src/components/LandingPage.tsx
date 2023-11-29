@@ -17,7 +17,7 @@ function LandingPage() {
         <h1 className="text-white text-lg sm:text-4xl font-bold text-center">
           Say Goodbye to Losing Streaks
           <br />
-          Get Your Winning Edge with a Booster!
+          Get Your Winning Edge with a Booster
         </h1>
         <h2 className="text-gray-300 text-xs sm:text-xl text-center">
           Or unleash your true potential with coaching
