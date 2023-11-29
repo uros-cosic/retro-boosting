@@ -5,8 +5,7 @@ import BoosterCard from "./BoosterCard";
 import { getTopBoosters, BoosterCardInterface } from "@/lib/apiUtils";
 
 async function BoostingServiceSection() {
-  const boostersContent: Array<BoosterCardInterface> | any =
-    await getTopBoosters();
+  const boostersContent: any = await getTopBoosters();
 
   return (
     <section className="flex items-center justify-center w-full relative h-[65vh]">
@@ -39,7 +38,7 @@ async function BoostingServiceSection() {
             connect with booster
           </Link>
         </div>
-        <div className="w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-start lg:space-y-5 space-x-3 lg:space-x-0 mx-auto overflow-x-scroll lg:overflow-x-auto">
+        <div className="w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-start sm:justify-center lg:space-y-5 space-x-3 lg:space-x-0 mx-auto overflow-x-auto">
           {boostersContent.map((booster: BoosterCardInterface, idx: number) => (
             <BoosterCard key={idx} data={{ booster, idx }} />
           ))}

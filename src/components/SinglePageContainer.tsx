@@ -137,13 +137,13 @@ function SinglePageContainer({
       {reviews.length && (
         <div className="w-full text-white space-y-10">
           <h1 className="font-bold text-3xl">Read Reviews</h1>
-          <div className="w-full pb-5 overflow-x-scroll flex space-x-5 max-w-7xl">
+          <div className="w-full pb-5 overflow-x-auto flex space-x-5 max-w-7xl">
             {reviews.map((review, idx) => (
               <div
                 key={idx}
                 className="rounded-xl border border-primary bg-black p-1 sm:p-7 flex items-center justify-center shadow-base shadow-primary"
               >
-                <div className="w-[97vw] lg:w-[30rem] h-full space-y-7 flex flex-col items-center justify-center">
+                <div className="w-[85vw] lg:w-[30rem] h-full space-y-7 flex flex-col items-center justify-center">
                   <div className="w-full flex items-center justify-between">
                     <div className="w-[40%] h-full flex items-center space-x-2 md:justify-between">
                       <Avatar className="md:h-20 w-auto border">

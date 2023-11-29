@@ -7,14 +7,6 @@ import {
 } from "@/lib/apiUtils";
 import React from "react";
 import NotFound from "../not-found";
-import { CalendarDateRangePicker } from "@/components/admin/DateRangePicker";
-import { Overview } from "@/components/admin/Overview";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { priceify } from "@/lib/utils";
-import RecentOrders from "@/components/admin/RecentOrders";
-import OrdersDataTable from "@/components/admin/OrdersDataTable";
-import { DateRange } from "react-day-picker";
 import Dashboard from "@/components/admin/Dashboard";
 
 async function Page() {
