@@ -33,6 +33,7 @@ function BoostingServiceContainer({
       window.removeEventListener("scroll", checkMiddleVisibility);
     };
   }, [isMiddleVisible]);
+
   return (
     <section
       className="flex items-center justify-center w-full relative h-[65vh] overflow-x-clip"

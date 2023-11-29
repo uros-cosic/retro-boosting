@@ -1,28 +1,8 @@
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Parallax from "./Parallax";
 
 function LandingPage() {
-  const parallaxEffect = () => {
-    const parallax = document.querySelector(".parallax") as HTMLElement;
-    if (parallax) {
-      const scrollPosition = window.pageYOffset;
-      parallax.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", parallaxEffect);
-    window.addEventListener("resize", parallaxEffect);
-
-    return () => {
-      window.removeEventListener("scroll", parallaxEffect);
-      window.removeEventListener("resize", parallaxEffect);
-    };
-  }, []);
   return (
     <section className="relative w-full h-[60vh]">
       <Image
