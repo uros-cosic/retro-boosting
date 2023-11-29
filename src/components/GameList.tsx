@@ -4,7 +4,7 @@ import Link from "next/link";
 const links = [
   {
     label: "ranked",
-    link: "/boosting/boosting#nav",
+    link: "/boosting#nav",
   },
   {
     label: "duo",
