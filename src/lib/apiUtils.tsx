@@ -255,7 +255,7 @@ export const getTopBoosters = async () => {
   // TEMP FETCHING SIMULATION
   return await new Promise((resolve) => {
     setTimeout(() => {
-      resolve(boostersContent);
+      resolve(boostersContent.slice(0, 3));
     }, 500);
   });
 };
@@ -264,7 +264,7 @@ export const getTopCoaches = async () => {
   // TEMP FETCHING SIMULATION
   return await new Promise((resolve) => {
     setTimeout(() => {
-      resolve(coachesContent);
+      resolve(coachesContent.slice(0, 3));
     }, 500);
   });
 };

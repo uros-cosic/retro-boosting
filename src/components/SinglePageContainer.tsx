@@ -58,7 +58,9 @@ function SinglePageContainer({
                   ))}
               </div>
               {data.ratingsQuantity && (
-                <p className="text-xs">{`(${data.ratingsQuantity} Reviews)`}</p>
+                <p className="text-xs">{`(${data.ratingsQuantity} ${
+                  data.ratingsQuantity > 1 ? "Reviews" : "Review"
+                })`}</p>
               )}
             </div>
           </div>
