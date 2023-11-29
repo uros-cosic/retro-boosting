@@ -1,30 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
 
-function GameList() {
-  const links = [
-    {
-      label: "ranked",
-      link: "/boosting/boosting#nav",
-    },
-    {
-      label: "duo",
-      link: "/boosting/duo#nav",
-    },
-    {
-      label: "casual",
-      link: "/boosting/normals#nav",
-    },
-    {
-      label: "win",
-      link: "/boosting/win#nav",
-    },
-    {
-      label: "arena",
-      link: "/boosting/arena#nav",
-    },
-  ];
+const links = [
+  {
+    label: "ranked",
+    link: "/boosting/boosting#nav",
+  },
+  {
+    label: "duo",
+    link: "/boosting/duo#nav",
+  },
+  {
+    label: "casual",
+    link: "/boosting/normals#nav",
+  },
+  {
+    label: "win",
+    link: "/boosting/win#nav",
+  },
+  {
+    label: "arena",
+    link: "/boosting/arena#nav",
+  },
+];
 
+function GameList() {
   return (
     <section className="py-10 max-w-5xl mx-auto space-y-5 px-1 lg:px-0">
       <h1 className="text-3xl font-normal text-center text-white uppercase">
