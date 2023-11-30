@@ -1,6 +1,6 @@
 "use client";
 import { TeamDataContext } from "@/lib/TeamContext";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TeamMenuLeft from "./TeamMenuLeft";
 import TeamCard from "./TeamCard";
 import {
@@ -12,6 +12,8 @@ import {
 import { Button } from "./ui/button";
 import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
+import { Skeleton } from "./ui/skeleton";
+import { getTeam } from "@/lib/apiUtils";
 
 function TeamPageContainer({
   data,
@@ -25,7 +27,26 @@ function TeamPageContainer({
   const [showPages, setShowPages] = useState(
     [...Array(Math.min(data.pages, 5))].map((_, idx) => idx + 1)
   );
+  const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(1);
+  const [options, setOptions] = useState({
+    searchVal: "",
+    boosterChecked: false,
+    coachChecked: false,
+    server: "any",
+    language: "any",
+  });
+
+  const handleChange = async () => {
+    const data: any = await getTeam();
+    setTeamData(data.data);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    handleChange();
+  }, [page, options]);
 
   return (
     <div className="max-w-7xl mx-auto text-white flex space-x-5 justify-between px-1 lg:px-0">
@@ -35,15 +56,19 @@ function TeamPageContainer({
           setData: setTeamData,
         }}
       >
-        <TeamMenuLeft />
+        <TeamMenuLeft options={options} setOptions={setOptions} />
         <div className="h-full w-full space-y-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
-            {teamData.team.map((teamMemberObj, idx) => (
-              <TeamCard
-                key={teamMemberObj._id + `-${idx}`}
-                data={teamMemberObj}
-              />
-            ))}
+            {loading
+              ? [...Array(6)].map((_, idx) => (
+                  <Skeleton key={idx} className="h-96 bg-muted-foreground" />
+                ))
+              : teamData.team.map((teamMemberObj, idx) => (
+                  <TeamCard
+                    key={teamMemberObj._id + `-${idx}`}
+                    data={teamMemberObj}
+                  />
+                ))}
           </div>
           {data.pages > 1 && (
             <div className="flex items-center w-full text-center justify-center text-xl space-x-2">

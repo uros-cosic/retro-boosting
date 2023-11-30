@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Checkbox } from "./ui/checkbox";
@@ -11,28 +11,77 @@ import {
 } from "./ui/select";
 import { Button } from "./ui/button";
 
-function TeamMenuLeft() {
+function TeamMenuLeft({
+  options,
+  setOptions,
+}: {
+  options: {
+    searchVal: string;
+    boosterChecked: boolean;
+    coachChecked: boolean;
+    server: string;
+    language: string;
+  };
+  setOptions: any;
+}) {
   return (
     <div className="py-5 px-10 rounded-xl bg-black border border-primary h-fit space-y-10 uppercase shadow-base shadow-primary">
       <div className="space-y-2">
         <Label htmlFor="teamMenuSearch">Search</Label>
-        <Input id="teamMenuSearch" className="border-primary border w-44" />
+        <Input
+          id="teamMenuSearch"
+          className="border-primary border w-44"
+          value={options.searchVal}
+          onChange={(e) => {
+            setOptions((prev: any) => {
+              return { ...prev, searchVal: e.target.value };
+            });
+          }}
+          autoComplete="off"
+        />
       </div>
       <div className="flex flex-col space-y-5">
         <div className="flex items-center space-x-2">
-          <Checkbox id="teamMenuBoosterCB" />
-          <Label htmlFor="teamMenuBoosterCB">booster</Label>
+          <Checkbox
+            id="teamMenuBoosterCB"
+            onCheckedChange={(checked) => {
+              setOptions((prev: any) => {
+                return { ...prev, boosterChecked: checked };
+              });
+            }}
+            checked={options.boosterChecked}
+          />
+          <Label htmlFor="teamMenuBoosterCB" className="cursor-pointer">
+            booster
+          </Label>
         </div>
         <div className="flex items-center space-x-2">
-          <Checkbox id="teamMenuCoachCB" />
-          <Label htmlFor="teamMenuCoachCB">coach</Label>
+          <Checkbox
+            id="teamMenuCoachCB"
+            onCheckedChange={(checked) => {
+              setOptions((prev: any) => {
+                return { ...prev, coachChecked: checked };
+              });
+            }}
+            checked={options.coachChecked}
+          />
+          <Label htmlFor="teamMenuCoachCB" className="cursor-pointer">
+            coach
+          </Label>
         </div>
       </div>
       <div className="flex flex-col space-y-5">
         <Label>server</Label>
-        <Select>
+        <Select
+          onValueChange={(val) => {
+            setOptions((prev: any) => {
+              return { ...prev, server: val };
+            });
+          }}
+          value={options.server}
+        >
           <SelectTrigger className="border border-primary w-44">
-            <SelectValue placeholder="any" />
+            <SelectValue placeholder={options.server} />
           </SelectTrigger>
           <SelectContent className="border border-primary">
             <SelectItem value="any">any</SelectItem>
@@ -44,9 +93,16 @@ function TeamMenuLeft() {
           </SelectContent>
         </Select>
         <Label>language</Label>
-        <Select>
+        <Select
+          onValueChange={(val) => {
+            setOptions((prev: any) => {
+              return { ...prev, language: val };
+            });
+          }}
+          value={options.language}
+        >
           <SelectTrigger className="border border-primary w-44">
-            <SelectValue placeholder="any" />
+            <SelectValue placeholder={options.language} />
           </SelectTrigger>
           <SelectContent className="border border-primary">
             <SelectItem value="any">any</SelectItem>
@@ -56,7 +112,18 @@ function TeamMenuLeft() {
           </SelectContent>
         </Select>
       </div>
-      <Button className="bg-primary w-full uppercase hover:bg-primary/90">
+      <Button
+        className="bg-primary w-full uppercase hover:bg-primary/90"
+        onClick={() => {
+          setOptions({
+            searchVal: "",
+            boosterChecked: false,
+            coachChecked: false,
+            server: "any",
+            language: "any",
+          });
+        }}
+      >
         Clear
       </Button>
     </div>

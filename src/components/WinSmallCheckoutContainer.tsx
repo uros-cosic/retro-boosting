@@ -161,7 +161,10 @@ function WinSmallCheckoutContainer() {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-normal">Lane</h3>
-              <Select onValueChange={handleLaneChange}>
+              <Select
+                onValueChange={handleLaneChange}
+                value={winOrderData.options.extraOptions.lane}
+              >
                 <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
                   <SelectValue
                     placeholder={
@@ -183,7 +186,10 @@ function WinSmallCheckoutContainer() {
             </div>
             <div>
               <h3 className="text-lg font-normal">Flash Placement</h3>
-              <Select onValueChange={handleFlashChange}>
+              <Select
+                onValueChange={handleFlashChange}
+                value={winOrderData.options.extraOptions.flashPlacement}
+              >
                 <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
                   <SelectValue
                     placeholder={
