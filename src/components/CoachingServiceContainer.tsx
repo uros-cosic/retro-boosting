@@ -51,7 +51,7 @@ function CoachingServiceContainer({
         <div
           className={twMerge(
             clsx(
-              "w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-center lg:space-y-5 space-x-3 lg:space-x-0 mx-auto ease-out transition-all duration-1000",
+              "w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-center lg:space-y-5 space-x-3 lg:space-x-0 mx-auto ease-out transition-all duration-700",
               {
                 "transform -translate-x-[100vw] opacity-0": !isMiddleVisible,
                 "transform opacity-100": isMiddleVisible,
@@ -66,7 +66,7 @@ function CoachingServiceContainer({
         <div
           className={twMerge(
             clsx(
-              "w-full lg:w-1/2 h-2/3 lg:h-full flex flex-col justify-center lg:justify-between space-y-3 lg:space-y-5 text-center lg:text-left items-center lg:items-start ease-out transition-all duration-1000",
+              "w-full lg:w-1/2 h-2/3 lg:h-full flex flex-col justify-center lg:justify-between space-y-3 lg:space-y-5 text-center lg:text-left items-center lg:items-start ease-out transition-all duration-700",
               {
                 "transform translate-x-[100vw] opacity-0": !isMiddleVisible,
                 "transform opacity-100": isMiddleVisible,

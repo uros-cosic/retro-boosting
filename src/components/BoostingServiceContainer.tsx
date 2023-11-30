@@ -50,7 +50,7 @@ function BoostingServiceContainer({
       <div
         className={twMerge(
           clsx(
-            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col lg:flex-row justify-between items-center ease-out transition-all duration-1000",
+            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col lg:flex-row justify-between items-center ease-out transition-all duration-700",
             {
               "transform -translate-x-[100vw] opacity-0": !isMiddleVisible,
               "transform opacity-100": isMiddleVisible,
@@ -81,7 +81,7 @@ function BoostingServiceContainer({
         <div
           className={twMerge(
             clsx(
-              "w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-start sm:justify-center lg:space-y-5 space-x-3 lg:space-x-0 mx-auto ease-out transition-all duration-1000 overflow-x-auto",
+              "w-full lg:w-[40%] h-[40%] lg:h-full flex flex-row lg:flex-col items-center justify-start sm:justify-center lg:space-y-5 space-x-3 lg:space-x-0 mx-auto ease-out transition-all duration-700 overflow-x-auto",
               {
                 "transform translate-x-[100vw] opacity-0": !isMiddleVisible,
                 "transform opacity-100": isMiddleVisible,

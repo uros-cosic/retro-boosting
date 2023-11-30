@@ -63,6 +63,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
         }
         height={150}
         width={150}
+        className="h-28 lg:h-36 w-auto"
       />
       <div className="flex flex-col items-center justify-center text-center w-full">
         <div className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-5 justify-center w-full items-center">

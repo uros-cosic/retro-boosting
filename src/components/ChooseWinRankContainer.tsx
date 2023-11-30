@@ -49,8 +49,9 @@ function ChooseWinRankContainer() {
         <Image
           src={tierMapping[winOrderData.currentRank].href}
           alt={tierMapping[winOrderData.currentRank].label}
-          height={250}
-          width={250}
+          height={150}
+          width={150}
+          className="h-28 lg:h-36 w-auto"
         />
       </div>
       <div className="flex flex-col items-center justify-center text-center w-full space-y-5">

@@ -608,3 +608,16 @@ export const getTeam = async () => {
     }, 500);
   });
 };
+
+export const getCheckout = async () => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: 'succes',
+        data: [
+          
+        ]
+      });
+    }, 500);
+  });
+}

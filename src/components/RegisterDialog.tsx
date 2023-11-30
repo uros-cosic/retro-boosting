@@ -44,14 +44,8 @@ function RegisterDialog() {
             aria-disabled={loading}
             onClick={handleGoogleClick}
           >
-            {loading ? (
-              <ImSpinner2 className="text-lg text-center animate-spin" />
-            ) : (
-              <>
-                <FaGoogle className="mr-3 text-lg" />
-                use google
-              </>
-            )}
+            <FaGoogle className="mr-3 text-lg" />
+            use google
           </Button>
         </div>
       </DialogContent>

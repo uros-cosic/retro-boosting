@@ -163,7 +163,9 @@ function SmallCheckoutContainer({
         <Dialog>
           <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
             <FaGear className="text-xl" />
-            <p className="uppercase font-medium text-xs">extra options</p>
+            <p className="uppercase font-medium text-xs underline">
+              lane & flash placement
+            </p>
           </DialogTrigger>
           <DialogContent className="bg-black border-primary border text-white">
             <DialogHeader className="space-y-3">
