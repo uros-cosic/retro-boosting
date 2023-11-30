@@ -31,7 +31,12 @@ import {
   SelectItem,
 } from "./ui/select";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
-import { getDiscountedPrice, getOrderPrice } from "@/lib/apiUtils";
+import {
+  getDiscountedPrice,
+  getOrderPrice,
+  validateCheckout,
+} from "@/lib/apiUtils";
+import { ImSpinner2 } from "react-icons/im";
 
 function SmallCheckoutContainer({
   extraOptions,
@@ -48,6 +53,8 @@ function SmallCheckoutContainer({
     discountedPrice: null,
     priceLoading: true,
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleOptionsChange = async () => {
     const data: any = await getOrderPrice();
@@ -126,6 +133,14 @@ function SmallCheckoutContainer({
         discountedPrice: data.data.discountedPrice,
       };
     });
+  };
+
+  const handlePurchaseClick = async () => {
+    setLoading(true);
+    const data: any = await validateCheckout();
+    if (data.status === "success") {
+      window.location.assign(`/checkout/${data.data.id}`);
+    }
   };
 
   return (
@@ -267,12 +282,18 @@ function SmallCheckoutContainer({
         </Button>
       </div>
       <SmallCheckoutPrice priceObj={priceObj} />
-      <Link
-        href="/checkout"
+      <Button
         className="bg-primary uppercase w-full rounded-xl text-center py-2 font-normal text-sm hover:bg-primary/90 transition-colors"
+        onClick={handlePurchaseClick}
+        disabled={loading}
+        aria-disabled={loading}
       >
-        purchase boost
-      </Link>
+        {loading ? (
+          <ImSpinner2 className="text-lg text-center animate-spin" />
+        ) : (
+          "purchase boost"
+        )}
+      </Button>
     </div>
   );
 }

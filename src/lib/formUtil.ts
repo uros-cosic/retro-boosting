@@ -69,3 +69,10 @@ export const forgotPasswordSchema = z.object({
 });
 
 export type ForgotPasswordValues = z.infer<typeof forgotPasswordSchema>;
+
+export const checkoutSchema = z.object({
+  email: z.string().email(),
+  paymentMethod: z.string().default("paypal"),
+});
+
+export type CheckoutValues = z.infer<typeof checkoutSchema>;

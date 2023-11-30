@@ -609,15 +609,32 @@ export const getTeam = async () => {
   });
 };
 
-export const getCheckout = async () => {
+export const validateCheckout = async () => {
   return await new Promise((resolve) => {
     setTimeout(() => {
       resolve({
-        status: 'succes',
-        data: [
-          
-        ]
+        status: "success",
+        data: {
+          id: 123,
+        },
       });
     }, 500);
   });
-}
+};
+
+export const getCheckout = async (id: string) => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+        data: {
+          totalPrice: 1234.5,
+          order: {
+            type: "Solo Boosting",
+            name: "Diamond IV - Master",
+          },
+        },
+      });
+    }, 500);
+  });
+};

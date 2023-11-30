@@ -35,6 +35,8 @@ import { Input } from "./ui/input";
 import SmallCheckoutPrice from "./SmallCheckoutPrice";
 import { normalsSwitchableOptions as switchableOptions } from "@/lib/data";
 import { getOrderPrice, getDiscountedPrice } from "@/lib/apiUtils";
+import { validateCheckout } from "@/lib/apiUtils";
+import { ImSpinner2 } from "react-icons/im";
 
 function NormalsSmallCheckoutContainer() {
   const { normalsOrderData, setNormalsOrderData } =
@@ -45,6 +47,8 @@ function NormalsSmallCheckoutContainer() {
     discountedPrice: null,
     priceLoading: true,
   });
+
+  const [loading, setLoading] = useState(false);
 
   const handleOptionsChange = async () => {
     const data: any = await getOrderPrice();
@@ -78,36 +82,6 @@ function NormalsSmallCheckoutContainer() {
     });
   };
 
-  const handleLaneChange = (val: string) => {
-    setNormalsOrderData((prev: any) => {
-      return {
-        ...prev,
-        options: {
-          ...prev.options,
-          extraOptions: {
-            ...prev.options.extraOptions,
-            lane: val,
-          },
-        },
-      };
-    });
-  };
-
-  const handleFlashChange = (val: string) => {
-    setNormalsOrderData((prev: any) => {
-      return {
-        ...prev,
-        options: {
-          ...prev.options,
-          extraOptions: {
-            ...prev.options.extraOptions,
-            flashPlacement: val,
-          },
-        },
-      };
-    });
-  };
-
   const handleDiscountClick = async () => {
     setPriceObj((prev: any) => {
       return {
@@ -123,6 +97,14 @@ function NormalsSmallCheckoutContainer() {
         discountedPrice: data.data.discountedPrice,
       };
     });
+  };
+
+  const handlePurchaseClick = async () => {
+    setLoading(true);
+    const data: any = await validateCheckout();
+    if (data.status === "success") {
+      window.location.assign(`/checkout/${data.data.id}`);
+    }
   };
 
   return (
@@ -184,12 +166,18 @@ function NormalsSmallCheckoutContainer() {
         </Button>
       </div>
       <SmallCheckoutPrice priceObj={priceObj} />
-      <Link
-        href="/checkout"
+      <Button
         className="bg-primary uppercase w-full rounded-xl text-center py-2 font-normal text-sm hover:bg-primary/90 transition-colors"
+        onClick={handlePurchaseClick}
+        disabled={loading}
+        aria-disabled={loading}
       >
-        purchase boost
-      </Link>
+        {loading ? (
+          <ImSpinner2 className="text-lg text-center animate-spin" />
+        ) : (
+          "purchase boost"
+        )}
+      </Button>
     </div>
   );
 }

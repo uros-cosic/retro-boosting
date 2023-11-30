@@ -47,7 +47,7 @@ function ContactForm() {
                   <Input
                     placeholder="name..."
                     {...field}
-                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
+                    className="bg-white text-black text-xs placeholder:text-black font-bold"
                   />
                 </FormControl>
                 <FormMessage />
@@ -65,7 +65,7 @@ function ContactForm() {
                     placeholder="email..."
                     {...field}
                     type="email"
-                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
+                    className="bg-white text-black text-xs placeholder:text-black font-bold"
                   />
                 </FormControl>
                 <FormMessage />
@@ -82,7 +82,7 @@ function ContactForm() {
                   <Input
                     placeholder="subject..."
                     {...field}
-                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
+                    className="bg-white text-black text-xs placeholder:text-black font-bold"
                   />
                 </FormControl>
                 <FormMessage />
@@ -99,7 +99,7 @@ function ContactForm() {
                 </FormLabel>
                 <FormControl>
                   <Textarea
-                    className="bg-white text-black  text-xs placeholder:text-black font-bold"
+                    className="bg-white text-black text-xs placeholder:text-black font-bold"
                     placeholder="question..."
                     {...field}
                   />
