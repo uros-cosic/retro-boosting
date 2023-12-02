@@ -49,7 +49,7 @@ function TeamPageContainer({
   }, [page, options]);
 
   return (
-    <div className="max-w-7xl mx-auto text-white flex space-x-5 justify-between px-1 lg:px-0">
+    <div className="max-w-7xl mx-auto text-white flex justify-between px-1 lg:px-0">
       <TeamDataContext.Provider
         value={{
           data: teamData,

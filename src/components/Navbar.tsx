@@ -39,7 +39,7 @@ function Navbar() {
   const navLinks = [
     {
       label: "support",
-      href: "/support#contact",
+      href: "/support",
     },
     {
       label: "boosting",

@@ -54,7 +54,7 @@ function CheckoutInformation({ data }: { data: any }) {
           <SheetTrigger>
             <AiOutlineMenu className="text-black text-2xl" />
           </SheetTrigger>
-          <SheetContent className="bg-gray-100 text-black flex flex-col items-center space-y-5 justify-center z-[100]">
+          <SheetContent className="bg-gray-100 text-black flex flex-col items-center space-y-5 justify-center">
             <div className="w-full flex items-center justify-between">
               <div>
                 <h1>{data.order.type}</h1>

@@ -17,7 +17,7 @@ function TeamCard({ data }: { data: any }) {
         <FaStar className="text-lg" />
         <p className="text-lg">{data.rating}</p>
       </div>
-      <Avatar className="h-12 sm:h-20 w-auto border">
+      <Avatar className="h-20 w-auto border">
         <AvatarImage src={data.avatar} className="h-full w-auto" />
         <AvatarFallback className="text-white">{data.name}</AvatarFallback>
       </Avatar>

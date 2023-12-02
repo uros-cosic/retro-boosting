@@ -30,7 +30,7 @@ function ContactForm() {
   };
 
   return (
-    <div className="py-10 px-1" id="contact">
+    <div className="py-10 px-1">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
