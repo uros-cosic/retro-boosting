@@ -296,7 +296,9 @@ export const getMe = async () => {
     setTimeout(() => {
       resolve({
         status: "fail",
-        data: null,
+        data: {
+          role: "administrator",
+        },
       });
     }, 500);
   });
