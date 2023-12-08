@@ -82,11 +82,11 @@ function Navbar() {
               </SheetContent>
             </Sheet>
           </div>
-          <Link href="/">
+          <Link href="/" className="border-gray-300 border-r px-5">
             <Logo />
           </Link>
         </div>
-        <ul className="hidden lg:flex uppercase items-center text-sm font-normal space-x-5">
+        <ul className="hidden lg:flex uppercase items-center text-xs font-normal space-x-5">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link

@@ -9,7 +9,7 @@ function Logo() {
       alt="Retro Boosting Logo"
       height={250}
       width={250}
-      className="h-10 w-auto"
+      className="h-6 w-auto"
     />
   );
 }
