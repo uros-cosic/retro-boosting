@@ -66,9 +66,9 @@ function ChooseRankContainer({ idx }: { idx: number }) {
         className="h-28 lg:h-36 w-auto"
       />
       <div className="flex flex-col items-center justify-center text-center w-full">
-        <div className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-5 justify-center w-full items-center">
+        <div className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-10 justify-center w-full items-center">
           <div className="space-y-5">
-            <h2 className="font-normal capitalize text-2xl text-left">
+            <h2 className="font-normal capitalize text-xl text-left">
               {idx === 0 ? "current rank" : "desired rank"}
             </h2>
             <Select onValueChange={(val) => handleChange(idx, val)}>
@@ -93,7 +93,7 @@ function ChooseRankContainer({ idx }: { idx: number }) {
           </div>
           {idx === 0 && (
             <div className="space-y-5">
-              <h2 className="font-normal capitalize text-2xl text-left">
+              <h2 className="font-normal capitalize text-xl text-left">
                 LP gains
               </h2>
               <Select onValueChange={handleLpGainsChange}>
