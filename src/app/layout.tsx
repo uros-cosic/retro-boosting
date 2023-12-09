@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Pixelify_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
-const pixelify_sans = Pixelify_Sans({ subsets: ["latin"] });
+const myFont = localFont({ src: "/fonts/Lilliput Steps.otf" });
 
 export const metadata: Metadata = {
   title: "RETRO BOOSTING",
@@ -50,7 +50,7 @@ export default function RootLayout({
           content="https://retro-boosting.vercel.app/img/logo.png"
         />
       </head>
-      <body className={`${pixelify_sans.className} antialiased bg-muted`}>
+      <body className={`${myFont.className} antialiased bg-muted`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
           <main>{children}</main>

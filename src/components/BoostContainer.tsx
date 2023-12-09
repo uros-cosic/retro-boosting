@@ -151,7 +151,7 @@ function SoloBoostContainer({
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-2/6 h-full bg-dark text-light rounded-xl p-10 border border-primary shadow-base shadow-primary">
+        <div className="w-full lg:w-2/6 h-full bg-dark text-light rounded-xl p-5 border border-primary shadow-base shadow-primary">
           <SmallCheckoutContainer
             extraOptions={extraOptions}
             switchableOptions={switchableOptions}

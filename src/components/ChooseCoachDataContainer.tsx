@@ -105,7 +105,7 @@ function ChooseCoachDataContainer() {
         </div>
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="font-normal capitalize bg-primary hover:bg-primary/90 w-40">
+            <Button className="font-normal capitalize bg-primary hover:bg-primary/90">
               choose your coach
             </Button>
           </DialogTrigger>
