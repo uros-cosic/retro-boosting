@@ -21,7 +21,7 @@ async function Page({ params }: { params: { token: string } }) {
     <div className="max-w-xl mx-auto py-32 space-y-20 text-light flex flex-col items-center justify-center">
       <h1 className="text-2xl text-center">Token Not Found</h1>
       <div className="text-grayed text-center space-y-10">
-        <p>Token has expired or doesn't exist</p>
+        <p>{"Token has expired or doesn't exist"}</p>
         <p>
           Go to{" "}
           <Link href="/forgotPassword" className="underline">
