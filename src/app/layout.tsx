@@ -17,7 +17,6 @@ export const metadata: Metadata = {
     title: "RETRO BOOSTING",
     description:
       "Unlock your full potential in League of Legends with Retro Boosting! 🚀 Our top-tier services include Elo boosting, arena boosting, and expert coaching. Level up your gameplay, climb the ranks, and dominate the competition with the best LoL boosting and coaching services available. Join the ranks of satisfied gamers who've achieved their dream ranks with Retro Boosting. Get started today!",
-    images: ["/img/logo.png"],
   },
 };
 
@@ -45,6 +44,10 @@ export default function RootLayout({
           type="image/png"
           sizes="16x16"
           href="/favicon/favicon-16x16.png"
+        />
+        <meta
+          property="og:image"
+          content="https://retro-boosting.vercel.app/img/logo.png"
         />
       </head>
       <body className={`${russo.className} antialiased bg-muted`}>
