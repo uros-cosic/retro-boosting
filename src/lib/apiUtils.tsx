@@ -1,5 +1,12 @@
 export const API_LINK = "http://retro.starlabs.rs/";
 
+const errorResponse = (err: any) => {
+  return {
+    status: "error",
+    message: err.message || "Try Again Later",
+  };
+};
+
 export interface BoosterCardInterface {
   avatar: string;
   name: string;
@@ -238,193 +245,238 @@ const coachesContent = [
 ];
 
 export const getOrderPrice = async () => {
-  // TEMP FETCHING SIMULATION
-  const price = Math.round(Math.random() * 7000);
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          total: price,
-          discountedPrice: null,
-        },
-      });
-    }, 500);
-  });
+  try {
+    const price = Math.round(Math.random() * 7000);
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            total: price,
+            discountedPrice: null,
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getTopBoosters = async () => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(boostersContent.slice(0, 3));
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(boostersContent.slice(0, 3));
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getTopCoaches = async () => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(coachesContent.slice(0, 3));
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(coachesContent.slice(0, 3));
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getTopReviews = async () => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve([...reviews, ...reviews]);
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve([...reviews, ...reviews]);
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getCoachesByOptions = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: coachesContent,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: coachesContent,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getMe = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "fail",
-        data: {
-          role: "administrator",
-        },
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "fail",
+          data: {
+            role: "administrator",
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const handleRegister = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          name: "temp-user",
-          avatar: "/img/temp/customer/customer.png",
-        },
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            name: "temp-user",
+            avatar: "/img/temp/customer/customer.png",
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const handleLogin = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          name: "temp-user",
-          avatar: "/img/temp/customer/customer.png",
-        },
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            name: "temp-user",
+            avatar: "/img/temp/customer/customer.png",
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const sendContactMessage = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: null,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: null,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getBoosterBySlug = async (slug: string) => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: boostersContent.filter((obj) => obj.slug === slug)[0],
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: boostersContent.filter((obj) => obj.slug === slug)[0],
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getBoosterReviews = async (boosterId: string) => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: boostersContent.filter((obj) => obj._id === boosterId)[0].reviews,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: boostersContent.filter((obj) => obj._id === boosterId)[0]
+            .reviews,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getCoachBySlug = async (slug: string) => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: coachesContent.filter((obj) => obj.slug === slug)[0],
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: coachesContent.filter((obj) => obj.slug === slug)[0],
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getCoachReviews = async (coachId: string) => {
-  // TEMP FETCHING SIMULATION
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: coachesContent.filter((obj) => obj._id === coachId)[0].reviews,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: coachesContent.filter((obj) => obj._id === coachId)[0].reviews,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getDiscountedPrice = async (total: number) => {
-  // temp - will always get 10% off
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          total,
-          discountedPrice: total - total * 0.1,
-        },
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            total,
+            discountedPrice: total - total * 0.1,
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const handleForgotPassword = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: null,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: null,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getChartData = async () => {
-  // temp
   const data: Array<ChartDataInterface> = [
     {
       name: "Jan",
@@ -476,31 +528,38 @@ export const getChartData = async () => {
     },
   ];
 
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: data,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: data,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getAnalytics = async () => {
-  // temp
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          totalRevenue: 45231,
-          users: 2350,
-          sales: 12234,
-          activeNow: 500,
-        },
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            totalRevenue: 45231,
+            users: 2350,
+            sales: 12234,
+            activeNow: 500,
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getRecentOrders = async () => {
@@ -537,14 +596,18 @@ export const getRecentOrders = async () => {
       type: "Win Boost",
     },
   ];
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: data,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: data,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getOrdersData = async () => {
@@ -592,116 +655,148 @@ export const getOrdersData = async () => {
     },
   ];
 
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: data,
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: data,
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const getTeam = async () => {
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: { team: [...boostersContent, ...coachesContent], pages: 3 },
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: { team: [...boostersContent, ...coachesContent], pages: 3 },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const validateCheckout = async () => {
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          id: 123,
-        },
-      });
-    }, 500);
-  });
-};
-
-export const getCheckout = async (id: string) => {
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-        data: {
-          totalPrice: 1234.5,
-          order: {
-            type: "Solo Boosting",
-            name: "Diamond IV - Master",
-          },
-        },
-      });
-    }, 500);
-  });
-};
-
-export const sendJobApplication = async (values: any) => {
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-      });
-    }, 500);
-  });
-};
-
-export const getCoachById = async (coachID: string | null) => {
-  if (coachID)
+  try {
     return await new Promise((resolve) => {
       setTimeout(() => {
         resolve({
           status: "success",
           data: {
-            avatar: "/img/temp/coaches/lexa.png",
-            name: "lexa",
-            link: "/team/coaches/lexa",
-            rating: 5,
-            ratingsQuantity: 20,
-            slug: "lexa",
-            _id: "lexa",
-            roles: ["jungle", "support"],
-            mainRole: "support",
-            elo: "challenger",
-            about:
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
-            coachingSince: 2023,
-            ordersCompleted: 15,
-            type: ["booster", "coach"],
-            reviews: [...reviews, ...reviews],
+            id: 123,
           },
         });
       }, 500);
     });
-  else return { status: "fail", data: null };
+  } catch (err: any) {
+    return errorResponse(err);
+  }
+};
+
+export const getCheckout = async (id: string) => {
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            totalPrice: 1234.5,
+            order: {
+              type: "Solo Boosting",
+              name: "Diamond IV - Master",
+            },
+          },
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
+};
+
+export const sendJobApplication = async (values: any) => {
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
+};
+
+export const getCoachById = async (coachID: string | null) => {
+  try {
+    if (coachID)
+      return await new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({
+            status: "success",
+            data: {
+              avatar: "/img/temp/coaches/lexa.png",
+              name: "lexa",
+              link: "/team/coaches/lexa",
+              rating: 5,
+              ratingsQuantity: 20,
+              slug: "lexa",
+              _id: "lexa",
+              roles: ["jungle", "support"],
+              mainRole: "support",
+              elo: "challenger",
+              about:
+                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+              coachingSince: 2023,
+              ordersCompleted: 15,
+              type: ["booster", "coach"],
+              reviews: [...reviews, ...reviews],
+            },
+          });
+        }, 500);
+      });
+    else return { status: "fail", data: null };
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const updatePassword = async (
   password: string,
   passwordConfirm: string
 ) => {
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };
 
 export const validatePasswordResetToken = async (token: string) => {
-  return await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve({
-        status: "success",
-      });
-    }, 500);
-  });
+  try {
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+        });
+      }, 500);
+    });
+  } catch (err: any) {
+    return errorResponse(err);
+  }
 };

@@ -9,10 +9,16 @@ import { Toaster } from "@/components/ui/toaster";
 const russo = Russo_One({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
-  title: "RETRO-BOOSTING",
+  title: "RETRO BOOSTING",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi a illo ipsam, vero ipsum voluptates recusandae saepe repellat numquam.",
+    "Unlock your full potential in League of Legends with Retro Boosting! 🚀 Our top-tier services include Elo boosting, arena boosting, and expert coaching. Level up your gameplay, climb the ranks, and dominate the competition with the best LoL boosting and coaching services available. Join the ranks of satisfied gamers who've achieved their dream ranks with Retro Boosting. Get started today!",
   icons: ["/img/logo.png"],
+  openGraph: {
+    title: "RETRO BOOSTING",
+    description:
+      "Unlock your full potential in League of Legends with Retro Boosting! 🚀 Our top-tier services include Elo boosting, arena boosting, and expert coaching. Level up your gameplay, climb the ranks, and dominate the competition with the best LoL boosting and coaching services available. Join the ranks of satisfied gamers who've achieved their dream ranks with Retro Boosting. Get started today!",
+    images: ["/img/logo.png"],
+  },
 };
 
 export default function RootLayout({
