@@ -68,7 +68,7 @@ function SinglePageContainer({
           </div>
         )}
       </div>
-      <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 text-light h-[50vh]">
+      <div className="flex flex-col space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 text-light lg:h-[50vh]">
         <div className="bg-dark rounded-xl border-primary border w-full lg:w-2/3 flex flex-col items-center shadow-base shadow-primary relative overflow-hidden">
           <Image
             src={
@@ -82,7 +82,7 @@ function SinglePageContainer({
             width={1920}
           />
           <div className="h-full w-full absolute top-0 left-0 bg-primary/50" />
-          <div className="absolute h-full w-full flex flex-col items-center justify-center p-5">
+          <div className="absolute h-full w-full flex flex-col items-center justify-center p-5 space-y-3">
             <h1 className="font-bold text-3xl z-10 uppercase text-white">
               About
             </h1>
@@ -92,7 +92,7 @@ function SinglePageContainer({
               </p>
             </div>
             <Button
-              className="bg-primary text-white border uppercase hover:bg-primary/90"
+              className="bg-primary text-white border uppercase hover:bg-primary/90 text-xs lg:text-sm"
               asChild
             >
               <Link

@@ -5,7 +5,7 @@ import React from "react";
 function TrustPilotSection() {
   return (
     <section className="py-10 w-full flex items-center justify-center px-1">
-      <Link href="/#" className="hover:opacity-70 transition-opacity">
+      <Link href="#" className="hover:opacity-70 transition-opacity">
         <Image
           src="/img/trust-temp.svg"
           alt="trustpilot rating"

@@ -29,191 +29,190 @@ function JobForm() {
   };
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="grid grid-cols-2 lg:grid-cols-3 gap-5"
-      >
-        <FormField
-          name="name"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Name:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="John Doe"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="email"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  type="email"
-                  {...field}
-                  placeholder="Email"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="type"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Type:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="Booster/Arena Booster/Coach"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="currentRank"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Current Rank:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="Challenger"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="server"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Server:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="EUW"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="opgg"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>OP.GG Link:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="EUW"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="mainLanes"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Main Lanes:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="MID, TOP"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="mainChampions"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Main Champions:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="Ahri, Tryndamere"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="country"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Country:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="Germany"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="languages"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Languages:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="English, German"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <FormField
-          name="discord"
-          control={form.control}
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Discord ID:</FormLabel>
-              <FormControl>
-                <Input
-                  className="bg-white text-black"
-                  {...field}
-                  placeholder="Discord ID"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+          <FormField
+            name="name"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Name:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="John Doe"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="email"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    type="email"
+                    {...field}
+                    placeholder="Email"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="type"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Type:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="Booster / Arena Booster / Coach"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="currentRank"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Current Rank:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="Challenger"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="server"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Server:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="EUW"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="opgg"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>OP.GG Link:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="op.gg"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="mainLanes"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Main Lanes:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="MID, TOP"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="mainChampions"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Main Champions:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="Ahri, Tryndamere"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="country"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Country:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="Germany"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="languages"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Languages:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="English, German"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+          <FormField
+            name="discord"
+            control={form.control}
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Discord ID:</FormLabel>
+                <FormControl>
+                  <Input
+                    className="bg-white text-black"
+                    {...field}
+                    placeholder="Discord ID"
+                  />
+                </FormControl>
+              </FormItem>
+            )}
+          />
+        </div>
         <div className="flex w-full h-full items-end">
           <Button
             type="submit"
-            className="w-full bg-black text-white border hover:bg-black/20"
+            className="w-40 lg:w-56 bg-black text-white border hover:bg-black/70"
             disabled={loading}
             aria-disabled={loading}
           >

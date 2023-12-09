@@ -81,9 +81,7 @@ function ChooseCoachDataContainer() {
         <Avatar className="h-20 lg:h-40 w-fit border">
           <AvatarImage
             src={coachingOrderData.coach.avatar}
-            className={`${
-              coachingOrderData.coach.name === "any" ? "bg-white" : ""
-            }`}
+            className="bg-white h-full w-auto"
           />
           <AvatarFallback className="text-light">
             {coachingOrderData.coach.name}

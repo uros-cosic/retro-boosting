@@ -83,9 +83,11 @@ function Navbar() {
               </SheetContent>
             </Sheet>
           </div>
-          <Link href="/" className="border-grayed border-r px-3 lg:px-5">
-            <Logo />
-          </Link>
+          <div className="border-grayed border-r px-3 lg:px-5 flex items-center justify-center">
+            <Link href="/" className="hover:opacity-90 transition-opacity">
+              <Logo />
+            </Link>
+          </div>
         </div>
         <ul className="hidden lg:flex uppercase items-center text-xs font-normal space-x-5">
           {navLinks.map((link) => (
