@@ -4,23 +4,23 @@ import Link from "next/link";
 const links = [
   {
     label: "ranked",
-    link: "/boosting#nav",
+    link: "/boosting",
   },
   {
     label: "duo",
-    link: "/boosting/duo#nav",
+    link: "/boosting/duo",
   },
   {
     label: "casual",
-    link: "/boosting/normals#nav",
+    link: "/boosting/normals",
   },
   {
     label: "win",
-    link: "/boosting/win#nav",
+    link: "/boosting/win",
   },
   {
     label: "arena",
-    link: "/boosting/arena#nav",
+    link: "/boosting/arena",
   },
 ];
 

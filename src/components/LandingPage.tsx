@@ -24,7 +24,7 @@ function LandingPage() {
         </h2>
         <div className="flex space-x-3 sm:space-x-5 text-sm sm:text-xl items-center justify-center">
           <Link
-            href="/boosting#nav"
+            href="/boosting"
             className="bg-primary hover:bg-primary/90 px-10 py-2 rounded transition-colors text-white"
           >
             Boosting

@@ -14,6 +14,7 @@ import { twMerge } from "tailwind-merge";
 import clsx from "clsx";
 import { Skeleton } from "./ui/skeleton";
 import { getTeam } from "@/lib/apiUtils";
+import { useSearchParams } from "next/navigation";
 
 function TeamPageContainer({
   data,
@@ -23,6 +24,7 @@ function TeamPageContainer({
     pages: number;
   };
 }) {
+  const searchParams = useSearchParams();
   const [teamData, setTeamData] = useState(data);
   const [showPages, setShowPages] = useState(
     [...Array(Math.min(data.pages, 5))].map((_, idx) => idx + 1)
@@ -31,8 +33,8 @@ function TeamPageContainer({
   const [page, setPage] = useState(1);
   const [options, setOptions] = useState({
     searchVal: "",
-    boosterChecked: false,
-    coachChecked: false,
+    boosterChecked: searchParams.get("booster") ? true : false,
+    coachChecked: searchParams.get("coach") ? true : false,
     server: "any",
     language: "any",
   });

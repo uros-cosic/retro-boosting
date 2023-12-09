@@ -44,7 +44,7 @@ function Navbar() {
     },
     {
       label: "boosting",
-      href: "/boosting#nav",
+      href: "/boosting",
     },
     {
       label: "coaching",

@@ -88,7 +88,7 @@ function CoachingServiceContainer({
             with our tailored coaching sessions.
           </p>
           <Link
-            href="/coaching"
+            href="/team?coach=true"
             className="bg-dark text-center border-b-2 border-r-2 border-primary px-10 py-3 text-light text-xs lg:text-xl rounded w-fit hover:text-light/70 transition-colors shadow-base shadow-primary"
           >
             connect with coach
