@@ -11,7 +11,7 @@ function TrustPilotSection() {
           alt="trustpilot rating"
           height={150}
           width={1800}
-          className="h-12 w-auto"
+          className="h-8 lg:h-12 w-auto"
         />
       </Link>
     </section>

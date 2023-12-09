@@ -114,7 +114,7 @@ function Footer() {
           </Link>
         ))}
       </div>
-      <div className="max-w-xl w-full mx-auto">
+      <div className="max-w-xl w-full mx-auto px-1">
         <hr className="border-primary border-2" />
       </div>
       <ul className="max-w-xl w-full flex justify-evenly uppercase font-medium items-center text-center mx-auto text-sm">
