@@ -6,12 +6,12 @@ function page() {
       <h1 className="text-center text-3xl">Terms</h1>
       <div className="space-y-5 text-center">
         <p>
-          Welcome to Retro Boosting! These terms and conditions ("Terms") govern
-          your use of our website and services. Please read them carefully
-          before accessing or using our website or any of our services. By using
-          Retro Boosting, you agree to abide by these Terms. If you do not agree
-          with any part of these Terms, please do not use our website or
-          services.
+          {`Welcome to Retro Boosting! These terms and conditions ("Terms") govern
+            your use of our website and services. Please read them carefully
+            before accessing or using our website or any of our services. By using
+            Retro Boosting, you agree to abide by these Terms. If you do not agree
+            with any part of these Terms, please do not use our website or
+            services.`}
         </p>
         <h2 className="text-xl">1. Acceptance of Terms</h2>
         <p>
@@ -65,9 +65,9 @@ function page() {
         </p>
         <h2 className="text-xl">8. Disclaimer of Warranty</h2>
         <p>
-          Retro Boosting is provided "as is" and "as available" without any
+          {`Retro Boosting is provided "as is" and "as available" without any
           warranties, expressed or implied. We do not guarantee that our website
-          or services will be error-free or uninterrupted.
+          or services will be error-free or uninterrupted.`}
         </p>
         <h2 className="text-xl">9. Limitation of Liability</h2>
         <p>
