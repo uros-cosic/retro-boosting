@@ -43,12 +43,12 @@ function page() {
         </p>
         <h2 className="text-xl">5. Prohibited Activities</h2>
         <p>
-          You are expressly prohibited from: Attempting to gain unauthorized
-          access to Retro Boosting's systems or data. Interfering with or
-          disrupting the operation of our website or services. Uploading,
-          posting, or transmitting any content that is unlawful, harmful,
-          offensive, or violates the rights of others. Using Retro Boosting for
-          any illegal or fraudulent purposes.
+          {`You are expressly prohibited from: Attempting to gain unauthorized
+            access to Retro Boosting's systems or data. Interfering with or
+            disrupting the operation of our website or services. Uploading,
+            posting, or transmitting any content that is unlawful, harmful,
+            offensive, or violates the rights of others. Using Retro Boosting for
+            any illegal or fraudulent purposes.`}
         </p>
         <h2 className="text-xl">6. Intellectual Property</h2>
         <p>
