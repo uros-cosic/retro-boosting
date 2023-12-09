@@ -24,7 +24,7 @@ function TeamCard({ data }: { data: any }) {
       <p className="text-lg">{data.name}</p>
       <p
         className={twMerge(
-          clsx("uppercase text-xs text-primary", {
+          clsx("uppercase text-xs text-primary font-black", {
             "text-yellow-500": data.elo === "challenger",
             "text-red-500": data.elo === "grandmaster",
             "text-purple-500": data.elo === "master",
@@ -37,7 +37,7 @@ function TeamCard({ data }: { data: any }) {
         {data.roles.length === 5 ? (
           <Badge
             variant={"outline"}
-            className="bg-light text-dark py-0 px-2 w-fit"
+            className="bg-light text-dark py-0 px-2 w-fit font-black"
           >
             any
           </Badge>
@@ -46,7 +46,7 @@ function TeamCard({ data }: { data: any }) {
             <Badge
               key={idx}
               variant={"outline"}
-              className="bg-light text-dark py-0 px-2 w-fit"
+              className="bg-light text-dark py-0 px-2 w-fit font-black"
             >
               {role}
             </Badge>
@@ -69,7 +69,7 @@ function TeamCard({ data }: { data: any }) {
           <Badge
             key={idx}
             variant={"outline"}
-            className="bg-light text-dark py-0 px-2 w-fit"
+            className="bg-light text-dark py-0 px-2 w-fit font-black"
           >
             {type}
           </Badge>

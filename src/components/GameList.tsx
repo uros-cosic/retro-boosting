@@ -27,10 +27,10 @@ const links = [
 function GameList() {
   return (
     <section className="py-10 max-w-5xl mx-auto space-y-5 px-1 lg:px-0">
-      <h1 className="text-3xl font-normal text-center text-light uppercase">
+      <h1 className="text-3xl font-black text-center text-light uppercase">
         game list
       </h1>
-      <h2 className="text-xl text-grayed text-center">
+      <h2 className="text-xl text-grayed text-center font-semibold">
         You can view all the games where you can find friends.
       </h2>
       <div className="h-[60vh] w-full rounded-xl border-primary border-b-4 border-r-4 overflow-hidden relative shadow-base">

@@ -28,7 +28,7 @@ function LoginDialog() {
   return (
     <Dialog onOpenChange={(isOpen) => setDialogOpen(isOpen)} open={dialogOpen}>
       <DialogTrigger asChild>
-        <Button className="h-1/2 bg-dark rounded px-2 md:px-5 border-b-2 border-r-2 border-light flex items-center hover:opacity-80 transition-colors uppercase font-normal text-xs md:text-sm ">
+        <Button className="h-1/2 bg-dark rounded px-2 md:px-5 border-b-2 border-r-2 border-light flex items-center hover:opacity-80 transition-colors uppercase font-black text-xs md:text-sm ">
           <PiUserCircleLight className="text-xl mr-1" />
           login
         </Button>

@@ -128,8 +128,12 @@ function Footer() {
       </ul>
       <div className="font-medium text-center text-sm space-y-5">
         <div className="flex space-x-5">
-          <Link href="/terms">Terms of Use</Link>
-          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/terms" className="hover:underline">
+            Terms of Use
+          </Link>
+          <Link href="/privacy" className="hover:underline">
+            Privacy Policy
+          </Link>
         </div>
         <p>&copy; 2023 RB</p>
       </div>

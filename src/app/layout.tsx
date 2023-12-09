@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Russo_One } from "next/font/google";
+import { Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
-const russo = Russo_One({ subsets: ["latin"], weight: ["400"] });
+const pixelify_sans = Pixelify_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "RETRO BOOSTING",
@@ -50,7 +50,7 @@ export default function RootLayout({
           content="https://retro-boosting.vercel.app/img/logo.png"
         />
       </head>
-      <body className={`${russo.className} antialiased bg-muted`}>
+      <body className={`${pixelify_sans.className} antialiased bg-muted`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
           <main>{children}</main>

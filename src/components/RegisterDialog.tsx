@@ -23,7 +23,7 @@ function RegisterDialog() {
   return (
     <Dialog onOpenChange={(isOpen) => setDialogOpen(isOpen)} open={dialogOpen}>
       <DialogTrigger asChild>
-        <Button className="h-1/2 bg-light rounded px-2 md:px-5 flex items-center text-dark hover:bg-light/80 transition-colors uppercase font-normal text-xs md:text-sm">
+        <Button className="h-1/2 bg-light rounded px-2 md:px-5 flex items-center text-dark hover:bg-light/80 transition-colors uppercase font-black text-xs md:text-sm">
           <PiUserCirclePlusLight className="text-xl mr-1" />
           register
         </Button>

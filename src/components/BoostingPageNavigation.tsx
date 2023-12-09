@@ -51,7 +51,7 @@ function BoostingPageNavigation() {
               href={boostingServiceObj.href}
               className={twMerge(
                 clsx(
-                  "text-grayed hover:text-light transition-colors text-xs lg:text-xl",
+                  "text-grayed hover:text-light transition-colors text-xs lg:text-xl font-black",
                   {
                     "text-primary hover:text-primary/90":
                       pathname ===

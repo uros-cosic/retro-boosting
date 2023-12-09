@@ -89,7 +89,7 @@ function Navbar() {
             </Link>
           </div>
         </div>
-        <ul className="hidden lg:flex uppercase items-center text-xs font-normal space-x-5">
+        <ul className="hidden lg:flex uppercase items-center text-sm font-black space-x-5">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link

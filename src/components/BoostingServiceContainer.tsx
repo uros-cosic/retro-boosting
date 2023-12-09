@@ -59,21 +59,21 @@ function BoostingServiceContainer({
         )}
       >
         <div className="w-full lg:w-1/2 h-2/3 lg:h-full flex flex-col justify-center lg:justify-between space-y-3 lg:space-y-5 text-center lg:text-left items-center lg:items-start">
-          <h1 className="text-white text-2xl lg:text-4xl font-bold">
+          <h1 className="text-white text-2xl lg:text-4xl font-black">
             boosting service
           </h1>
-          <p className="text-gray-300 text-xs lg:text-base">
+          <p className="text-gray-300 text-xs lg:text-base font-semibold">
             Discover the Fast Lane to Victory with Retro Boosting! 🏆 Our expert
             boosters are just a click away from turbocharging your League of
             Legends journey.
           </p>
-          <p className="text-gray-300 text-xs lg:text-base">
+          <p className="text-gray-300 text-xs lg:text-base font-semibold">
             Get ready to climb the ranks with our trusted boosting service.
             Connect with a booster now and unleash your full potential!
           </p>
           <Link
             href="/team?booster=true"
-            className="bg-dark text-center border-b-2 border-r-2 border-primary px-10 py-3 text-light text-xs lg:text-lg font-normal rounded w-fit hover:text-light/70 transition-colors shadow-primary shadow-base"
+            className="bg-dark text-center border-b-2 border-r-2 border-primary px-10 py-3 text-light text-xs lg:text-lg font-black rounded w-fit hover:text-light/70 transition-colors shadow-primary shadow-base"
           >
             connect with booster
           </Link>

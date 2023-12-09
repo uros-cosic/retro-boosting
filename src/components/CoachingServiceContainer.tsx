@@ -74,22 +74,22 @@ function CoachingServiceContainer({
             )
           )}
         >
-          <h1 className="text-white text-2xl lg:text-4xl font-bold">
+          <h1 className="text-white text-2xl lg:text-4xl font-black">
             coaching service
           </h1>
-          <p className="text-gray-300 text-xs lg:text-base">
+          <p className="text-gray-300 text-xs lg:text-base font-semibold">
             {`Master the Art of League of Legends with Retro Boosting's Coaching
               Service! 🎮 Unlock personalized guidance from top-tier coaches who
               will help you refine your skills, strategize like a pro, and
               dominate the competition.`}
           </p>
-          <p className="text-gray-300 text-xs lg:text-base">
+          <p className="text-gray-300 text-xs lg:text-base font-semibold">
             Ready to level up your gameplay? Connect with a coach now and embark
             on your path to mastery!
           </p>
           <Link
             href="/team?coach=true"
-            className="bg-dark text-center border-b-2 border-r-2 border-primary px-10 py-3 text-light text-xs lg:text-xl rounded w-fit hover:text-light/70 transition-colors shadow-base shadow-primary"
+            className="bg-dark text-center border-b-2 border-r-2 border-primary px-10 py-3 text-light text-xs lg:text-xl rounded w-fit hover:text-light/70 transition-colors shadow-base shadow-primary font-black"
           >
             connect with coach
           </Link>
