@@ -1,3 +1,5 @@
+export const API_LINK = "http://retro.starlabs.rs/";
+
 export interface BoosterCardInterface {
   avatar: string;
   name: string;

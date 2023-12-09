@@ -6,6 +6,7 @@ import { CoachCardInterface } from "@/lib/apiUtils";
 import { twMerge } from "tailwind-merge";
 import Image from "next/image";
 import { FaHeadphones } from "react-icons/fa";
+import { useTheme } from "next-themes";
 
 function CoachCard({
   data,
@@ -15,6 +16,7 @@ function CoachCard({
     idx: number;
   };
 }) {
+  const { theme } = useTheme();
   return (
     <div
       className={twMerge(
@@ -47,7 +49,11 @@ function CoachCard({
               </div>
               <div className="border border-light rounded-full bg-dark h-6 w-6 lg:h-8 lg:w-8 flex items-center justify-center -ml-2 p-2">
                 <Image
-                  src={`/img/lanes/${data.coach.mainRole}.svg`}
+                  src={`/img/lanes/${
+                    theme === "light"
+                      ? `dark/${data.coach.mainRole}`
+                      : data.coach.mainRole
+                  }.svg`}
                   alt={data.coach.mainRole || ""}
                   height={50}
                   width={50}

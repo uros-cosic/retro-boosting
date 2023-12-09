@@ -7,10 +7,10 @@ function TrustPilotSection() {
     <section className="py-10 w-full flex items-center justify-center px-1">
       <Link href="#" className="hover:opacity-70 transition-opacity">
         <Image
-          src="/img/trust-temp.svg"
+          src="/img/trust-temp-black.png"
           alt="trustpilot rating"
-          height={250}
-          width={500}
+          height={150}
+          width={1800}
           className="h-12 w-auto"
         />
       </Link>

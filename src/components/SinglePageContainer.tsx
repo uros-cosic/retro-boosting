@@ -11,6 +11,7 @@ import { nameify } from "@/lib/utils";
 import { FaGreaterThan } from "react-icons/fa";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 function SinglePageContainer({
   data,
@@ -22,6 +23,8 @@ function SinglePageContainer({
   type: string;
 }) {
   const stars = data.rating ? [...Array(Math.ceil(data.rating))] : [];
+
+  const { theme } = useTheme();
 
   return (
     <div className="flex flex-col space-y-10 max-w-7xl mx-auto px-1">
@@ -124,25 +127,29 @@ function SinglePageContainer({
             <h3 className="text-sm lg:text-2xl uppercase font-bold">Roles</h3>
             <div className="text-xs lg:text-xl space-x-0 lg:space-x-3 space-y-1 lg:space-y-0 w-full flex flex-col lg:flex-row text-center items-center justify-center">
               {data.roles?.length === 5 ? (
-                <div className="flex items-center">
+                <div className="flex items-center space-x-1">
                   <Image
-                    src="/img/lanes/any.svg"
+                    src={`/img/lanes/${
+                      theme === "light" ? "dark/any.svg" : "any.svg"
+                    }`}
                     alt="any"
                     height={50}
                     width={50}
-                    className="max-h-5 max-w-5"
+                    className="max-h-5 max-w-5 h-auto w-auto"
                   />
                   <p className="text-center">any</p>
                 </div>
               ) : (
                 data.roles?.map((role: string, idx: number) => (
-                  <div key={idx} className="flex items-center">
+                  <div key={idx} className="flex items-center space-x-1">
                     <Image
-                      src={`/img/lanes/${role}.svg`}
+                      src={`/img/lanes/${
+                        theme === "light" ? `dark/${role}` : role
+                      }.svg`}
                       alt={role}
                       height={50}
                       width={50}
-                      className="max-h-4 max-w-4"
+                      className="max-h-5 max-w-5 h-auto w-auto"
                     />
                     <p className="text-center">{role}</p>
                   </div>

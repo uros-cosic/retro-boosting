@@ -5,19 +5,10 @@ import { useTheme } from "next-themes";
 import { FaRegMoon, FaRegSun } from "react-icons/fa6";
 
 export default function ChangeTheme() {
-  const [dark, setDark] = React.useState(
-    document.querySelector("html")?.className === "dark"
-      ? true
-      : document.querySelector("html")?.className === "light"
-      ? false
-      : true
-  );
-
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const handleClick = () => {
-    setTheme(!dark ? "dark" : "light");
-    setDark(!dark);
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -25,7 +16,7 @@ export default function ChangeTheme() {
       className="cursor-pointer hover:opacity-70 transition-opacity"
       onClick={handleClick}
     >
-      {dark ? (
+      {theme === "dark" ? (
         <FaRegMoon className="text-xl" />
       ) : (
         <FaRegSun className="text-xl" />
