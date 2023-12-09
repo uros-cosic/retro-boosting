@@ -16,9 +16,12 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 import { UserContent, UserContext } from "@/lib/UserContext";
 import { handleLogin } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
+import { useRouter } from "next/navigation";
 
-function LoginForm() {
+function LoginForm({ setDialogOpen }: { setDialogOpen: any }) {
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const { user, setUser } = useContext<UserContent>(UserContext);
 
@@ -33,8 +36,9 @@ function LoginForm() {
     const data: any = await handleLogin();
     if (data.status === "success") {
       setUser(data.data);
-      if (data.data?.role === "administrator") window.location.assign("/admin");
-      else window.location.assign("/");
+      setDialogOpen(false);
+      if (data.data?.role === "administrator") router.push("/admin");
+      else router.push("/");
     } else {
       // handle 404 / 500
     }

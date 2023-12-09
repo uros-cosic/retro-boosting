@@ -16,9 +16,12 @@ import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 import { UserContent, UserContext } from "@/lib/UserContext";
 import { handleRegister } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
+import { useRouter } from "next/navigation";
 
-function RegisterForm() {
+function RegisterForm({ setDialogOpen }: { setDialogOpen: any }) {
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const { user, setUser } = useContext<UserContent>(UserContext);
 
@@ -33,7 +36,8 @@ function RegisterForm() {
     const data: any = await handleRegister();
     if (data.status === "success") {
       setUser(data);
-      window.location.assign("/");
+      setDialogOpen(false);
+      router.push("/");
     } else {
       // handle 404 / 500
     }

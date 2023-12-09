@@ -52,6 +52,7 @@ function BoosterCard({
                   height={50}
                   width={50}
                 />
+                <svg></svg>
               </div>
               <div className="border border-light rounded-full bg-dark h-6 w-6 lg:h-8 lg:w-8 flex items-center justify-center -ml-2 p-2">
                 <FaHeadphones />

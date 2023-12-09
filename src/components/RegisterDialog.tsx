@@ -14,13 +14,14 @@ import { ImSpinner2 } from "react-icons/im";
 
 function RegisterDialog() {
   const [loading, setLoading] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleGoogleClick = async () => {
     setLoading(true);
   };
 
   return (
-    <Dialog>
+    <Dialog onOpenChange={(isOpen) => setDialogOpen(isOpen)} open={dialogOpen}>
       <DialogTrigger asChild>
         <Button className="h-1/2 bg-light rounded px-2 md:px-5 flex items-center text-dark hover:bg-light/80 transition-colors uppercase font-normal text-xs md:text-sm">
           <PiUserCirclePlusLight className="text-xl mr-1" />
@@ -33,7 +34,7 @@ function RegisterDialog() {
             register
           </DialogTitle>
         </DialogHeader>
-        <RegisterForm />
+        <RegisterForm setDialogOpen={setDialogOpen} />
         <div className="before:border-t flex before:flex-1 items-center before:border-light after:border-t after:flex-1 after:border-light text-light">
           <p className="text-center uppercase mx-4 font-normal text-sm">or</p>
         </div>

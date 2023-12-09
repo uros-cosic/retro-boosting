@@ -14,7 +14,6 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Input } from "./ui/input";
-import Link from "next/link";
 import {
   Dialog,
   DialogTrigger,
@@ -37,6 +36,7 @@ import {
   validateCheckout,
 } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
+import { useRouter } from "next/navigation";
 
 function SmallCheckoutContainer({
   extraOptions,
@@ -55,6 +55,8 @@ function SmallCheckoutContainer({
   });
 
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleOptionsChange = async () => {
     const data: any = await getOrderPrice();
@@ -125,7 +127,9 @@ function SmallCheckoutContainer({
         priceLoading: true,
       };
     });
+
     const data: any = await getDiscountedPrice(priceObj.total);
+
     setPriceObj((prev: any) => {
       return {
         priceLoading: false,
@@ -139,7 +143,7 @@ function SmallCheckoutContainer({
     setLoading(true);
     const data: any = await validateCheckout();
     if (data.status === "success") {
-      window.location.assign(`/checkout/${data.data.id}`);
+      router.push(`/checkout/${data.data.id}`);
     }
   };
 

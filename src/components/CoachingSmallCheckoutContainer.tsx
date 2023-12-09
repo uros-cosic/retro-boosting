@@ -20,6 +20,7 @@ import { coachingSwitchableOptions as switchableOptions } from "@/lib/data";
 import { getOrderPrice, getDiscountedPrice } from "@/lib/apiUtils";
 import { validateCheckout } from "@/lib/apiUtils";
 import { ImSpinner2 } from "react-icons/im";
+import { useRouter } from "next/navigation";
 
 function CoachingSmallCheckoutContainer() {
   const { coachingOrderData, setCoachingOrderData } =
@@ -32,6 +33,8 @@ function CoachingSmallCheckoutContainer() {
   });
 
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const handleOptionsChange = async () => {
     const data: any = await getOrderPrice();
@@ -88,7 +91,7 @@ function CoachingSmallCheckoutContainer() {
     setLoading(true);
     const data: any = await validateCheckout();
     if (data.status === "success") {
-      window.location.assign(`/checkout/${data.data.id}`);
+      router.push(`/checkout/${data.data.id}`);
     }
   };
 
