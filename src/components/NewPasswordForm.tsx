@@ -92,7 +92,7 @@ function NewPasswordForm() {
           type="submit"
           className="w-full bg-primary text-white hover:bg-primary/90"
           disabled={loading}
-          aria-aria-disabled={loading}
+          aria-disabled={loading}
         >
           {loading ? <ImSpinner2 className="text-xl animate-spin" /> : "Submit"}
         </Button>

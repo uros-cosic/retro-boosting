@@ -78,10 +78,10 @@ function CoachingServiceContainer({
             coaching service
           </h1>
           <p className="text-gray-300 text-xs lg:text-base">
-            Master the Art of League of Legends with Retro Boosting's Coaching
-            Service! 🎮 Unlock personalized guidance from top-tier coaches who
-            will help you refine your skills, strategize like a pro, and
-            dominate the competition.
+            {`Master the Art of League of Legends with Retro Boosting's Coaching
+              Service! 🎮 Unlock personalized guidance from top-tier coaches who
+              will help you refine your skills, strategize like a pro, and
+              dominate the competition.`}
           </p>
           <p className="text-gray-300 text-xs lg:text-base">
             Ready to level up your gameplay? Connect with a coach now and embark
