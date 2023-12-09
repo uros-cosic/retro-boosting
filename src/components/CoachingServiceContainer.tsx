@@ -78,14 +78,14 @@ function CoachingServiceContainer({
             coaching service
           </h1>
           <p className="text-gray-300 text-xs lg:text-base">
-            Take your gaming to the next level with our exceptional coaching
-            service. Enhance your strategic gameplay, refine your skills, and
-            gain a competitive edge.
+            Master the Art of League of Legends with Retro Boosting's Coaching
+            Service! 🎮 Unlock personalized guidance from top-tier coaches who
+            will help you refine your skills, strategize like a pro, and
+            dominate the competition.
           </p>
           <p className="text-gray-300 text-xs lg:text-base">
-            Embrace the opportunity to grow as a player, unlock your true
-            abilities, and embark on a journey to become a true gaming champion
-            with our tailored coaching sessions.
+            Ready to level up your gameplay? Connect with a coach now and embark
+            on your path to mastery!
           </p>
           <Link
             href="/team?coach=true"

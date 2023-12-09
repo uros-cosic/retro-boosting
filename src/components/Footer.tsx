@@ -114,11 +114,11 @@ function Footer() {
           </Link>
         ))}
       </div>
-      <div className="w-4/5 lg:w-1/3 mx-auto">
+      <div className="max-w-xl w-full mx-auto">
         <hr className="border-primary border-2" />
       </div>
-      <ul className="w-4/5 lg:w-1/3 flex justify-center uppercase font-medium items-center text-center mx-auto relative space-x-5">
-        {nav.map((link, idx) => (
+      <ul className="max-w-xl w-full flex justify-evenly uppercase font-medium items-center text-center mx-auto text-sm">
+        {nav.map((link) => (
           <li key={link.label}>
             <Link href={link.href} className="hover:underline">
               {link.label}
@@ -126,14 +126,10 @@ function Footer() {
           </li>
         ))}
       </ul>
-      <div className="font-medium text-center space-y-3">
+      <div className="font-medium text-center text-sm space-y-5">
         <div className="flex space-x-5">
-          <Link href="/terms" className="hover:underline">
-            Terms of User
-          </Link>
-          <Link href="/privacy" className="hover:underline">
-            Privacy Policy
-          </Link>
+          <Link href="/terms">Terms of Use</Link>
+          <Link href="/privacy">Privacy Policy</Link>
         </div>
         <p>&copy; 2023 RB</p>
       </div>

@@ -63,13 +63,13 @@ function BoostingServiceContainer({
             boosting service
           </h1>
           <p className="text-gray-300 text-xs lg:text-base">
-            Master the competitive realm of League of Legends with our unmatched
-            boosting service. Experience unparalleled success as our dedicated
-            professionals propel you to new heights of victory.
+            Discover the Fast Lane to Victory with Retro Boosting! 🏆 Our expert
+            boosters are just a click away from turbocharging your League of
+            Legends journey.
           </p>
           <p className="text-gray-300 text-xs lg:text-base">
-            Unlock your true potential, surge ahead in the rankings, and cement
-            your legacy as a true legend in the game.
+            Get ready to climb the ranks with our trusted boosting service.
+            Connect with a booster now and unleash your full potential!
           </p>
           <Link
             href="/team?booster=true"

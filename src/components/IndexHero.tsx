@@ -15,12 +15,10 @@ function LandingPage() {
       />
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 uppercase space-y-3 sm:space-y-5 w-full">
         <h1 className="text-white text-lg sm:text-4xl font-bold text-center">
-          Say Goodbye to Losing Streaks
-          <br />
-          Get Your Winning Edge with a Booster
+          Your Path to Victory Begins Here
         </h1>
         <h2 className="text-gray-300 text-xs sm:text-xl text-center">
-          Or unleash your true potential with coaching
+          Elevate Your Game with Expert Boosting and Coaching Services
         </h2>
         <div className="flex space-x-3 sm:space-x-5 text-sm sm:text-xl items-center justify-center">
           <Link

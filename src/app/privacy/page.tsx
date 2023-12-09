@@ -11,41 +11,92 @@ function Page() {
   return (
     <div className="py-10 flex flex-col space-y-10 text-light max-w-7xl mx-auto px-1 lg:px-0">
       <h1 className="text-center text-3xl">Privacy</h1>
-      <p className="leading-10">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam
-        fugiat laudantium dignissimos atque dolorum et. Blanditiis doloremque
-        iste aspernatur placeat! Fuga aperiam dolor totam quia voluptas beatae
-        atque eligendi facere, obcaecati quae alias quo vitae amet ab explicabo
-        cumque expedita ipsum consectetur nisi? Esse corporis est fugiat rerum,
-        aliquid quas iusto odio tenetur dolores modi incidunt. Voluptates,
-        dignissimos tenetur quidem nulla cum, molestiae illo libero quae maxime
-        quam magni iste aut velit, nostrum fuga voluptatum natus! Dicta facilis
-        fuga at inventore natus accusamus nesciunt eaque explicabo quos sit
-        neque non minus in ipsum, iure, saepe odit et? Quo quia recusandae
-        soluta eligendi error neque ipsam cupiditate esse. Voluptas fuga atque
-        placeat soluta saepe accusamus sint impedit dolore nisi. Magni, ipsam
-        laudantium itaque quas accusamus sunt corporis voluptatem esse, iure
-        iusto fugiat fugit necessitatibus quia eum, cumque consectetur sed
-        tempore mollitia voluptates nesciunt. Fuga maxime officiis qui sint?
-        Cumque voluptas provident facilis optio magni vel quo, deleniti iure
-        eaque expedita, eos natus inventore dolorum at nihil obcaecati
-        architecto ea! Officiis consequatur officia placeat sint tempora
-        sapiente eaque fugiat quisquam dolorum. Sit dolore esse quia doloribus
-        voluptates deleniti corporis omnis doloremque quae dicta sequi, sapiente
-        placeat molestias beatae nam iure sunt eaque. Ducimus, esse.
-        Praesentium, eligendi rerum officia facere, cupiditate repudiandae
-        voluptates, commodi beatae dicta architecto necessitatibus eum nemo. Hic
-        impedit nemo blanditiis sapiente nulla consectetur suscipit,
-        necessitatibus doloremque tempore natus nam voluptate odit, perspiciatis
-        excepturi officia, velit maiores animi corrupti. Similique, quam? Nisi
-        cum labore, non accusamus, voluptatum illum necessitatibus vero soluta
-        eos rem quibusdam, distinctio voluptates? A tempore in optio molestiae
-        maxime quas voluptatem tenetur ea ab delectus. Optio repellat earum
-        exercitationem labore cum enim vitae laboriosam accusantium facilis
-        dolore fugiat maiores expedita hic perferendis perspiciatis temporibus
-        doloribus eos quae est deserunt ipsum, obcaecati officia quam. Magni,
-        deserunt. Excepturi?
-      </p>
+      <div className="space-y-5 text-center">
+        <h2 className="text-xl">1. Introduction</h2>
+        <p>
+          Welcome to Retro Boosting! At Retro Boosting, we respect your privacy
+          and are committed to protecting your personal information. This
+          Privacy Policy explains how we collect, use, disclose, and safeguard
+          your information when you use our website and services. By using Retro
+          Boosting, you consent to the practices described in this Privacy
+          Policy.
+        </p>
+
+        <h2 className="text-xl">2. Information We Collect</h2>
+        <p>
+          a. Personal Information: When you use Retro Boosting, we may collect
+          personal information such as your name, email address, and payment
+          information when you make a purchase.
+        </p>
+        <p>
+          b. Log Data: We may also collect information that your browser sends
+          whenever you visit our website. This may include your IP address,
+          browser type, browser version, the pages you visit, the time and date
+          of your visit, and other statistics.
+        </p>
+
+        <h2 className="text-xl">3. How We Use Your Information</h2>
+        <p>
+          a. To Provide Services: We use your personal information to provide
+          the services you request, including Elo boosting, arena boosting, and
+          coaching.
+        </p>
+        <p>
+          b. To Improve Services: We may use your information to analyze and
+          improve our services, including the user experience and the
+          effectiveness of our website.
+        </p>
+        <p>
+          c. To Communicate: We may use your email address to send you updates,
+          newsletters, and promotional materials. You can opt out of receiving
+          these communications at any time.
+        </p>
+
+        <h2 className="text-xl">4. How We Share Your Information</h2>
+        <p>
+          a. Service Providers: We may share your information with third-party
+          service providers who assist us in delivering our services. These
+          providers are obligated to protect your information.
+        </p>
+        <p>
+          b. Legal Requirements: We may disclose your information to comply with
+          legal obligations, enforce our policies, respond to legal actions, or
+          protect our rights, privacy, safety, or property.
+        </p>
+
+        <h2 className="text-xl">5. Your Choices</h2>
+        <p>
+          a. Opt-Out: You can opt out of receiving promotional emails from us by
+          following the instructions in those emails. However, we may still send
+          you transactional or administrative communications.
+        </p>
+        <p>
+          b. Access and Update: You can access and update your personal
+          information by contacting us at support@retro-boosting.com.
+        </p>
+
+        <h2 className="text-xl">6. Security</h2>
+        <p>
+          We take reasonable steps to protect your personal information from
+          unauthorized access, disclosure, alteration, and destruction. However,
+          please note that no data transmission over the internet is 100%
+          secure, and we cannot guarantee the security of your information.
+        </p>
+
+        <h2 className="text-xl">7. Changes to this Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect changes
+          in our practices or for other operational, legal, or regulatory
+          reasons. We encourage you to review this Privacy Policy periodically
+          to stay informed about how we are protecting your information.
+        </p>
+
+        <h2 className="text-xl">8. Contact Us</h2>
+        <p>
+          If you have any questions or concerns about this Privacy Policy,
+          please contact us at support@retro-boosting.com.
+        </p>
+      </div>
     </div>
   );
 }
