@@ -94,10 +94,14 @@ function Footer() {
       label: "our team",
       href: "/team",
     },
+    {
+      label: "job",
+      href: "/job",
+    },
   ];
 
   return (
-    <footer className="bg-black w-full py-10 flex flex-col items-center justify-center text-white space-y-7">
+    <footer className="bg-dark w-full py-10 flex flex-col items-center justify-center text-light space-y-7">
       <Logo />
       <div className="flex space-x-5 items-center text-center justify-center">
         {socials.map((social) => (

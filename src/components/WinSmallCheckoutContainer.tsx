@@ -155,18 +155,18 @@ function WinSmallCheckoutContainer() {
         <hr className="border-primary border-2" />
       </div>
       <Dialog>
-        <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-white/80">
+        <DialogTrigger className="flex items-center space-x-1 justify-start p-0 w-full transition-colors hover:text-light/80">
           <FaGear className="text-xl" />
           <p className="uppercase font-medium text-xs underline">
             lane & flash placement
           </p>
         </DialogTrigger>
-        <DialogContent className="bg-black border-primary border text-white">
+        <DialogContent className="bg-dark border-primary border text-light">
           <DialogHeader className="space-y-3">
             <DialogTitle className="uppercase font-normal">
               extra options
             </DialogTitle>
-            <DialogDescription className="text-secondary text-xs">
+            <DialogDescription className="text-light text-xs">
               Customize your order free of charge.
             </DialogDescription>
           </DialogHeader>
@@ -177,7 +177,7 @@ function WinSmallCheckoutContainer() {
                 onValueChange={handleLaneChange}
                 value={winOrderData.options.extraOptions.lane}
               >
-                <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
+                <SelectTrigger className="bg-dark py-5 rounded-xl font-bold border border-primary text-center w-40">
                   <SelectValue
                     placeholder={
                       extraOptionsMapping[
@@ -202,7 +202,7 @@ function WinSmallCheckoutContainer() {
                 onValueChange={handleFlashChange}
                 value={winOrderData.options.extraOptions.flashPlacement}
               >
-                <SelectTrigger className="bg-black py-5 rounded-xl font-bold border border-primary text-center w-40">
+                <SelectTrigger className="bg-dark py-5 rounded-xl font-bold border border-primary text-center w-40">
                   <SelectValue
                     placeholder={
                       extraOptionsMapping[
@@ -250,7 +250,7 @@ function WinSmallCheckoutContainer() {
         <Input
           maxLength={20}
           placeholder="discount code"
-          className="uppercase border border-primary h-fit placeholder:text-white"
+          className="uppercase border border-primary h-fit placeholder:text-light"
         />
         <Button
           className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90"

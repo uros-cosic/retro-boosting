@@ -10,8 +10,10 @@ import {
   SelectItem,
 } from "./ui/select";
 import ArenaSmallCheckoutContainer from "./ArenaSmallCheckoutContainer";
+import { useSearchParams } from "next/navigation";
 
 function ArenaBoostContainer() {
+  const searchParams = useSearchParams();
   const [arenaOrderData, setArenaOrderData] = useState<any>({
     currentRank: "G1",
     numOfGames: 1,
@@ -27,6 +29,7 @@ function ArenaBoostContainer() {
         lane: "any",
         flashPlacement: "any",
       },
+      boosterID: searchParams.get("booster"),
     },
   });
 
@@ -84,7 +87,7 @@ function ArenaBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Type of Service</h2>
                 <Select onValueChange={handleTypeChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Solo" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -96,7 +99,7 @@ function ArenaBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -111,7 +114,7 @@ function ArenaBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Arena" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -122,7 +125,7 @@ function ArenaBoostContainer() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary shadow-base shadow-primary">
+        <div className="w-full lg:w-2/6 h-full bg-dark text-light rounded-xl p-10 border border-primary shadow-base shadow-primary">
           <ArenaSmallCheckoutContainer />
         </div>
       </ArenaOrderDataContext.Provider>

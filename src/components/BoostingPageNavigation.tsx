@@ -3,35 +3,44 @@ import React from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { twMerge } from "tailwind-merge";
+import { useSearchParams } from "next/navigation";
 
 function BoostingPageNavigation() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  const boosterParam = searchParams.get("booster");
 
   const boostingServices = [
     {
       label: "solo boosting",
-      href: "/boosting",
+      href: "/boosting" + `${boosterParam ? `?booster=${boosterParam}` : ""}`,
     },
     {
       label: "duo boosting",
-      href: "/boosting/duo",
+      href:
+        "/boosting/duo" + `${boosterParam ? `?booster=${boosterParam}` : ""}`,
     },
     {
       label: "arena",
-      href: "/boosting/arena",
+      href:
+        "/boosting/arena" + `${boosterParam ? `?booster=${boosterParam}` : ""}`,
     },
     {
       label: "win boosting",
-      href: "/boosting/win",
+      href:
+        "/boosting/win" + `${boosterParam ? `?booster=${boosterParam}` : ""}`,
     },
     {
       label: "normal matches",
-      href: "/boosting/normals",
+      href:
+        "/boosting/normals" +
+        `${boosterParam ? `?booster=${boosterParam}` : ""}`,
     },
   ];
 
   return (
-    <nav className="py-5 w-full bg-black" id="nav">
+    <nav className="py-5 w-full bg-dark" id="nav">
       <ul className="flex w-full capitalize justify-between items-center px-3 lg:px-5">
         {boostingServices.map((boostingServiceObj) => (
           <li
@@ -42,10 +51,11 @@ function BoostingPageNavigation() {
               href={boostingServiceObj.href}
               className={twMerge(
                 clsx(
-                  "text-gray-300 hover:text-white transition-colors text-xs lg:text-xl",
+                  "text-grayed hover:text-light transition-colors text-xs lg:text-xl",
                   {
                     "text-primary hover:text-primary/90":
-                      pathname === boostingServiceObj.href,
+                      pathname ===
+                      boostingServiceObj.href.replace(/\?booster=[^&\s]+/, ""),
                   }
                 )
               )}

@@ -75,17 +75,17 @@ function ChooseCoachDataContainer() {
   };
 
   return (
-    <div className="px-5 lg:px-10 py-5 bg-black rounded-xl h-full flex items-center justify-between border border-primary space-x-3 shadow-base shadow-primary">
+    <div className="px-5 lg:px-10 py-5 bg-dark rounded-xl h-full flex items-center justify-between border border-primary space-x-3 shadow-base shadow-primary">
       <div className="h-full w-full flex items-center justify-start lg:justify-center flex-col space-y-3">
         <h2 className="font-normal uppercase text-xl">coach</h2>
-        <Avatar className="h-1/2 w-fit border">
+        <Avatar className="h-20 lg:h-40 w-fit border">
           <AvatarImage
             src={coachingOrderData.coach.avatar}
             className={`${
               coachingOrderData.coach.name === "any" ? "bg-white" : ""
             }`}
           />
-          <AvatarFallback className="text-white">
+          <AvatarFallback className="text-light">
             {coachingOrderData.coach.name}
           </AvatarFallback>
         </Avatar>
@@ -111,7 +111,7 @@ function ChooseCoachDataContainer() {
               choose your coach
             </Button>
           </DialogTrigger>
-          <DialogContent className="bg-black border-primary border text-white">
+          <DialogContent className="bg-dark border-primary border text-light">
             <div className="border-primary border-b relative">
               <Input
                 className="border-none focus-visible:ring-0"
@@ -135,7 +135,7 @@ function ChooseCoachDataContainer() {
                         src={coachObj.avatar}
                         className="h-full w-auto"
                       />
-                      <AvatarFallback className="text-white">
+                      <AvatarFallback className="text-light">
                         {coachObj.name}
                       </AvatarFallback>
                     </Avatar>
@@ -143,13 +143,13 @@ function ChooseCoachDataContainer() {
                       <div className="flex space-x-1">
                         <Badge
                           variant={"outline"}
-                          className="text-white bg-primary uppercase font-normal px-1 text-[9px]"
+                          className="text-light bg-primary uppercase font-normal px-1 text-[9px]"
                         >
                           challenger
                         </Badge>
                         <Badge
                           variant={"outline"}
-                          className="text-white bg-primary uppercase font-normal px-1 text-[9px]"
+                          className="text-light bg-primary uppercase font-normal px-1 text-[9px]"
                         >
                           any role
                         </Badge>
@@ -159,7 +159,7 @@ function ChooseCoachDataContainer() {
                   </div>
                   <DialogClose asChild>
                     <Button
-                      className="bg-primary text-white text-xs uppercase hover:bg-primary/90"
+                      className="bg-primary text-light text-xs uppercase hover:bg-primary/90"
                       onClick={() => {
                         handleCoachChange(coachObj);
                       }}

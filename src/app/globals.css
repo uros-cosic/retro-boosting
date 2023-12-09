@@ -16,11 +16,17 @@
     --primary: 259 100% 62.4%;
     --primary-foreground: 229 73.9% 4.5%;
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 229 73.9% 4.5%;
+    --light: 0 0% 100%;
+    --light-foreground: 229 73.9% 4.5%;
 
-    --muted: 300 2.2% 8.8%;
-    --muted-foreground: 300 4.4% 16.16%;
+    --grayed: 216 2% 45%;
+
+    --light: 0 0% 0%;
+
+    --dark: 0 100% 100%;
+
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 75%;
 
     --accent: 263 30.2% 49.4%;
     --accent-foreground: 229 73.9% 4.5%;
@@ -48,11 +54,17 @@
     --primary: 259 100% 62.4%;
     --primary-foreground: 229 73.9% 4.5%;
 
-    --secondary: 0 0% 100%;
-    --secondary-foreground: 229 73.9% 4.5%;
+    --light: 0 0% 100%;
+    --light-foreground: 229 73.9% 4.5%;
+
+    --grayed: 216 12% 84%;
+
+    --light: 100 100% 100%;
+
+    --dark: 0 0% 0%;
 
     --muted: 300 2.2% 8.8%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 300 4.4% 16.16%;
 
     --accent: 263 30.2% 49.4%;
     --accent-foreground: 229 73.9% 4.5%;
@@ -68,12 +80,30 @@
   }
 }
 
+.light .text-light {
+  color: #000;
+}
+
+.light .text-dark {
+  color: #fff;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.scroll {
+  animation: scroll 60s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.75rem));
   }
 }
 

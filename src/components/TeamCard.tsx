@@ -11,7 +11,7 @@ function TeamCard({ data }: { data: any }) {
   return (
     <Link
       href={data.link}
-      className="bg-black rounded-xl border border-primary h-96 p-5 shadow-base shadow-primary flex flex-col items-center justify-between relative hover:opacity-80 transition-opacity"
+      className="bg-dark rounded-xl border border-primary h-96 p-5 shadow-base shadow-primary flex flex-col items-center justify-between relative hover:opacity-80 transition-opacity"
     >
       <div className="absolute top-0 left-0 p-5 flex space-x-1 items-center">
         <FaStar className="text-lg" />
@@ -19,7 +19,7 @@ function TeamCard({ data }: { data: any }) {
       </div>
       <Avatar className="h-20 w-auto border">
         <AvatarImage src={data.avatar} className="h-full w-auto" />
-        <AvatarFallback className="text-white">{data.name}</AvatarFallback>
+        <AvatarFallback className="text-light">{data.name}</AvatarFallback>
       </Avatar>
       <p className="text-lg">{data.name}</p>
       <p
@@ -35,7 +35,10 @@ function TeamCard({ data }: { data: any }) {
       </p>
       <div className="flex space-x-2 uppercase">
         {data.roles.length === 5 ? (
-          <Badge variant={"outline"} className="bg-white py-0 px-2 w-fit">
+          <Badge
+            variant={"outline"}
+            className="bg-light text-dark py-0 px-2 w-fit"
+          >
             any
           </Badge>
         ) : (
@@ -43,7 +46,7 @@ function TeamCard({ data }: { data: any }) {
             <Badge
               key={idx}
               variant={"outline"}
-              className="bg-white py-0 px-2 w-fit"
+              className="bg-light text-dark py-0 px-2 w-fit"
             >
               {role}
             </Badge>
@@ -66,7 +69,7 @@ function TeamCard({ data }: { data: any }) {
           <Badge
             key={idx}
             variant={"outline"}
-            className="bg-white py-0 px-2 w-fit"
+            className="bg-light text-dark py-0 px-2 w-fit"
           >
             {type}
           </Badge>

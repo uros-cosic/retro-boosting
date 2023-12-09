@@ -210,7 +210,7 @@ const coachesContent = [
     elo: "challenger",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
-    boostingSince: 2023,
+    coachingSince: 2023,
     ordersCompleted: 15,
     type: ["booster", "coach"],
     reviews: [...reviews, ...reviews],
@@ -228,7 +228,7 @@ const coachesContent = [
     elo: "challenger",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
-    boostingSince: 2023,
+    coachingSince: 2023,
     ordersCompleted: 15,
     type: ["booster", "coach"],
     reviews: [...reviews, ...reviews],
@@ -273,7 +273,7 @@ export const getTopReviews = async () => {
   // TEMP FETCHING SIMULATION
   return await new Promise((resolve) => {
     setTimeout(() => {
-      resolve(reviews);
+      resolve([...reviews, ...reviews]);
     }, 500);
   });
 };
@@ -636,6 +636,69 @@ export const getCheckout = async (id: string) => {
             name: "Diamond IV - Master",
           },
         },
+      });
+    }, 500);
+  });
+};
+
+export const sendJobApplication = async (values: any) => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+      });
+    }, 500);
+  });
+};
+
+export const getCoachById = async (coachID: string | null) => {
+  if (coachID)
+    return await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({
+          status: "success",
+          data: {
+            avatar: "/img/temp/coaches/lexa.png",
+            name: "lexa",
+            link: "/team/coaches/lexa",
+            rating: 5,
+            ratingsQuantity: 20,
+            slug: "lexa",
+            _id: "lexa",
+            roles: ["jungle", "support"],
+            mainRole: "support",
+            elo: "challenger",
+            about:
+              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ipsam alias corporis quas fuga quasi id enim voluptatem nam voluptatum.",
+            coachingSince: 2023,
+            ordersCompleted: 15,
+            type: ["booster", "coach"],
+            reviews: [...reviews, ...reviews],
+          },
+        });
+      }, 500);
+    });
+  else return { status: "fail", data: null };
+};
+
+export const updatePassword = async (
+  password: string,
+  passwordConfirm: string
+) => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
+      });
+    }, 500);
+  });
+};
+
+export const validatePasswordResetToken = async (token: string) => {
+  return await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        status: "success",
       });
     }, 500);
   });

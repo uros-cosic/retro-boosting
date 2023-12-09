@@ -76,3 +76,26 @@ export const checkoutSchema = z.object({
 });
 
 export type CheckoutValues = z.infer<typeof checkoutSchema>;
+
+export const jobSchema = z.object({
+  name: z.string().min(2),
+  email: z.string().email(),
+  currentRank: z.string(),
+  opgg: z.string(),
+  server: z.string(),
+  mainLanes: z.string(),
+  mainChampions: z.string(),
+  country: z.string(),
+  languages: z.string(),
+  discord: z.string(),
+  type: z.string(),
+});
+
+export type jobValues = z.infer<typeof jobSchema>;
+
+export const newPasswordSchema = z.object({
+  password: z.string().min(8),
+  passwordConfirm: z.string().min(8),
+});
+
+export type newPasswordValues = z.infer<typeof newPasswordSchema>;

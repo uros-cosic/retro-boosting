@@ -13,6 +13,7 @@ interface OptionsInterface {
     lane: string;
     flashPlacement: string;
   };
+  boosterID: null | string;
 }
 
 export type ArenaOrderDataContent = {
@@ -40,6 +41,7 @@ export const ArenaOrderDataContext: any = createContext<ArenaOrderDataContent>({
         lane: "any",
         flashPlacement: "any",
       },
+      boosterID: null,
     },
   },
   setArenaOrderData: () => {},

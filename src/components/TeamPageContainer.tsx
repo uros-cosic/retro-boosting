@@ -49,7 +49,7 @@ function TeamPageContainer({
   }, [page, options]);
 
   return (
-    <div className="max-w-7xl mx-auto text-white flex justify-between px-1 lg:px-0">
+    <div className="max-w-7xl mx-auto text-light flex justify-between px-1 lg:px-0">
       <TeamDataContext.Provider
         value={{
           data: teamData,
@@ -73,7 +73,7 @@ function TeamPageContainer({
           {data.pages > 1 && (
             <div className="flex items-center w-full text-center justify-center text-xl space-x-2">
               <Button
-                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-white/80 hover:bg-transparent"
+                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-light/80 hover:bg-transparent"
                 onClick={() => {
                   setPage(1);
                   setShowPages(
@@ -84,7 +84,7 @@ function TeamPageContainer({
                 <FaAnglesLeft />
               </Button>
               <Button
-                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-white/80 hover:bg-transparent"
+                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-light/80 hover:bg-transparent"
                 onClick={() => setPage(Math.max(1, page - 1))}
               >
                 <FaAngleLeft />
@@ -95,7 +95,7 @@ function TeamPageContainer({
                     key={idx}
                     className={twMerge(
                       clsx(
-                        "bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-white/80 hover:bg-transparent",
+                        "bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-light/80 hover:bg-transparent",
                         {
                           "text-gray-400": num === page,
                         }
@@ -108,13 +108,13 @@ function TeamPageContainer({
                 ))}
               </div>
               <Button
-                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-white/80 hover:bg-transparent"
+                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-light/80 hover:bg-transparent"
                 onClick={() => setPage(Math.min(data.pages, page + 1))}
               >
                 <FaAngleRight />
               </Button>
               <Button
-                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-white/80 hover:bg-transparent"
+                className="bg-transparent shadow-none outline-none text-xl p-0 m-0 hover:text-light/80 hover:bg-transparent"
                 onClick={() => {
                   setPage(data.pages);
                   setShowPages(

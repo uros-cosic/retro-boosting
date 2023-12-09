@@ -8,6 +8,7 @@ interface OptionsInterface {
   priorityOrder: boolean;
   streamGames: boolean;
   soloOnly: boolean;
+  boosterID: null | string;
 }
 
 export type NormalsOrderDataContent = {
@@ -31,6 +32,7 @@ export const NormalsOrderDataContext: any =
         priorityOrder: false,
         streamGames: false,
         soloOnly: false,
+        boosterID: null,
       },
     },
     setNormalsOrderData: () => {},

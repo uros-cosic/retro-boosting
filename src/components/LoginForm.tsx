@@ -51,7 +51,7 @@ function LoginForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem className="border-b border-white flex items-center space-x-3">
+            <FormItem className="border-b border-light flex items-center space-x-3">
               <FaEnvelope className="text-xl text-primary" />
               <FormControl>
                 <Input
@@ -69,7 +69,7 @@ function LoginForm() {
           control={form.control}
           name="password"
           render={({ field }) => (
-            <FormItem className="border-b border-white flex items-center space-x-3">
+            <FormItem className="border-b border-light flex items-center space-x-3">
               <FaLock className="text-xl text-primary" />
               <FormControl>
                 <Input
@@ -85,7 +85,7 @@ function LoginForm() {
         />
         <Button
           type="submit"
-          className="bg-primary text-white text-lg font-normal w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+          className="bg-primary text-light text-lg font-normal w-full py-5 hover:bg-primary/90 transition-colors uppercase"
           disabled={loading}
           aria-disabled={loading}
         >

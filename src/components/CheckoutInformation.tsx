@@ -23,7 +23,7 @@ function CheckoutInformation({ data }: { data: any }) {
           <p className="text-sm">${priceify(data.totalPrice)}</p>
         </div>
         <div className="w-full">
-          <hr className="border-gray-300" />
+          <hr className="border-grayed" />
         </div>
         <div className="flex space-x-3">
           <Input
@@ -33,7 +33,7 @@ function CheckoutInformation({ data }: { data: any }) {
             onChange={(e) => setDiscountCodeVal(e.target.value)}
           />
           <Button
-            className="bg-black text-white"
+            className="bg-black text-white hover:bg-black/70"
             disabled={Boolean(!discountCodeVal)}
             aria-disabled={Boolean(!discountCodeVal)}
             onClick={handleDiscountClick}
@@ -42,7 +42,7 @@ function CheckoutInformation({ data }: { data: any }) {
           </Button>
         </div>
         <div className="w-full">
-          <hr className="border-gray-300" />
+          <hr className="border-grayed" />
         </div>
         <div className="flex items-center justify-between w-full">
           <h1>Total</h1>
@@ -63,7 +63,7 @@ function CheckoutInformation({ data }: { data: any }) {
               <p className="text-sm">${priceify(data.totalPrice)}</p>
             </div>
             <div className="w-full">
-              <hr className="border-gray-300" />
+              <hr className="border-grayed" />
             </div>
             <div className="flex space-x-3">
               <Input
@@ -73,7 +73,7 @@ function CheckoutInformation({ data }: { data: any }) {
                 onChange={(e) => setDiscountCodeVal(e.target.value)}
               />
               <Button
-                className="bg-black text-white"
+                className="bg-black text-white hover:bg-black/70"
                 disabled={Boolean(!discountCodeVal)}
                 aria-disabled={Boolean(!discountCodeVal)}
                 onClick={handleDiscountClick}
@@ -82,7 +82,7 @@ function CheckoutInformation({ data }: { data: any }) {
               </Button>
             </div>
             <div className="w-full">
-              <hr className="border-gray-300" />
+              <hr className="border-grayed" />
             </div>
             <div className="flex items-center justify-between w-full">
               <h1>Total</h1>

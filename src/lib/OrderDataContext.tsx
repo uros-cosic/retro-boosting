@@ -13,6 +13,7 @@ interface OptionsInterface {
     lane: string;
     flashPlacement: string;
   };
+  boosterID?: null | string;
 }
 
 export type OrderDataContent = {
@@ -41,6 +42,7 @@ export const OrderDataContext: any = createContext<OrderDataContent>({
         lane: "any",
         flashPlacement: "any",
       },
+      boosterID: null,
     },
   },
   setOrderData: () => {},

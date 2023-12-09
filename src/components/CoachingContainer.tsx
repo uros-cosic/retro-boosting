@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { CoachingOrderDataContext } from "@/lib/CoachingDataContext";
 import {
   Select,
@@ -10,8 +10,12 @@ import {
 } from "./ui/select";
 import ChooseCoachDataContainer from "./ChooseCoachDataContainer";
 import CoachingSmallCheckoutContainer from "./CoachingSmallCheckoutContainer";
+import { useSearchParams } from "next/navigation";
+import { getCoachById } from "@/lib/apiUtils";
 
 function CoachingContainer() {
+  const searchParams = useSearchParams();
+
   const [coachingData, setCoachingData] = useState<any>({
     coachingHours: 1,
     server: "EUW",
@@ -53,6 +57,25 @@ function CoachingContainer() {
     });
   };
 
+  const handleChosenCoach = async () => {
+    const data: any = await getCoachById(searchParams.get("coach"));
+    if (data.status === "success") {
+      setCoachingData((prev: any) => {
+        return {
+          ...prev,
+          coach: {
+            name: data.data.name,
+            avatar: data.data.avatar,
+          },
+        };
+      });
+    }
+  };
+
+  useEffect(() => {
+    handleChosenCoach();
+  }, []);
+
   return (
     <div className="w-full flex flex-col space-y-5 lg:space-y-0 lg:flex-row lg:h-[60vh]">
       <CoachingOrderDataContext.Provider
@@ -71,7 +94,7 @@ function CoachingContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Role</h2>
                 <Select onValueChange={handleRoleChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Jungle" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -86,7 +109,7 @@ function CoachingContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -101,7 +124,7 @@ function CoachingContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Language</h2>
                 <Select onValueChange={handleLanguageChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="English" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -114,7 +137,7 @@ function CoachingContainer() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary shadow-base shadow-primary">
+        <div className="w-full lg:w-2/6 h-full bg-dark text-light rounded-xl p-10 border border-primary shadow-base shadow-primary">
           <CoachingSmallCheckoutContainer />
         </div>
       </CoachingOrderDataContext.Provider>

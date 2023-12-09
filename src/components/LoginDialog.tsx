@@ -27,12 +27,12 @@ function LoginDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="h-1/2 bg-black rounded px-2 md:px-5 border-b-2 border-r-2 border-secondary flex items-center hover:opacity-80 transition-colors uppercase font-normal text-xs md:text-sm ">
+        <Button className="h-1/2 bg-dark rounded px-2 md:px-5 border-b-2 border-r-2 border-light flex items-center hover:opacity-80 transition-colors uppercase font-normal text-xs md:text-sm ">
           <PiUserCircleLight className="text-xl mr-1" />
           login
         </Button>
       </DialogTrigger>
-      <DialogContent className="bg-black text-white border border-primary">
+      <DialogContent className="bg-dark text-light border border-primary z-[100]">
         <DialogHeader>
           <DialogTitle className="text-3xl text-center uppercase font-bold">
             login
@@ -47,12 +47,12 @@ function LoginDialog() {
             Forgot Password
           </Link>
         </DialogClose>
-        <div className="before:border-t flex before:flex-1 items-center before:border-white after:border-t after:flex-1 after:border-white text-white">
+        <div className="before:border-t flex before:flex-1 items-center before:border-light after:border-t after:flex-1 after:border-light text-light">
           <p className="text-center uppercase mx-4 font-normal text-sm">or</p>
         </div>
         <div className="w-full">
           <Button
-            className="bg-primary text-white text-lg font-normal w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+            className="bg-primary text-light text-lg font-normal w-full py-5 hover:bg-primary/90 transition-colors uppercase"
             onClick={handleGoogleClick}
             disabled={loading}
             aria-disabled={loading}

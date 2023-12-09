@@ -10,6 +10,7 @@ import {
   SelectItem,
 } from "./ui/select";
 import SmallCheckoutContainer from "./SmallCheckoutContainer";
+import { useSearchParams } from "next/navigation";
 
 function SoloBoostContainer({
   extraOptions,
@@ -18,6 +19,7 @@ function SoloBoostContainer({
   extraOptions: boolean;
   switchableOptions: Array<any>;
 }) {
+  const searchParams = useSearchParams();
   const [orderData, setOrderData] = useState<any>(
     extraOptions
       ? {
@@ -36,6 +38,7 @@ function SoloBoostContainer({
               lane: "any",
               flashPlacement: "any",
             },
+            boosterID: searchParams.get("booster"),
           },
         }
       : {
@@ -46,6 +49,7 @@ function SoloBoostContainer({
             server: "euw",
             queue: "solo",
             priorityOrder: false,
+            boosterID: searchParams.get("booster"),
           },
         }
   );
@@ -105,7 +109,7 @@ function SoloBoostContainer({
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Current LP</h2>
                 <Select onValueChange={handleLpChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="LP 0-20" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -120,7 +124,7 @@ function SoloBoostContainer({
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -135,7 +139,7 @@ function SoloBoostContainer({
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Solo/Duo" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -147,7 +151,7 @@ function SoloBoostContainer({
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary shadow-base shadow-primary">
+        <div className="w-full lg:w-2/6 h-full bg-dark text-light rounded-xl p-10 border border-primary shadow-base shadow-primary">
           <SmallCheckoutContainer
             extraOptions={extraOptions}
             switchableOptions={switchableOptions}

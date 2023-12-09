@@ -73,7 +73,7 @@ function BoostingServiceContainer({
           </p>
           <Link
             href="/boosting"
-            className="bg-black text-center border-b-2 border-r-2 border-primary px-10 py-3 text-white text-xs lg:text-lg font-normal rounded w-fit hover:text-white/70 transition-colors shadow-primary shadow-base"
+            className="bg-dark text-center border-b-2 border-r-2 border-primary px-10 py-3 text-light text-xs lg:text-lg font-normal rounded w-fit hover:text-light/70 transition-colors shadow-primary shadow-base"
           >
             connect with booster
           </Link>

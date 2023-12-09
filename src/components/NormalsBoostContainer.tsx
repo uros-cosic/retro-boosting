@@ -10,8 +10,10 @@ import {
 import { NormalsOrderDataContext } from "@/lib/NormalsDataContext";
 import ChooseNormalsRankContainer from "./ChooseNormalsRankContainer";
 import NormalsSmallCheckoutContainer from "./NormalsSmallCheckoutContainer";
+import { useSearchParams } from "next/navigation";
 
 function NormalsBoostContainer() {
+  const searchParams = useSearchParams();
   const [normalsOrderData, setNormalsOrderData] = useState<any>({
     boosterRank: "M1",
     numOfGames: 1,
@@ -22,6 +24,7 @@ function NormalsBoostContainer() {
       priorityOrder: false,
       streamGames: false,
       soloOnly: false,
+      boosterID: searchParams.get("booster"),
     },
   });
 
@@ -67,7 +70,7 @@ function NormalsBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -82,7 +85,7 @@ function NormalsBoostContainer() {
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
                 <h2 className="text-lg font-normal">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-black py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Summoners Rift" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -96,7 +99,7 @@ function NormalsBoostContainer() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-2/6 h-full bg-black text-white rounded-xl p-10 border border-primary shadow-base shadow-primary">
+        <div className="w-full lg:w-2/6 h-full bg-dark text-light rounded-xl p-10 border border-primary shadow-base shadow-primary">
           <NormalsSmallCheckoutContainer />
         </div>
       </NormalsOrderDataContext.Provider>

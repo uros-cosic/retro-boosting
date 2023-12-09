@@ -36,8 +36,17 @@ module.exports = {
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(var(--light))",
+          foreground: "hsl(var(--light-foreground))",
+        },
+        dark: {
+          DEFAULT: "hsl(var(--dark))",
+        },
+        light: {
+          DEFAULT: "hsl(var(--light))",
+        },
+        grayed: {
+          DEFAULT: "hsl(var(--grayed))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

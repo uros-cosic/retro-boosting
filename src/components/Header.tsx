@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 function Header() {
   return (
-    <header className="w-full bg-black h-20 px-2">
+    <header className="w-full bg-dark h-20 px-2">
       <Navbar />
     </header>
   );

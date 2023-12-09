@@ -13,6 +13,7 @@ interface OptionsInterface {
     lane: string;
     flashPlacement: string;
   };
+  boosterID: null | string;
 }
 
 export type WinOrderDataContent = {
@@ -40,6 +41,7 @@ export const WinOrderDataContext: any = createContext<WinOrderDataContent>({
         lane: "any",
         flashPlacement: "any",
       },
+      boosterID: null,
     },
   },
   setWinOrderData: () => {},

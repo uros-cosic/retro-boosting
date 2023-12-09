@@ -2,7 +2,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="py-10 flex flex-col space-y-10 text-white max-w-7xl mx-auto px-1 lg:px-0">
+    <div className="py-10 flex flex-col space-y-10 text-light max-w-7xl mx-auto px-1 lg:px-0">
       <h1 className="text-center text-3xl">Terms</h1>
       <p className="leading-10">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia totam

@@ -5,7 +5,7 @@ import CheckoutForm from "./CheckoutForm";
 
 function CheckoutContainer({ data }: { data: any }) {
   return (
-    <div className="min-h-[60vh] w-full text-white bg-white overflow-hidden border rounded-xl shadow flex">
+    <div className="min-h-[60vh] w-full bg-white overflow-hidden border rounded-xl shadow flex">
       <CheckoutForm />
       <CheckoutInformation data={data} />
     </div>

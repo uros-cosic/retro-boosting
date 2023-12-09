@@ -49,7 +49,7 @@ export const columns: ColumnDef<OrderPayment>[] = [
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
         aria-label="Select all"
-        className="border-white checked:bg-white data-[state=checked]:bg-white"
+        className="border-light checked:bg-light data-[state=checked]:bg-light"
       />
     ),
     cell: ({ row }) => (
@@ -57,7 +57,7 @@ export const columns: ColumnDef<OrderPayment>[] = [
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
         aria-label="Select row"
-        className="border-white checked:bg-white data-[state=checked]:bg-white"
+        className="border-light checked:bg-light data-[state=checked]:bg-light"
       />
     ),
     enableSorting: false,
@@ -119,7 +119,7 @@ export const columns: ColumnDef<OrderPayment>[] = [
           <DropdownMenuTrigger asChild>
             <Button
               variant="ghost"
-              className="h-8 w-8 p-0 hover:bg-muted-foreground hover:text-white"
+              className="h-8 w-8 p-0 hover:bg-muted-foreground hover:text-light"
             >
               <span className="sr-only">Open menu</span>
               <DotsHorizontalIcon className="h-4 w-4" />
@@ -127,14 +127,14 @@ export const columns: ColumnDef<OrderPayment>[] = [
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
             <DropdownMenuItem
-              className="hover:bg-muted-foreground hover:text-white"
+              className="hover:bg-muted-foreground hover:text-light"
               onClick={() => navigator.clipboard.writeText(payment.id)}
             >
               Copy Order ID
             </DropdownMenuItem>
             {payment.claimedBy && (
               <DropdownMenuItem
-                className="hover:bg-muted-foreground hover:text-white"
+                className="hover:bg-muted-foreground hover:text-light"
                 onClick={() =>
                   navigator.clipboard.writeText(payment.claimedBy || "")
                 }
@@ -185,7 +185,7 @@ function OrdersDataTable() {
           <DropdownMenuTrigger asChild>
             <Button
               variant="outline"
-              className="ml-auto hover:bg-muted-foreground hover:text-white"
+              className="ml-auto hover:bg-muted-foreground hover:text-light"
             >
               Columns <ChevronDownIcon className="ml-2 h-4 w-4" />
             </Button>
@@ -198,7 +198,7 @@ function OrdersDataTable() {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="capitalize hover:bg-muted-foreground hover:text-white"
+                    className="capitalize hover:bg-muted-foreground hover:text-light"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)
@@ -218,7 +218,7 @@ function OrdersDataTable() {
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id} className="text-white">
+                    <TableHead key={header.id} className="text-light">
                       {header.isPlaceholder
                         ? null
                         : flexRender(

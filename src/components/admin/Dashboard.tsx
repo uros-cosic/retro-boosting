@@ -79,21 +79,21 @@ function Dashboard({
   }, [data.date]);
 
   return (
-    <div className="py-10 text-white max-w-7xl mx-auto px-1 lg:px-0">
+    <div className="py-10 text-light max-w-7xl mx-auto px-1 lg:px-0">
       <AdminDataContext.Provider
         value={{
           data,
           setData,
         }}
       >
-        <div className="w-full min-h-[70vh] bg-muted-foreground rounded-xl border border-black shadow-base p-5 flex flex-col justify-between space-y-5">
+        <div className="w-full min-h-[70vh] bg-muted-foreground rounded-xl border border-dark shadow-base p-5 flex flex-col justify-between space-y-5">
           <div className="w-full flex flex-col lg:flex-row justify-between items-center">
             <h1 className="text-3xl">Dashboard</h1>
             <CalendarDateRangePicker />
           </div>
           <div className="h-full w-full">
             <Tabs defaultValue="overview" className="space-y-4">
-              <TabsList className="bg-muted text-white">
+              <TabsList className="bg-muted text-light">
                 <TabsTrigger value="overview">Overview</TabsTrigger>
                 <TabsTrigger value="orders">Orders</TabsTrigger>
               </TabsList>
@@ -103,7 +103,7 @@ function Dashboard({
                 <>
                   <TabsContent value="overview" className="space-y-4">
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-                      <Card className="text-white bg-muted border-primary">
+                      <Card className="text-light bg-muted border-primary">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                           <CardTitle className="text-sm font-medium">
                             Total Revenue
@@ -115,7 +115,7 @@ function Dashboard({
                           )}`}</div>
                         </CardContent>
                       </Card>
-                      <Card className="text-white bg-muted border-primary">
+                      <Card className="text-light bg-muted border-primary">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                           <CardTitle className="text-sm font-medium">
                             Users
@@ -127,7 +127,7 @@ function Dashboard({
                           </div>
                         </CardContent>
                       </Card>
-                      <Card className="text-white bg-muted border-primary">
+                      <Card className="text-light bg-muted border-primary">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                           <CardTitle className="text-sm font-medium">
                             Sales
@@ -139,7 +139,7 @@ function Dashboard({
                           </div>
                         </CardContent>
                       </Card>
-                      <Card className="text-white bg-muted border-primary">
+                      <Card className="text-light bg-muted border-primary">
                         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                           <CardTitle className="text-sm font-medium">
                             Active Now
@@ -153,7 +153,7 @@ function Dashboard({
                       </Card>
                     </div>
                     <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
-                      <Card className="col-span-4 text-white bg-muted border-primary">
+                      <Card className="col-span-4 text-light bg-muted border-primary">
                         <CardHeader>
                           <CardTitle>Overview</CardTitle>
                         </CardHeader>
@@ -161,7 +161,7 @@ function Dashboard({
                           <Overview />
                         </CardContent>
                       </Card>
-                      <Card className="col-span-3 text-white bg-muted border-primary">
+                      <Card className="col-span-3 text-light bg-muted border-primary">
                         <CardHeader>
                           <CardTitle>Recent Orders</CardTitle>
                         </CardHeader>

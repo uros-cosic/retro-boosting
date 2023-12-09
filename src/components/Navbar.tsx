@@ -12,6 +12,7 @@ import { UserContext } from "@/lib/UserContext";
 import { getMe } from "@/lib/apiUtils";
 import AccountDialog from "./AccountDialog";
 import { Skeleton } from "./ui/skeleton";
+import ChangeTheme from "./ChangeTheme";
 
 function Navbar() {
   const [user, setUser] = useState({
@@ -58,7 +59,7 @@ function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="text-white mx-auto flex items-center justify-between h-full">
+    <nav className="text-light mx-auto flex items-center justify-between h-full">
       <div className="h-full flex space-x-5 items-center">
         <div className="h-full flex items-center space-x-2 lg:space-x-0">
           <div className="lg:hidden h-full flex items-center">
@@ -66,8 +67,8 @@ function Navbar() {
               <SheetTrigger>
                 <AiOutlineMenu className="text-2xl" />
               </SheetTrigger>
-              <SheetContent side="left" className="bg-black">
-                <div className="flex flex-col h-full items-center justify-center uppercase space-y-5 font-medium text-gray-300">
+              <SheetContent side="left" className="bg-dark">
+                <div className="flex flex-col h-full items-center justify-center uppercase space-y-5 font-medium text-grayed">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.label}>
                       <Link
@@ -82,7 +83,7 @@ function Navbar() {
               </SheetContent>
             </Sheet>
           </div>
-          <Link href="/" className="border-gray-300 border-r px-5">
+          <Link href="/" className="border-grayed border-r px-3 lg:px-5">
             <Logo />
           </Link>
         </div>
@@ -92,7 +93,7 @@ function Navbar() {
               <Link
                 href={link.href}
                 className={twMerge(
-                  clsx("text-gray-300 hover:text-white transition-colors", {
+                  clsx("text-grayed hover:text-light transition-colors", {
                     "text-primary hover:text-primary/90":
                       pathname.split(/\/|#/)[1] === link.href.split(/\/|#/)[1],
                   })
@@ -127,6 +128,7 @@ function Navbar() {
               </>
             ) : (
               <>
+                <ChangeTheme />
                 <RegisterDialog />
                 <LoginDialog />
               </>

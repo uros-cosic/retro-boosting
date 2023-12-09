@@ -40,7 +40,7 @@ function CheckoutForm() {
           <div className="w-full">
             <PayWithPaypal />
           </div>
-          <div className="before:border-t flex before:flex-1 items-center before:border-gray-300 after:border-t after:flex-1 after:border-gray-300 text-gray-500">
+          <div className="before:border-t flex before:flex-1 items-center before:border-grayed after:border-t after:flex-1 after:border-grayed text-gray-500">
             <p className="text-center uppercase mx-4 font-normal text-sm">or</p>
           </div>
           <FormField

@@ -29,7 +29,7 @@ function TeamMenuLeft({
 }) {
   return (
     <>
-      <div className="hidden lg:flex flex-col py-5 px-10 rounded-xl bg-black border border-primary h-fit space-y-10 uppercase shadow-base shadow-primary mr-5">
+      <div className="hidden lg:flex flex-col py-5 px-10 rounded-xl bg-dark border border-primary h-fit space-y-10 uppercase shadow-base shadow-primary mr-5">
         <div className="space-y-2">
           <Label htmlFor="teamMenuSearch">Search</Label>
           <Input
@@ -133,10 +133,10 @@ function TeamMenuLeft({
       </div>
       <div className="mr-5">
         <Dialog>
-          <DialogTrigger className="block lg:hidden text-3xl hover:text-white/80">
+          <DialogTrigger className="block lg:hidden text-3xl hover:text-light/80">
             <AiOutlineMenu />
           </DialogTrigger>
-          <DialogContent className="w-full flex flex-col items-center justify-center bg-black text-white uppercase border-primary">
+          <DialogContent className="w-full flex flex-col items-center justify-center bg-dark text-light uppercase border-primary">
             <div className="space-y-2">
               <Label htmlFor="teamMenuSearch">Search</Label>
               <Input
