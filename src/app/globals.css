@@ -80,6 +80,12 @@
   }
 }
 
+input,
+button,
+textarea {
+  text-transform: uppercase;
+}
+
 .light .text-light {
   color: #000;
 }

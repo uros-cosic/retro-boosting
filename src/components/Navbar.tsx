@@ -68,7 +68,7 @@ function Navbar() {
                 <AiOutlineMenu className="text-2xl" />
               </SheetTrigger>
               <SheetContent side="left" className="bg-dark">
-                <div className="flex flex-col h-full items-center justify-center uppercase space-y-5 font-medium text-grayed">
+                <div className="flex flex-col h-full items-center justify-center   space-y-5 font-medium text-grayed">
                   {navLinks.map((link) => (
                     <SheetClose asChild key={link.label}>
                       <Link
@@ -87,7 +87,7 @@ function Navbar() {
             <Logo />
           </Link>
         </div>
-        <ul className="hidden lg:flex uppercase items-center text-sm font-black space-x-5">
+        <ul className="hidden lg:flex   items-center text-sm font-black space-x-5">
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
@@ -119,10 +119,10 @@ function Navbar() {
           <div className="h-full space-x-2 md:space-x-5 flex items-center">
             {loading ? (
               <>
-                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-normal text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
+                <Skeleton className="h-1/2 bg-muted-foreground   font-normal text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
                   x register
                 </Skeleton>
-                <Skeleton className="h-1/2 bg-muted-foreground uppercase font-normal text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
+                <Skeleton className="h-1/2 bg-muted-foreground   font-normal text-xs md:text-sm rounded px-2 md:px-5 text-muted-foreground">
                   x login
                 </Skeleton>
               </>

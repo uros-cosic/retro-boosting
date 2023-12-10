@@ -66,9 +66,7 @@ export const columns: ColumnDef<OrderPayment>[] = [
   {
     accessorKey: "status",
     header: "Status",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("status")}</div>
-    ),
+    cell: ({ row }) => <div className=" ">{row.getValue("status")}</div>,
   },
   {
     accessorKey: "type",
@@ -198,7 +196,7 @@ function OrdersDataTable() {
                 return (
                   <DropdownMenuCheckboxItem
                     key={column.id}
-                    className="capitalize hover:bg-muted-foreground hover:text-light"
+                    className="  hover:bg-muted-foreground hover:text-light"
                     checked={column.getIsVisible()}
                     onCheckedChange={(value) =>
                       column.toggleVisibility(!!value)

@@ -117,7 +117,7 @@ function Footer() {
       <div className="max-w-xl w-full mx-auto px-1">
         <hr className="border-primary border-2" />
       </div>
-      <ul className="max-w-xl w-full flex justify-evenly uppercase font-medium items-center text-center mx-auto text-sm">
+      <ul className="max-w-xl w-full flex justify-evenly   font-medium items-center text-center mx-auto text-sm">
         {nav.map((link) => (
           <li key={link.label}>
             <Link href={link.href} className="hover:underline">

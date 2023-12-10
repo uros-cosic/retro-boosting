@@ -9,10 +9,6 @@ interface OptionsInterface {
   champion: boolean;
   priorityOrder: boolean;
   streamGames: boolean;
-  extraOptions: {
-    lane: string;
-    flashPlacement: string;
-  };
   boosterID: null | string;
 }
 
@@ -37,10 +33,6 @@ export const ArenaOrderDataContext: any = createContext<ArenaOrderDataContent>({
       champion: false,
       priorityOrder: false,
       streamGames: false,
-      extraOptions: {
-        lane: "any",
-        flashPlacement: "any",
-      },
       boosterID: null,
     },
   },

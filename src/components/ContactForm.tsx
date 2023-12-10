@@ -34,7 +34,7 @@ function ContactForm() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="text-light max-w-3xl mx-auto p-5 rounded-xl bg-dark uppercase space-y-5 border border-primary shadow-base shadow-primary"
+          className="text-light max-w-3xl mx-auto p-5 rounded-xl bg-dark   space-y-5 border border-primary shadow-base shadow-primary"
         >
           <h1 className="font-normal text-3xl">contact us</h1>
           <FormField
@@ -110,7 +110,7 @@ function ContactForm() {
           />
           <Button
             type="submit"
-            className="bg-white text-black text-lg w-full py-5 hover:bg-gray-100 transition-colors uppercase border"
+            className="bg-white text-black text-lg w-full py-5 hover:bg-gray-100 transition-colors   border"
             disabled={loading}
             aria-disabled={loading}
           >

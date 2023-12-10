@@ -29,7 +29,7 @@ function TeamMenuLeft({
 }) {
   return (
     <>
-      <div className="hidden lg:flex flex-col py-5 px-10 rounded-xl bg-dark border border-primary h-fit space-y-10 uppercase shadow-base shadow-primary mr-5">
+      <div className="hidden lg:flex flex-col py-5 px-10 rounded-xl bg-dark border border-primary h-fit space-y-10   shadow-base shadow-primary mr-5">
         <div className="space-y-2">
           <Label htmlFor="teamMenuSearch">Search</Label>
           <Input
@@ -117,7 +117,7 @@ function TeamMenuLeft({
           </Select>
         </div>
         <Button
-          className="bg-primary w-full uppercase hover:bg-primary/90"
+          className="bg-primary w-full   hover:bg-primary/90"
           onClick={() => {
             setOptions({
               searchVal: "",
@@ -136,7 +136,7 @@ function TeamMenuLeft({
           <DialogTrigger className="block lg:hidden text-3xl hover:text-light/80">
             <AiOutlineMenu />
           </DialogTrigger>
-          <DialogContent className="w-full flex flex-col items-center justify-center bg-dark text-light uppercase border-primary">
+          <DialogContent className="w-full flex flex-col items-center justify-center bg-dark text-light   border-primary">
             <div className="space-y-2">
               <Label htmlFor="teamMenuSearch">Search</Label>
               <Input
@@ -224,7 +224,7 @@ function TeamMenuLeft({
               </Select>
             </div>
             <Button
-              className="bg-primary w-44 uppercase hover:bg-primary/90"
+              className="bg-primary w-44   hover:bg-primary/90"
               onClick={() => {
                 setOptions({
                   searchVal: "",

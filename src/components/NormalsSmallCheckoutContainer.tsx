@@ -112,7 +112,7 @@ function NormalsSmallCheckoutContainer() {
 
   return (
     <div className="h-full w-full flex flex-col items-center justify-between space-y-3 lg:space-y-0">
-      <h1 className="font-bold uppercase text-center text-2xl">checkout</h1>
+      <h1 className="font-bold   text-center text-2xl">checkout</h1>
       <div className="flex justify-between w-full items-center">
         <div className="flex items-center justify-center flex-col w-full">
           <Image
@@ -122,7 +122,7 @@ function NormalsSmallCheckoutContainer() {
             width={100}
             className="h-auto w-auto max-h-[100px]"
           />
-          <p className="uppercase text-center text-xs">
+          <p className="  text-center text-xs">
             {tierMapping[normalsOrderData.boosterRank].label}
           </p>
         </div>
@@ -159,10 +159,10 @@ function NormalsSmallCheckoutContainer() {
         <Input
           maxLength={20}
           placeholder="discount code"
-          className="uppercase border border-primary h-fit placeholder:text-light"
+          className="  border border-primary h-fit placeholder:text-light"
         />
         <Button
-          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary uppercase text-xs rounded-l-none hover:bg-primary/90"
+          className="absolute top-1/2 left-full transform -translate-y-1/2 -translate-x-full h-fit bg-primary   text-xs rounded-l-none hover:bg-primary/90"
           onClick={handleDiscountClick}
         >
           apply
@@ -170,7 +170,7 @@ function NormalsSmallCheckoutContainer() {
       </div>
       <SmallCheckoutPrice priceObj={priceObj} />
       <Button
-        className="bg-primary uppercase w-full rounded-xl text-center py-2 font-normal text-sm hover:bg-primary/90 transition-colors"
+        className="bg-primary   w-full rounded-xl text-center py-2 font-normal text-sm hover:bg-primary/90 transition-colors"
         onClick={handlePurchaseClick}
         disabled={loading}
         aria-disabled={loading}

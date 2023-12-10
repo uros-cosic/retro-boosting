@@ -41,7 +41,7 @@ function BoostingPageNavigation() {
 
   return (
     <nav className="py-5 w-full bg-dark" id="nav">
-      <ul className="flex w-full capitalize justify-between items-center px-3 lg:px-5">
+      <ul className="flex w-full justify-between items-center px-1 lg:px-5">
         {boostingServices.map((boostingServiceObj) => (
           <li
             key={boostingServiceObj.label}
@@ -51,7 +51,7 @@ function BoostingPageNavigation() {
               href={boostingServiceObj.href}
               className={twMerge(
                 clsx(
-                  "text-grayed hover:text-light transition-colors text-xs lg:text-xl font-black",
+                  "text-grayed hover:text-light transition-colors text-[0.6rem] lg:text-xl font-black",
                   {
                     "text-primary hover:text-primary/90":
                       pathname ===

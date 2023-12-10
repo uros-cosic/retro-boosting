@@ -50,7 +50,7 @@ function BoostingServiceContainer({
       <div
         className={twMerge(
           clsx(
-            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col lg:flex-row justify-between items-center ease-out transition-all duration-700",
+            "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 px-1 lg:py-10 w-full lg:w-3/4 mx-auto   flex flex-col lg:flex-row justify-between items-center ease-out transition-all duration-700",
             {
               "transform -translate-x-[100vw] opacity-0": !isMiddleVisible,
               "transform opacity-100": isMiddleVisible,
@@ -62,12 +62,12 @@ function BoostingServiceContainer({
           <h1 className="text-white text-2xl lg:text-4xl font-black">
             boosting service
           </h1>
-          <p className="text-gray-300 text-xs lg:text-base font-semibold">
+          <p className="text-gray-300 text-xs lg:text-base  ">
             Discover the Fast Lane to Victory with Retro Boosting! 🏆 Our expert
             boosters are just a click away from turbocharging your League of
             Legends journey.
           </p>
-          <p className="text-gray-300 text-xs lg:text-base font-semibold">
+          <p className="text-gray-300 text-xs lg:text-base  ">
             Get ready to climb the ranks with our trusted boosting service.
             Connect with a booster now and unleash your full potential!
           </p>

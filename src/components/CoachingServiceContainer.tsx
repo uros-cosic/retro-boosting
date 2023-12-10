@@ -47,7 +47,7 @@ function CoachingServiceContainer({
         className="object-cover h-full w-full"
       />
       <div className="absolute h-full w-full bg-primary/50" />
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 lg:py-10 w-full lg:w-3/4 mx-auto uppercase flex flex-col-reverse lg:flex-row justify-between items-center">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full py-5 lg:py-10 w-full lg:w-3/4 mx-auto   flex flex-col-reverse lg:flex-row justify-between items-center">
         <div
           className={twMerge(
             clsx(
@@ -77,13 +77,13 @@ function CoachingServiceContainer({
           <h1 className="text-white text-2xl lg:text-4xl font-black">
             coaching service
           </h1>
-          <p className="text-gray-300 text-xs lg:text-base font-semibold">
+          <p className="text-gray-300 text-xs lg:text-base  ">
             {`Master the Art of League of Legends with Retro Boosting's Coaching
               Service! 🎮 Unlock personalized guidance from top-tier coaches who
               will help you refine your skills, strategize like a pro, and
               dominate the competition.`}
           </p>
-          <p className="text-gray-300 text-xs lg:text-base font-semibold">
+          <p className="text-gray-300 text-xs lg:text-base  ">
             Ready to level up your gameplay? Connect with a coach now and embark
             on your path to mastery!
           </p>

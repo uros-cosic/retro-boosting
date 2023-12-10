@@ -103,13 +103,13 @@ function SoloBoostContainer({
             <ChooseRankContainer idx={0} />
             <ChooseRankContainer idx={1} />
           </div>
-          <div className="lg:h-1/3 w-full space-y-3 flex flex-col justify-end">
-            <h1 className="text-3xl font-normal">Set Other Info</h1>
+          <div className="lg:h-1/3 w-full space-y-10 flex flex-col justify-end">
+            <h1 className="text-3xl">Set Other Info</h1>
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-normal">Current LP</h2>
+                <h2 className="text-sm lg:text-base">Current LP</h2>
                 <Select onValueChange={handleLpChange}>
-                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark text-sm lg:text-base py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="LP 0-20" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -122,9 +122,9 @@ function SoloBoostContainer({
                 </Select>
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-normal">Server</h2>
+                <h2 className="text-sm lg:text-base">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark text-sm lg:text-base py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -137,9 +137,9 @@ function SoloBoostContainer({
                 </Select>
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-normal">Queue</h2>
+                <h2 className="text-sm lg:text-base">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark text-sm lg:text-base py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Solo/Duo" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">

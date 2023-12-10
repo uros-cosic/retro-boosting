@@ -50,7 +50,7 @@ export default function RootLayout({
           content="https://retro-boosting.vercel.app/img/logo.png"
         />
       </head>
-      <body className={`${myFont.className} antialiased bg-muted`}>
+      <body className={`${myFont.className} antialiased bg-muted uppercase`}>
         <ThemeProvider attribute="class" defaultTheme="dark">
           <Header />
           <main>{children}</main>

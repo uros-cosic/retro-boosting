@@ -68,24 +68,24 @@ function ChooseRankContainer({ idx }: { idx: number }) {
       <div className="flex flex-col items-center justify-center text-center w-full">
         <div className="flex flex-col space-y-5 lg:flex-row lg:space-y-0 lg:space-x-10 justify-center w-full items-center">
           <div className="space-y-5">
-            <h2 className="font-normal capitalize text-xl text-left">
+            <h2 className="font-normal   text-xl text-left">
               {idx === 0 ? "current rank" : "desired rank"}
             </h2>
             <Select onValueChange={(val) => handleChange(idx, val)}>
               <SelectTrigger className="w-40 border border-primary">
                 <SelectValue
-                  className="uppercase"
+                  className=" "
                   placeholder={
                     idx === 0
-                      ? tierMapping[orderData.from].label.toUpperCase()
-                      : tierMapping[orderData.to].label.toUpperCase()
+                      ? tierMapping[orderData.from].label
+                      : tierMapping[orderData.to].label
                   }
                 />
               </SelectTrigger>
               <SelectContent className="border border-primary">
                 {filterDivisions(divisionsOrdered).map((key: string) => (
                   <SelectItem key={tierMapping[key].label} value={key}>
-                    {tierMapping[key].label.toUpperCase()}
+                    {tierMapping[key].label}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -93,12 +93,10 @@ function ChooseRankContainer({ idx }: { idx: number }) {
           </div>
           {idx === 0 && (
             <div className="space-y-5">
-              <h2 className="font-normal capitalize text-xl text-left">
-                LP gains
-              </h2>
+              <h2 className="font-normal   text-xl text-left">LP gains</h2>
               <Select onValueChange={handleLpGainsChange}>
                 <SelectTrigger className="w-40 border border-primary">
-                  <SelectValue className="uppercase" placeholder="< 15" />
+                  <SelectValue className=" " placeholder="< 15" />
                 </SelectTrigger>
                 <SelectContent className="border border-primary">
                   <SelectItem value="<15">{`< 15`}</SelectItem>

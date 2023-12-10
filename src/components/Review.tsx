@@ -25,7 +25,7 @@ function Review({ data }: { data: ReviewCardInterface }) {
           </Avatar>
           <div className="flex flex-col h-full justify-around">
             <div>
-              <p className="text-sm font-medium text-light uppercase">
+              <p className="text-sm font-medium text-light  ">
                 {data.customer.name}
               </p>
               <p className="text-xs text-gray-500 font-medium">
@@ -56,7 +56,7 @@ function Review({ data }: { data: ReviewCardInterface }) {
               width={500}
               className="w-auto h-14 sm:h-16"
             />
-            <p className="text-light uppercase text-center text-xs">
+            <p className="text-light   text-center text-xs">
               {tierMapping[data.order.from].label}
             </p>
           </div>
@@ -69,7 +69,7 @@ function Review({ data }: { data: ReviewCardInterface }) {
               width={500}
               className="w-auto h-14 sm:h-16"
             />
-            <p className="text-light uppercase text-center text-xs">
+            <p className="text-light   text-center text-xs">
               {tierMapping[data.order.to].label}
             </p>
           </div>

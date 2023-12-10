@@ -16,14 +16,14 @@ function AccountDialog() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="h-1/2 bg-light rounded px-2 md:px-5 flex items-center text-dark hover:bg-light/80 transition-colors uppercase font-normal text-xs md:text-sm ">
+        <Button className="h-1/2 bg-light rounded px-2 md:px-5 flex items-center text-dark hover:bg-light/80 transition-colors   font-normal text-xs md:text-sm ">
           <PiUserCircleLight className="text-xl mr-1" />
           Account
         </Button>
       </DialogTrigger>
       <DialogContent className="bg-dark text-light border border-primary">
         <DialogHeader>
-          <DialogTitle className="text-3xl text-center uppercase font-bold">
+          <DialogTitle className="text-3xl text-center   font-bold">
             manage account
           </DialogTitle>
         </DialogHeader>

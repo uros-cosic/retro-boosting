@@ -64,13 +64,13 @@ function NormalsBoostContainer() {
           <div className="h-2/3 w-full pb-5 flex flex-col justify-between space-y-5 lg:space-y-0">
             <ChooseNormalsRankContainer />
           </div>
-          <div className="lg:h-1/3 w-full space-y-3 flex flex-col justify-end">
+          <div className="lg:h-1/3 w-full space-y-10 flex flex-col justify-end">
             <h1 className="text-3xl font-normal">Set Other Info</h1>
             <div className="flex w-full justify-between">
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-normal">Server</h2>
+                <h2 className="text-sm lg:text-base">Server</h2>
                 <Select onValueChange={handleServerChange}>
-                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark text-sm lg:text-base py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Europe West" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">
@@ -83,9 +83,9 @@ function NormalsBoostContainer() {
                 </Select>
               </div>
               <div className="w-1/4 space-y-2 flex flex-col justify-end">
-                <h2 className="text-lg font-normal">Queue</h2>
+                <h2 className="text-sm lg:text-base">Queue</h2>
                 <Select onValueChange={handleQueueChange}>
-                  <SelectTrigger className="bg-dark py-5 rounded-xl border border-primary">
+                  <SelectTrigger className="bg-dark text-sm lg:text-base py-5 rounded-xl border border-primary">
                     <SelectValue placeholder="Summoners Rift" />
                   </SelectTrigger>
                   <SelectContent className="border border-primary">

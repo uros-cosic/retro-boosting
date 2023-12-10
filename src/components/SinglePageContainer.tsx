@@ -30,14 +30,14 @@ function SinglePageContainer({
     <div className="flex flex-col space-y-10 max-w-7xl mx-auto px-1">
       <div className="flex items-center justify-between">
         <div className="flex space-x-3 lg:space-x-5 items-center h-28">
-          <Avatar className="h-full w-fit border">
+          <Avatar className="h-20 lg:h-full w-fit border">
             <AvatarImage src={data.avatar} className="h-full w-auto" />
             <AvatarFallback className="text-light">{data.name}</AvatarFallback>
           </Avatar>
           <div className="flex flex-col justify-center space-y-3 h-full">
             <Badge
               variant={"outline"}
-              className="text-light bg-primary uppercase text-[10px] lg:text-xs text-center w-fit"
+              className="text-light bg-primary   text-[10px] lg:text-xs text-center w-fit"
             >
               {data.elo}
             </Badge>
@@ -86,16 +86,14 @@ function SinglePageContainer({
           />
           <div className="h-full w-full absolute top-0 left-0 bg-primary/50" />
           <div className="absolute h-full w-full flex flex-col items-center justify-center p-5 space-y-3">
-            <h1 className="font-bold text-3xl z-10 uppercase text-white">
-              About
-            </h1>
+            <h1 className="font-bold text-3xl z-10   text-white">About</h1>
             <div className="h-full flex items-center z-10">
               <p className="text-center text-xs lg:text-sm text-gray-300">
                 {data.about}
               </p>
             </div>
             <Button
-              className="bg-primary text-white border uppercase hover:bg-primary/90 text-xs lg:text-sm"
+              className="bg-primary text-white border   hover:bg-primary/90 text-xs lg:text-sm"
               asChild
             >
               <Link
@@ -110,13 +108,13 @@ function SinglePageContainer({
         </div>
         <div className="flex lg:flex-col h-full w-full space-x-1 lg:space-x-0 lg:w-1/3 lg:space-y-5 justify-between">
           <div className="bg-dark rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary flex flex-col items-center justify-center">
-            <h3 className="text-sm lg:text-2xl uppercase font-bold">
+            <h3 className="text-sm lg:text-2xl   font-bold">
               Orders Completed
             </h3>
             <p className="text-xs lg:text-xl">{data.ordersCompleted}</p>
           </div>
           <div className="bg-dark rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary flex flex-col items-center justify-center">
-            <h3 className="text-sm lg:text-2xl uppercase font-bold">
+            <h3 className="text-sm lg:text-2xl   font-bold">
               {type === "booster" ? "Boosting Since" : "Coaching Since"}
             </h3>
             <p className="text-xs lg:text-xl">
@@ -124,7 +122,7 @@ function SinglePageContainer({
             </p>
           </div>
           <div className="bg-dark rounded-xl border-primary border w-full p-2 lg:p-5 text-center space-y-5 shadow-base shadow-primary flex flex-col items-center justify-center">
-            <h3 className="text-sm lg:text-2xl uppercase font-bold">Roles</h3>
+            <h3 className="text-sm lg:text-2xl   font-bold">Roles</h3>
             <div className="text-xs lg:text-xl space-x-0 lg:space-x-3 space-y-1 lg:space-y-0 w-full flex flex-col lg:flex-row text-center items-center justify-center">
               {data.roles?.length === 5 ? (
                 <div className="flex items-center space-x-1">
@@ -182,7 +180,7 @@ function SinglePageContainer({
                       </Avatar>
                       <div className="flex flex-col h-full justify-around">
                         <div>
-                          <p className="text-sm font-medium text-light uppercase">
+                          <p className="text-sm font-medium text-light  ">
                             {review.customer.name}
                           </p>
                           <p className="text-xs text-gray-500 font-medium">
@@ -213,7 +211,7 @@ function SinglePageContainer({
                           width={500}
                           className="w-auto h-14 sm:h-16"
                         />
-                        <p className="text-light uppercase text-center text-xs">
+                        <p className="text-light   text-center text-xs">
                           {tierMapping[review.order.from].label}
                         </p>
                       </div>
@@ -226,7 +224,7 @@ function SinglePageContainer({
                           width={500}
                           className="w-auto h-14 sm:h-16"
                         />
-                        <p className="text-light uppercase text-center text-xs">
+                        <p className="text-light   text-center text-xs">
                           {tierMapping[review.order.to].label}
                         </p>
                       </div>

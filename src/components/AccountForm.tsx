@@ -132,7 +132,7 @@ function AccountForm() {
         </div>
         <Button
           type="submit"
-          className="bg-primary text-light text-lg font-normal w-full py-5 hover:bg-primary/90 transition-colors uppercase"
+          className="bg-primary text-light text-lg font-normal w-full py-5 hover:bg-primary/90 transition-colors  "
           disabled={loading}
           aria-disabled={loading}
         >
