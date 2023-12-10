@@ -117,7 +117,7 @@ function Footer() {
       <div className="max-w-xl w-full mx-auto px-1">
         <hr className="border-primary border-2" />
       </div>
-      <ul className="max-w-xl w-full flex justify-evenly   font-medium items-center text-center mx-auto text-sm">
+      <ul className="max-w-xl w-full flex justify-around font-medium items-center text-center mx-auto text-sm">
         {nav.map((link) => (
           <li key={link.label}>
             <Link href={link.href} className="hover:underline">
@@ -126,13 +126,16 @@ function Footer() {
           </li>
         ))}
       </ul>
-      <div className="font-medium text-center text-sm space-y-5">
-        <div className="flex space-x-5">
+      <div className="font-medium text-center text-xs space-y-5">
+        <div className="flex space-x-5 lg:space-x-10 text-center">
           <Link href="/terms" className="hover:underline">
             Terms of Use
           </Link>
           <Link href="/privacy" className="hover:underline">
             Privacy Policy
+          </Link>
+          <Link href="/refund" className="hover:underline">
+            Refund Policy
           </Link>
         </div>
         <p>&copy; 2023 RB</p>
